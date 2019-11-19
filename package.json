@@ -1,0 +1,30 @@
+{
+  "name": "blurange",
+  "version": "0.0.1",
+  "description": "Devleague Cohort 29 Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lhnozaki/Blurange.git"
+  },
+  "keywords": [
+    "Portfolio",
+    "Final",
+    "Project",
+    "React",
+    "Node",
+    "Express",
+    "Javascript",
+    "CSS",
+    "HTML"
+  ],
+  "author": "Devid Efhan, Kevin Guo, Justin Benson, Lewis Nozaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lhnozaki/Blurange/issues"
+  },
+  "homepage": "https://github.com/Lhnozaki/Blurange#readme"
+}
