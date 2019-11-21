@@ -1,0 +1,68 @@
+// GRIDS
+// Add to the parent of the grid
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-gap-sm {
+  grid-gap: 10px;
+}
+
+.grid-gap-md {
+  grid-gap: 20px;
+}
+
+.grid-gap-lg {
+  grid-gap: 40px;
+}
+
+// POSITIONS
+// Attach these to the parents
+
+// Works well with one child
+.center-block {
+  display: grid;
+  place-items: center;
+}
+
+// Works well with multiple children
+.center-content {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+}
+
+// IMAGES
+// Attach to the img
+.full-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+// TURN THE ELEMENT TO UPPERCASE
+.uppercase {
+  text-transform: uppercase;
+}
+
+// CONTAINERS
+
+.container-sm,
+.container-md,
+.container-lg {
+  padding: 0 20px;
+}
+
+@media (min-width: $breakpoint-small) {
+  .container-sm {
+    padding: 0 50px;
+  }
+
+  .container-md {
+    padding: 0 100px;
+  }
+  .container-lg {
+    padding: 0 150px;
+  }
+}

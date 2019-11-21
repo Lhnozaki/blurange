@@ -1,2 +1,27 @@
-// Imports
-$background: coral;
+// Variables
+@import url("https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:500,700&display=swap");
+
+// Typography
+$type-base: "Archivo", sans-serif;
+$type-heading: "Archivo Narrow", sans-serif;
+$type-linewidth: 38em;
+$type-color-body: rgba(0, 0, 0, 0.8);
+$type-color-headings: #000;
+
+// Colors
+$background: #f1f2f6;
+$light-grey: #bfbfbf;
+$mid-grey: #737373;
+$dark-grey: #404040;
+$black: #0d0d0d;
+
+// Breakpoints
+$breakpoint-small: 768px;
+$breakpoint-medium: 1050px;
+$breakpoint-large: 1250px;
+
+// Easings
+$cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
+
+// Box shadow
+$box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.23);
