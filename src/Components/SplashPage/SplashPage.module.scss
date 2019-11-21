@@ -1,0 +1,12 @@
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .heroContent {
+    margin-left: 10%;
+    width: fit-content;
+    text-align: left;
+  }
+}
