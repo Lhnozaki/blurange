@@ -1,8 +1,10 @@
 .header {
   width: 100%;
-  background: red;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
