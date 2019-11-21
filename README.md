@@ -4,10 +4,10 @@ A Web Application aimed at helping software engineers who have no time, patience
 
 This DevLeague Cohort 29 final project was created by:
 
-- [David Efhan](https://github.com/frzrbox)
-- [Kevin Guo](https://github.com/kevinchguo)
-- [Justin Benson](https://github.com/bensonjustin)
-- [Lewis Nozaki](https://github.com/lhnozaki)
+* [David Efhan](https://github.com/frzrbox) 
+* [Kevin Guo](https://github.com/kevinchguo)
+* [Justin Benson](https://github.com/bensonjustin)
+* [Lewis Nozaki](https://github.com/lhnozaki)
 
 ### Technologies Used
 
