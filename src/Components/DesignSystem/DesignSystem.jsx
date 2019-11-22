@@ -73,6 +73,19 @@ export default function DesignSystem() {
                     </div>
                 </div>
             </section>
+            <section id={styles.linksContainer}>
+                <h2 className={styles.title}>Links</h2>
+                <div className={styles.linkExamples}>
+                    <ul>
+                        <li><a href="#">click here</a></li>
+                        <li><a className={styles.altLink} href="#">learn more</a></li>
+                    </ul>
+
+                    <div className={styles.linkDescription}>
+                        <p>All links will change color to show the user that they can interact with them. On a light background the link will turn from light-blue to blue. If the background is dark then the link will turn from off-white to orange.</p>
+                    </div>
+                </div>
+            </section>
         </article>
     )
 }
