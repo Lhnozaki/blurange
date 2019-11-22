@@ -19,8 +19,8 @@ export default function DesignSystem() {
                         <p>Vaporware listicle hammock, bicycle rights post-ironic cardigan quinoa man bun cred live-edge celiac mustache tbh master cleanse. Deep v mixtape 90's squid pok pok gluten-free taxidermy, af coloring book. Church-key scenester cornhole pok pok neutra gentrify actually tumblr vice. Humblebrag live-edge small batch, wolf listicle health goth offal kogi four dollar toast glossier. Gastropub iPhone bespoke pinterest, pop-up raw denim +1 leggings thundercats jean shorts tumeric. Air plant offal cray freegan +1 everyday carry.</p>
                     </div>
                     <div className={styles.typeInfo}>
-                        <h3>Headings are in Rubik</h3>
-                        <p>Body copy are in Nunito Sans</p>
+                        <h3>Headings are Rubik</h3>
+                        <p>Body copy is Nunito Sans</p>
                     </div>
                 </div>
 
