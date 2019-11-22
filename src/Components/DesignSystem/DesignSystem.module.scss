@@ -1,0 +1,153 @@
+// Colors
+$off-white:#f5f6fa;
+$blue: #010038;
+$orange: #f39422;
+$light-blue: #293a80;
+$grey-accent: #dfe6e9;
+$dark-accent: #101820;
+$border-color: rgba(178, 190, 195, 0.4);
+// Styles
+$border-radius: 5px;
+$btn-border-radius: 20px;
+$cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
+$box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+
+.card {
+    border: 1px solid $border-color;
+    background: $grey-accent;
+    padding: 20px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+// Doesn't affect the global design system
+.appContainer {
+    background: $off-white;
+
+    // apply this globally to all buttons
+    button {
+        background: $light-blue;
+        border: none;
+        border-radius: $btn-border-radius;
+        padding: 15px 20px;
+        color: $off-white;
+        font-size: 1rem;
+        box-shadow: $box-shadow;
+        transition: all .2s $cubic-ease;
+        width: fit-content;
+
+        &:hover {
+            transform: scale(1.05);
+            background: $blue;
+        }
+    }
+}
+
+
+section {
+    padding: 10vh 0;
+}
+
+.title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+// hero section
+#hero {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+}
+
+// Typography
+.typeWrapper {
+    width: 80%;
+    place-items: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+
+// Colors section
+
+#colorsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .colorBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+            &:first-of-type {
+                margin-top: 20px;
+            }
+
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.colorPalette {
+    width: 60%;
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.color {
+    height: 200px;
+    width: 100%;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+#orange {
+    background: $orange;
+}
+
+#blue {
+    background: $blue;
+}
+
+#offWhite {
+    background: $off-white;
+}
+
+#darkAccent {
+    background: $dark-accent;
+}
+
+#greyAccent {
+    background: $grey-accent;
+}
+
+#lightBlue {
+    background: $light-blue;
+}
+
+
+// Buttons
+.buttonInfo {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+
+    .buttonDescription {
+        font-size: 1.5rem;
+        line-height: 1.6;
+
+        p {
+            text-align: left;
+        }
+    }
+}
