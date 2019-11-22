@@ -50,7 +50,10 @@ section {
 
 .title {
     margin-bottom: 3rem;
-    text-align: center;
+    width: fit-content;
+    margin: 0 auto 50px auto;
+    padding-bottom: 10px;
+    border-bottom: 4px solid $orange;
 }
 
 // hero section
@@ -58,6 +61,14 @@ section {
     display: grid;
     place-items: center;
     min-height: 60vh;
+
+    h4 {
+        color: $orange;
+    }
+
+    h1 {
+        color: $blue;
+    }
 }
 
 // Typography
