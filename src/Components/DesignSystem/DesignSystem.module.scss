@@ -212,14 +212,22 @@ section {
 }
 
 // Cards
-.cardInfo {
+// .cardInfo {
+    //     width: 60%;
+    //     margin: 0 auto;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-evenly;
+    // }
+
+.card {
+    width: 250px;
+}
+
+.info {
     width: 60%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.card {
-    width: 250px;
 }

@@ -88,14 +88,23 @@ export default function DesignSystem() {
             </section>
             <section id={styles.cardContainer}>
                 <h2 className={styles.title}>Cards</h2>
-                <div className={styles.cardInfo}>
+                <div className={styles.info}>
                     <div className={styles.card}>
                         <h4>OG Drip</h4>
                         <p>A template for those who like them simple and want their work to do the talking.</p>
                     </div>
-                    <div className={styles.cardDescription}>
+                    <div className={styles.description}>
                         <p>All cards have the background of grey while having a slight border of a darker shade. They also have a subtle drop-shadow applied in order to give a sense of depth and heirarchy. There is also an all-around padding of 20px to contain all the contents inside of the card.</p>
                     </div>
+                </div>
+            </section>
+            <section id={styles.inputContainer}>
+                <h2 className={styles.title}>Inputs</h2>
+                <div className={styles.inputInfo}>
+                    <div className={styles.inputExamples}>
+                        <input type="text" placeholder="I'm an input" />
+                    </div>
+                    <div className={styles.inputDescription}></div>
                 </div>
             </section>
         </article>
