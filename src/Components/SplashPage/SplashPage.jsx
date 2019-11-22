@@ -7,7 +7,7 @@ const SplashPage = () => {
             <section id={styles.hero}>
                 <div className={styles.heroContent}>
                     <h1>Blurange</h1>
-                    <h3>Get yourself out there...fast lol</h3>
+                    <h3>Your code doesn't repeat itself, why should you?</h3>
                     <button>get started for free</button>
                 </div>
             </section>
