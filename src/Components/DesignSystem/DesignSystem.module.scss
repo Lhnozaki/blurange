@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 // Colors
 $off-white:#f5f6fa;
 $blue: #010038;
@@ -24,6 +26,27 @@ $box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
 .appContainer {
     background: $off-white;
     color: $dark-accent;
+
+    // apply this to all inputs
+    input,
+    select,
+    option,
+    textarea {
+        border: 1px solid $border-color;
+        background: $grey-accent;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        padding: 10px 20px;
+        font-family: $type-base;
+
+        &:focus {
+            border: 1px solid $orange;
+        }
+
+        &[placeholder] {
+            color: $dark-accent;
+        }
+    }
 
     // apply this globally to all links
     a {
@@ -212,14 +235,6 @@ section {
 }
 
 // Cards
-// .cardInfo {
-    //     width: 60%;
-    //     margin: 0 auto;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: space-evenly;
-    // }
-
 .card {
     width: 250px;
 }
@@ -230,4 +245,17 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+// Input
+
+.inputExamples {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    select,
+    textarea {
+        margin-bottom: 20px;
+    }
 }
