@@ -10,6 +10,7 @@ const knex = require("./database/knex");
 const flash = require("connect-flash");
 const saltRounds = 12;
 
+///// ROUTING /////
 const githubAuth = require("./routes/auth-routes/github/oauth-github");
 const linkedinAuth = require("./routes/auth-routes/linkedin/oauth-linkedin");
 
