@@ -33,4 +33,4 @@ COPY . .
 EXPOSE 8080
 
 # Start the Express server
-CMD ["node", "./deploy-dev.js"]
+CMD ["node", "./deploy-prod.js"]
