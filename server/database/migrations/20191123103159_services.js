@@ -1,9 +1,8 @@
 exports.up = function(knex) {
-  return knex.schema.createTable("projects", table => {
+  return knex.schema.createTable("services", table => {
     table.increments();
     table.string("name").notNullable();
-    table.string("description").notNullable();
-    table.string("url");
+    table.string("description");
     table
       .integer("user_id")
       .unsigned()
@@ -12,6 +11,4 @@ exports.up = function(knex) {
   });
 };
 
-exports.down = function(knex) {
-  return knex.schema.dropTable("projects");
-};
+exports.down = function(knex) {};
