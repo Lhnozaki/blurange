@@ -10,10 +10,15 @@
   top: 0;
   left: 0;
   background: $off-white;
+  color: $dark-accent;
   box-shadow: $box-shadow;
 }
 
-.navigation {
+.siteBranding {
+  font-size: 2rem;
+}
+
+.loginBtns {
   width: fit-content;
 
   button {

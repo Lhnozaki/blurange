@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { withRouter } from "react-router";
+import Routes from '../Routes';
 import SplashPage from '../Components/SplashPage';
 import Header from '../Components/Header';
 import DesignSystem from '../Components/DesignSystem';
@@ -10,9 +12,10 @@ function App() {
   return (
     <div className="App">
       <Header setAuth={setAuth} isAuth={isAuth} />
-      {isAuth ? <DesignSystem /> : <SplashPage />}
+      <Routes />
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);
+
