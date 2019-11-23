@@ -1,0 +1,249 @@
+@import '../../scss/variables';
+
+// Colors
+$off-white:#f5f6fa;
+$blue: #010038;
+$orange: #f39422;
+$light-blue: #293a80;
+$grey-accent: #dfe6e9;
+$dark-accent: #101820;
+$border-color: rgba(178, 190, 195, 0.4);
+// Styles
+$border-radius: 5px;
+$btn-border-radius: 20px;
+$cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
+$box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+
+
+// Doesn't affect the global design system
+
+section {
+    padding: 10vh 0;
+}
+
+
+// hero section
+#hero {
+    display: grid;
+    place-items: center;
+    min-height: 60vh;
+
+    h4 {
+        color: $orange;
+    }
+
+    h1 {
+        color: $blue;
+    }
+}
+
+// Typography
+
+.typeWrapper {
+    width: 80%;
+    place-items: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+}
+
+@media (min-width: $breakpoint-small) {
+
+    .typeWrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
+
+
+// Colors section
+
+#colorsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .colorBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        p {
+            &:first-of-type {
+                margin-top: 20px;
+            }
+
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.color {
+    height: 200px;
+    width: 200px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+@media(min-width: $breakpoint-small) {
+    .colorPalette {
+        width: 60%;
+        height: 60vh;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .color {
+        width: 100%;
+    }
+}
+
+
+
+
+
+#orange {
+    background: $orange;
+}
+
+#blue {
+    background: $blue;
+}
+
+#offWhite {
+    background: $off-white;
+}
+
+#darkAccent {
+    background: $dark-accent;
+}
+
+#greyAccent {
+    background: $grey-accent;
+}
+
+#lightBlue {
+    background: $light-blue;
+}
+
+
+.buttonDescription,
+.linkDescription {
+    width: 80%;
+    margin: 40px auto 0 auto;
+}
+
+.linkExamples {
+    li {
+        margin-bottom: 20px;
+    }
+}
+
+.altLink {
+    padding: 10px;
+    background: $blue;
+    color: white;
+
+    &:hover {
+        color: $orange;
+    }
+}
+
+@media(min-width: $breakpoint-small) {
+    .buttonInfo {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        width: fit-content;
+        margin: 0 auto;
+
+        .buttonDescription {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+    }
+
+    .linkExamples {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        width: fit-content;
+        margin: 0 auto;
+
+        ul {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+
+            li {
+                list-style: none;
+            }
+        }
+
+        .linkDescription {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+
+
+
+// Cards
+
+.info {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.description {
+    margin-top: 30px;
+}
+
+@media(min-width: $breakpoint-small) {
+    #cardContainer {
+        #card {
+            width: 250px;
+        }
+    }
+
+    .info {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .description {
+            p {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}
+
+
+
+// Input
+
+.inputExamples {
+    display: flex;
+    flex-direction: column;
+
+
+    input,
+    select,
+    textarea {
+        margin-bottom: 20px;
+    }
+}
