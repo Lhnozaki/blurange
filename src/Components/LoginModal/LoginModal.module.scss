@@ -5,14 +5,13 @@
     height: 100vh;
     width: 100%;
     background: rgba($color: #000000, $alpha: 0.4);
+    display: grid;
+    place-items: center;
 }
 
 .loginModal {
-    position: absolute;
-    top: calc(50% - 30vh);
-    left: calc(50% - 40vw);
-    height: 60vh;
-    width: 80vw;
+    height: fit-content;
+    width: fit-content;
     background: $off-white;
     box-shadow: $box-shadow;
     padding: 40px;
@@ -23,7 +22,7 @@
 .loginForm {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 
     input {
@@ -37,14 +36,5 @@
             background: $blue;
             color: $off-white;
         }
-    }
-}
-
-@media(min-width: $breakpoint-small) {
-    .loginModal {
-        top: calc(50% - 15vh);
-        left: calc(50% - 10vw);
-        height: 30vh;
-        width: 20vw;
     }
 }
