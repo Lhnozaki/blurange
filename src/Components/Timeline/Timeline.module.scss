@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.progressBar {
+    height: 50px;
+    border-radius: $border-radius;
+    background: $orange;
+    width: 80%;
+    margin: 0 auto;
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: all .3s $cubic-ease;
+}
