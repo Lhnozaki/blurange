@@ -1,0 +1,40 @@
+@import '../../scss/variables';
+
+.loginOverlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgba($color: #000000, $alpha: 0.4);
+    display: grid;
+    place-items: center;
+}
+
+.loginModal {
+    height: fit-content;
+    width: fit-content;
+    background: $off-white;
+    box-shadow: $box-shadow;
+    padding: 40px;
+    display: grid;
+    place-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+
+    input {
+        margin-bottom: 5px;
+    }
+
+    .loginBtn {
+        margin: 10px 0 20px 0;
+
+        &:hover {
+            background: $blue;
+            color: $off-white;
+        }
+    }
+}

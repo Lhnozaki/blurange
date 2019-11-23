@@ -4,6 +4,7 @@ A Web Application aimed at helping software engineers who have no time, patience
 
 This DevLeague Cohort 29 final project was created by:
 
+
 * [David Efhan](https://github.com/frzrbox) 
 * [Kevin Guo](https://github.com/kevinchguo)
 * [Justin Benson](https://github.com/bensonjustin)
@@ -23,4 +24,3 @@ This DevLeague Cohort 29 final project was created by:
 - Redis
 - KnexJS
 - BookshelfJS
-- Netlify

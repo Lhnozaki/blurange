@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $off-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+label {
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
