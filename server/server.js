@@ -10,6 +10,7 @@ const knex = require("./database/knex");
 const flash = require("connect-flash");
 const saltRounds = 12;
 
+///// ROUTING /////
 const githubAuth = require("./routes/auth-routes/github");
 
 ///// DOTENV & PASSPORT /////
@@ -35,6 +36,11 @@ app.use(decorator);
 
 ///// ROUTES /////
 app.use("/auth", githubAuth);
+
+///// Smoke Test /////
+app.get("/", (req, res) => {
+  res.status(200).json({ success: true });
+});
 
 ///// LISTEN /////
 app.listen(PORT, () => {
