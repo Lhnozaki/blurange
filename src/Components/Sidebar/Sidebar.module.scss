@@ -1,0 +1,13 @@
+@import '../../scss/_variables'
+
+.sidebar {
+    width: 100%;
+    height: 30vh;
+    background: $blue;
+    }
+@media(min-width: $breakpoint-small) {
+    .sidebar {
+        width: 30vw;
+        height: 100vh;
+    }
+}

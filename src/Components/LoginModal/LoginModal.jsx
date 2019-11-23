@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './LoginModal.module.scss';
 
-const LoginModal = ({ setLoginOn, setAuth, credentials, setCredentials }) => {
+
+const LoginModal = ({ setLoginOn, isAuth, setAuth, credentials, setCredentials }) => {
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -13,7 +14,6 @@ const LoginModal = ({ setLoginOn, setAuth, credentials, setCredentials }) => {
     function handleChange(e) {
         setCredentials({ ...credentials, [e.target.name]: e.target.value });
     }
-
 
     return (
         <div className={styles.loginOverlay}>

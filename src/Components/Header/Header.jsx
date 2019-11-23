@@ -17,7 +17,7 @@ const Header = ({ setAuth, isAuth, credentials, setLoginOn }) => {
         <header className={styles.header}>
             <Link className={styles.siteBranding} to="/">blurange</Link>
             <div className={styles.rightHeader}>
-                <Navigation />
+                <Navigation isAuth={isAuth} />
                 {isAuth && <p className={styles.loggedInAs}>hi <span className="color-orange">{credentials.username}</span></p>}
                 <div className={styles.loginBtns}>
                     <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login'}</button>
