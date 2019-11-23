@@ -11,7 +11,7 @@ export default function DesignSystem() {
                 </div>
             </section>
             <section id={styles.typographyContainer}>
-                <h2 className={styles.title}>Typography</h2>
+                <h2 className="title">Typography</h2>
                 <div className={styles.typeWrapper}>
                     <div className={styles.typeSpecimen}>
                         <h1>Blurange</h1>
@@ -26,7 +26,7 @@ export default function DesignSystem() {
 
             </section>
             <section id={styles.colorsContainer} >
-                <h2 className={styles.title}>Color Palette</h2>
+                <h2 className="title">Color Palette</h2>
 
                 <div className={styles.colorPalette}>
                     <div className={styles.colorBlock}>
@@ -62,7 +62,7 @@ export default function DesignSystem() {
                 </div>
             </section>
             <section id={styles.buttonContainaer}>
-                <h2 className={styles.title}>Buttons</h2>
+                <h2 className="title">Buttons</h2>
                 <div className={styles.buttonInfo}>
                     <div>
                         <button>click me</button>
@@ -74,7 +74,7 @@ export default function DesignSystem() {
                 </div>
             </section>
             <section id={styles.linksContainer}>
-                <h2 className={styles.title}>Links</h2>
+                <h2 className="title">Links</h2>
                 <div className={styles.linkExamples}>
                     <ul>
                         <li><a href="#">click here</a></li>
@@ -87,9 +87,9 @@ export default function DesignSystem() {
                 </div>
             </section>
             <section id={styles.cardContainer}>
-                <h2 className={styles.title}>Cards</h2>
+                <h2 className="title">Cards</h2>
                 <div className={styles.info}>
-                    <div className={styles.card}>
+                    <div className="card" id={styles.card}>
                         <h4>OG Drip</h4>
                         <p>A template for those who like them simple and want their work to do the talking.</p>
                     </div>
@@ -99,7 +99,7 @@ export default function DesignSystem() {
                 </div>
             </section>
             <section id={styles.inputContainer}>
-                <h2 className={styles.title}>Inputs</h2>
+                <h2 className="title">Inputs</h2>
                 <div className={styles.info}>
                     <div className={styles.inputExamples}>
                         <input type="text" placeholder="I'm an input" />

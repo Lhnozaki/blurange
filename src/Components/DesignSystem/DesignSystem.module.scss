@@ -14,81 +14,6 @@ $btn-border-radius: 20px;
 $cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
 $box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
 
-.card {
-    border: 1px solid $border-color;
-    background: $grey-accent;
-    padding: 20px;
-    border-radius: $border-radius;
-    box-shadow: $box-shadow;
-}
-
-
-.appContainer {
-    background: $off-white;
-    color: $dark-accent;
-
-    // apply this to all inputs
-    input,
-    select,
-    option,
-    textarea {
-        border: 1px solid $border-color;
-        background: $grey-accent;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
-        padding: 10px 20px;
-        font-family: $type-base;
-
-        &:focus {
-            border: 1px solid $orange;
-        }
-
-        &[placeholder] {
-            color: $dark-accent;
-        }
-    }
-
-    // apply this globally to all links
-    a {
-        text-decoration: none;
-        color: $light-blue;
-        font-size: 1.4rem;
-
-        &:hover {
-            color: $blue;
-        }
-    }
-
-    .altLink {
-        // don't put background  or padding in real app just for example
-        background: $dark-accent;
-        padding: 20px;
-        color: $off-white;
-
-        &:hover {
-            color: $orange;
-        }
-    }
-
-    // apply this globally to all buttons
-    button {
-        background: $light-blue;
-        border: none;
-        border-radius: $btn-border-radius;
-        padding: 15px 20px;
-        color: $off-white;
-        font-size: 1rem;
-        box-shadow: $box-shadow;
-        transition: all .2s $cubic-ease;
-        width: fit-content;
-
-        &:hover {
-            transform: scale(1.05);
-            background: $blue;
-        }
-    }
-}
-
 
 // Doesn't affect the global design system
 
@@ -96,13 +21,6 @@ section {
     padding: 10vh 0;
 }
 
-.title {
-    margin-bottom: 3rem;
-    width: fit-content;
-    margin: 0 auto 50px auto;
-    padding-bottom: 10px;
-    border-bottom: 4px solid $orange;
-}
 
 // hero section
 #hero {
@@ -120,13 +38,24 @@ section {
 }
 
 // Typography
+
 .typeWrapper {
     width: 80%;
     place-items: center;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
 }
+
+@media (min-width: $breakpoint-small) {
+
+    .typeWrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+
 
 
 // Colors section
@@ -153,20 +82,30 @@ section {
     }
 }
 
-.colorPalette {
-    width: 60%;
-    height: 60vh;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
 .color {
     height: 200px;
-    width: 100%;
+    width: 200px;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
 }
+
+@media(min-width: $breakpoint-small) {
+    .colorPalette {
+        width: 60%;
+        height: 60vh;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .color {
+        width: 100%;
+    }
+}
+
+
+
+
 
 #orange {
     background: $orange;
@@ -193,65 +132,114 @@ section {
 }
 
 
-// Buttons
-.buttonInfo {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    width: fit-content;
-    margin: 0 auto;
+.buttonDescription,
+.linkDescription {
+    width: 80%;
+    margin: 40px auto 0 auto;
+}
 
-    .buttonDescription {
-        font-size: 1.5rem;
-        line-height: 1.6;
+.linkExamples {
+    li {
+        margin-bottom: 20px;
     }
 }
 
-// Links
+.altLink {
+    padding: 10px;
+    background: $blue;
+    color: white;
 
-.linkExamples {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    width: fit-content;
-    margin: 0 auto;
+    &:hover {
+        color: $orange;
+    }
+}
 
-    ul {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-evenly;
+@media(min-width: $breakpoint-small) {
+    .buttonInfo {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
         align-items: center;
+        width: fit-content;
+        margin: 0 auto;
 
-        li {
-            list-style: none;
+        .buttonDescription {
+            font-size: 1.5rem;
+            line-height: 1.6;
         }
     }
 
-    .linkDescription {
-        font-size: 1.5rem;
-        line-height: 1.6;
+    .linkExamples {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        width: fit-content;
+        margin: 0 auto;
+
+        ul {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+
+            li {
+                list-style: none;
+            }
+        }
+
+        .linkDescription {
+            font-size: 1.5rem;
+            line-height: 1.6;
+        }
     }
 }
 
+
+
+
 // Cards
-.card {
-    width: 250px;
-}
 
 .info {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
 }
+
+.description {
+    margin-top: 30px;
+}
+
+@media(min-width: $breakpoint-small) {
+    #cardContainer {
+        #card {
+            width: 250px;
+        }
+    }
+
+    .info {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .description {
+            p {
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}
+
+
 
 // Input
 
 .inputExamples {
     display: flex;
     flex-direction: column;
+
 
     input,
     select,
