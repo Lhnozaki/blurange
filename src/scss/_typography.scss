@@ -17,6 +17,13 @@ h6 {
   color: $type-color-headings;
 }
 
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
 /* Traditional typographic scale
        48, 36, 24, 21, 18, 16 */
 
@@ -61,4 +68,18 @@ h6 {
 p {
   margin: 0 0 0.5em 0;
   max-width: $type-linewidth;
+}
+
+
+.title {
+  margin-bottom: 3rem;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  padding-bottom: 10px;
+  border-bottom: 4px solid $orange;
+  font-size: 3rem;
+}
+
+.subhead {
+  text-align: center;
 }

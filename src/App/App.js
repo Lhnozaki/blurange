@@ -5,7 +5,7 @@ import DesignSystem from '../Components/DesignSystem';
 import './App.scss';
 
 function App() {
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState(false);
 
   return (
     <div className="App">

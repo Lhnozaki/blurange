@@ -94,7 +94,7 @@ export default function DesignSystem() {
                         <p>A template for those who like them simple and want their work to do the talking.</p>
                     </div>
                     <div className={styles.description}>
-                        <p>All cards have the background of grey while having a slight border of a darker shade. They also have a subtle drop-shadow applied in order to give a sense of depth and heirarchy. There is also an all-around padding of 20px to contain all the contents inside of the card.</p>
+                        <p>All cards have the background of grey while having a slight border of a darker shade. They also have a subtle drop-shadow applied in order to give a sense of depth and heirarchy. There is also an all-around padding that should be uniform with all cards in it's cluster in order to contain all the contents inside of the card.</p>
                     </div>
                 </div>
             </section>
@@ -110,7 +110,7 @@ export default function DesignSystem() {
                             <option value="clout three">option three</option>
                         </select>
 
-                        <textarea name="textarea" value="type something here" cols="30" rows="10"></textarea>
+                        <textarea readOnly name="textarea" value="type something here" cols="30" rows="10"></textarea>
                     </div>
                     <div className={styles.description}>
                         <p>This is the input</p>

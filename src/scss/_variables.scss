@@ -11,11 +11,19 @@ $type-color-body: rgba(0, 0, 0, 0.8);
 $type-color-headings: #000;
 
 // Colors
-$background: #f1f2f6;
-$light-grey: #bfbfbf;
-$mid-grey: #737373;
-$dark-grey: #404040;
-$black: #0d0d0d;
+$off-white:#f5f6fa;
+$blue: #010038;
+$orange: #f39422;
+$light-blue: #293a80;
+$grey-accent: #dfe6e9;
+$dark-accent: #101820;
+$border-color: rgba(178, 190, 195, 0.4);
+// Styles
+$border-radius: 5px;
+$btn-border-radius: 35px;
+$cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
+$box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+
 
 // Breakpoints
 $breakpoint-small: 768px;
@@ -24,6 +32,3 @@ $breakpoint-large: 1250px;
 
 // Easings
 $cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
-
-// Box shadow
-$box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.23);
