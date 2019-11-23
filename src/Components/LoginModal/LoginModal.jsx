@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './LoginModal.module.scss';
 
-const LoginModal = ({ setLoginOn, setAuth }) => {
-
-    const [credentials, setCredentials] = useState({});
+const LoginModal = ({ setLoginOn, setAuth, credentials, setCredentials }) => {
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -21,8 +19,8 @@ const LoginModal = ({ setLoginOn, setAuth }) => {
         <div className={styles.loginOverlay}>
             <div className={styles.loginModal}>
                 <form className={styles.loginForm} onSubmit={handleSubmit}>
-                    <label>email</label>
-                    <input type="email" name="email" required onChange={handleChange} />
+                    <label>username</label>
+                    <input type="text" name="username" required onChange={handleChange} />
                     <label>password</label>
                     <input type="password" id="pass" name="password"
                         minLength="8" required onChange={handleChange} />
