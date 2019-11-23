@@ -1,14 +1,14 @@
-const bookshelf = require('../bookshelf');
-require('../models/User');
+const bookshelf = require("../bookshelf");
+require("../models/User");
 
 class Edu extends bookshelf.Model {
   get tableName() {
-    return 'edu';
+    return "edu";
   }
 
   user() {
-    return this.hasOne('User');
+    return this.hasOne("User", "id", "user_id");
   }
 }
 
-module.exports = bookshelf.model('Edu', Edu);
+module.exports = bookshelf.model("Edu", Edu);
