@@ -1,4 +1,4 @@
-# Blurange [Tentative Name Pending]
+# NoCan.Design
 
 A Web Application aimed at helping software engineers who have no time, patience, or design skills create beautiful portfolios to showcase their projects and work.
 
