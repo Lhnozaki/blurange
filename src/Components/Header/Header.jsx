@@ -3,14 +3,14 @@ import styles from './Header.module.scss'
 import Navigation from '../Navigation'
 import { Link } from "react-router-dom";
 
-const Header = ({ isAuth, setAuth }) => {
+const Header = ({ isAuth, setAuth, setLoginOn }) => {
     return (
         <header className={styles.header}>
             <Link className={styles.siteBranding} to="/">blurange</Link>
             <div className={styles.rightHeader}>
                 <Navigation />
                 <div className={styles.loginBtns}>
-                    <button onClick={() => setAuth(!isAuth)}>{isAuth ? 'logout' : 'login'}</button>
+                    <button onClick={() => setLoginOn(true)}>{isAuth ? 'logout' : 'login'}</button>
                     <button className="alt-btn">sign up</button>
                 </div>
             </div>
