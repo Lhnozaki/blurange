@@ -18,6 +18,15 @@
   font-size: 2rem;
 }
 
+.rightHeader {
+  display: flex;
+  align-items: center;
+
+  nav {
+    margin-right: 30px;
+  }
+}
+
 .loginBtns {
   width: fit-content;
 

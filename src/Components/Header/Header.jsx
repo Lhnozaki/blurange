@@ -7,11 +7,14 @@ const Header = ({ isAuth, setAuth }) => {
     return (
         <header className={styles.header}>
             <Link className={styles.siteBranding} to="/">blurange</Link>
-            <Navigation />
-            <div className={styles.loginBtns}>
-                <button onClick={() => setAuth(!isAuth)}>{isAuth ? 'logout' : 'login'}</button>
-                <button className="alt-btn">sign up</button>
+            <div className={styles.rightHeader}>
+                <Navigation />
+                <div className={styles.loginBtns}>
+                    <button onClick={() => setAuth(!isAuth)}>{isAuth ? 'logout' : 'login'}</button>
+                    <button className="alt-btn">sign up</button>
+                </div>
             </div>
+
         </header>
     )
 }
