@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
   const [loginOn, setLoginOn] = useState(false);
   const [credentials, setCredentials] = useState({});
 

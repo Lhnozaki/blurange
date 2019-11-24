@@ -77,8 +77,8 @@ export default function DesignSystem() {
                 <h2 className="title">Links</h2>
                 <div className={styles.linkExamples}>
                     <ul>
-                        <li><a href="#">click here</a></li>
-                        <li><a className={styles.altLink} href="#">learn more</a></li>
+                        <li><button className={styles.a}>click here</button></li>
+                        <li><button className={styles.aAlt}>learn more</button></li>
                     </ul>
 
                     <div className={styles.linkDescription}>
