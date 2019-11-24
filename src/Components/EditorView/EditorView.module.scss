@@ -1,6 +1,6 @@
 @import '../../scss/variables';
 
-.editorView {
+#editorView {
     position: relative;
     top: 20vh;
     margin: 0 auto;
@@ -10,7 +10,7 @@
 
 
 @media(min-width: $breakpoint-small) {
-    .editorView {
+    #editorView {
         position: fixed;
         top: calc(8vh + 20px);
         right: 20px;
