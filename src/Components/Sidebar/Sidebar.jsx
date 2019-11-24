@@ -10,8 +10,8 @@ const Sidebar = ({ setEditorStatus }) => {
     return (
         <div id={styles.sidebar} className="card">
             <h3 onClick={() => changeStatus(0)} to="/editor/templates">1. Choose a template</h3>
-            <h3 onClick={() => changeStatus(2)} to="/editor/deploy">3. Deploy your site</h3>
             <h3 onClick={() => changeStatus(1)} to="/editor/info">2. Load in your info</h3>
+            <h3 onClick={() => changeStatus(2)} to="/editor/deploy">3. Deploy your site</h3>
         </div>
     )
 }
