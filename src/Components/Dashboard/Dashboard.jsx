@@ -4,11 +4,13 @@ import DashboardProject from '../DashboardProject';
 
 const Dashboard = () => {
     return (
-        <div className={styles.dashboard}>
-            <div className={styles.container}>
-                <h2>Profile</h2>
-                <div className={styles.projectCollection}>
-                    <DashboardProject />
+        <div className={styles.templateWrapper}>
+            <div className={styles.dashboard}>
+                <div className={styles.container}>
+                    <h2>Profile</h2>
+                    <div className={styles.projectCollection}>
+                        <DashboardProject />
+                    </div>
                 </div>
             </div>
         </div>

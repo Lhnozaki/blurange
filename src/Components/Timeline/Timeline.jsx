@@ -3,7 +3,10 @@ import styles from './Timeline.module.scss'
 
 const Timeline = () => {
     return (
-        <div className={styles.progressBar}></div>
+        <div>
+            <p>You're 50% finished</p>
+            <div className={styles.progressBar}></div>
+        </div>
     )
 }
 
