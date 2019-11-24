@@ -11,8 +11,9 @@ const flash = require("connect-flash");
 const saltRounds = 12;
 
 ///// ROUTING /////
-const githubAuth = require("./routes/auth-routes/github/oauth-github");
-const linkedinAuth = require("./routes/auth-routes/linkedin/oauth-linkedin");
+const githubAuth = require("./routes/api/auth-routes/github/oauth-github");
+const linkedinAuth = require("./routes/api/auth-routes/linkedin/oauth-linkedin");
+const loginLogout = require("./routes/api/auth-routes/authentication");
 
 ///// DOTENV & PASSPORT /////
 require("dotenv").config();
@@ -44,6 +45,7 @@ app.use(decorator);
 // );
 
 ///// ROUTES /////
+app.use("/auth", loginLogout);
 app.use("/auth", githubAuth);
 app.use("/auth", linkedinAuth);
 
