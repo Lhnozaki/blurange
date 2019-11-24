@@ -1,9 +1,9 @@
 // Imports
-@import "./scss/variables";
-@import "./scss/reset";
-@import "./scss/typography";
-@import "./scss/helpers";
-@import "./scss/global";
+@import './scss/variables';
+@import './scss/reset';
+@import './scss/typography';
+@import './scss/helpers';
+@import './scss/global';
 
 html {
   box-sizing: border-box;
@@ -20,10 +20,6 @@ html {
 body {
   min-height: 100vh;
   overflow: auto;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 button:focus {
