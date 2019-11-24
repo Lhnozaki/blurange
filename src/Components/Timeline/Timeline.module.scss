@@ -1,9 +1,18 @@
 @import '../../scss/variables';
 
-.progressBar {
+.timeline {
     position: absolute;
     bottom: 50px;
     right: 50px;
+    display: flex;
+    align-items: flex-end;
+
+    p {
+        margin: 0 20px 0 0;
+    }
+}
+
+.progressBar {
     height: 100px;
     width: 60px;
     border-radius: $border-radius;
