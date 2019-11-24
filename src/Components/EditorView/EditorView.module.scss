@@ -7,7 +7,7 @@
     width: calc(80vw - 60px);
     // border: 1px solid red;
     height: calc((100vh - 8vh) - 40px);
-    overflow-y: scroll;
+    overflow-y: auto;
 
     &::-webkit-scrollbar {
         width: 1em;
