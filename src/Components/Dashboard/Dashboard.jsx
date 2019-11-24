@@ -6,10 +6,8 @@ const Dashboard = () => {
     return (
         <div className={styles.dashboard}>
             <div className={styles.container}>
-                <h2>My Projects</h2>
+                <h2>Profile</h2>
                 <div className={styles.projectCollection}>
-                    <DashboardProject />
-                    <DashboardProject />
                     <DashboardProject />
                 </div>
             </div>
