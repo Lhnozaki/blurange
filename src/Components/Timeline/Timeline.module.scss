@@ -1,9 +1,9 @@
 @import '../../scss/variables';
 
 .timeline {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     align-items: flex-end;
 
@@ -11,6 +11,7 @@
         margin: 0 20px 0 0;
     }
 }
+
 
 .progressBar {
     height: 100px;
@@ -20,4 +21,11 @@
     transform-origin: top;
     transform: scaleX(1);
     transition: all .3s $cubic-ease;
+}
+
+@media(min-width: $breakpoint-small) {
+    .timeline {
+        bottom: 50px;
+        right: 50px;
+    }
 }
