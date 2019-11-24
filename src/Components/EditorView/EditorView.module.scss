@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.editorView {
+    position: fixed;
+    top: calc(8vh + 20px);
+    right: 20px;
+    width: calc(80vw - 60px);
+    // border: 1px solid red;
+    height: calc((100vh - 8vh) - 40px);
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 1em;
+        background-color: $grey-accent;
+        border-radius: $border-radius;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: $box-shadow;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: $border-radius;
+        background-color: $blue;
+        outline: 1px solid $dark-accent;
+    }
+
+}

@@ -17,7 +17,7 @@ function App() {
       <Header setAuth={setAuth} isAuth={isAuth} setLoginOn={setLoginOn} credentials={credentials} />
       {loginOn && <LoginModal isAuth={isAuth} setLoginOn={setLoginOn} setAuth={setAuth} credentials={credentials} setCredentials={setCredentials} />}
       <Routes />
-      {isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />}
+      {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}
     </div>
   );
 }
