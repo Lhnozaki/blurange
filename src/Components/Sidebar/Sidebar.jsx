@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
-import { Link } from "react-router-dom";
 
 const Sidebar = ({ setEditorStatus }) => {
     function changeStatus(e) {
