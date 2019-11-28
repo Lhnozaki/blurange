@@ -104,6 +104,18 @@ export default function DesignSystem() {
             </li>
           </ul>
 
+                    <div className={styles.buttonDescription}>
+                        <p>All buttons have a padding of 15px on the top and bottom, also 20px on the left and right. When hovered over, they scale up 1.05 as well as change background color in order to give the user a tactile feeling.</p>
+                    </div>
+                </div>
+            </section>
+            <section id={styles.linksContainer}>
+                <h2 className="title">Links</h2>
+                <div className={styles.linkExamples}>
+                    <ul>
+                        <li><button className={styles.a}>click here</button></li>
+                        <li><button className={styles.aAlt}>learn more</button></li>
+                    </ul>
           <div className={styles.linkDescription}>
             <p>
               All links will change color to show the user that they can
@@ -140,7 +152,6 @@ export default function DesignSystem() {
         <div className={styles.info}>
           <div className={styles.inputExamples}>
             <input type="text" placeholder="I'm an input" />
-
             <select>
               <option value="clout one">option one</option>
               <option value="clout two">option two</option>
