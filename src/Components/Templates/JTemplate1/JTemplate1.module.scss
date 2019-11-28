@@ -1,0 +1,21 @@
+#container {
+  background: rgb(61, 61, 61);
+
+  .content {
+    color: white;
+    margin-top: 500px;
+    font-family: 'Nunito Sans';
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .navigation {
+    background: rgb(34, 0, 0);
+    a {
+      color: white;
+      margin-right: 20px;
+    }
+  }
+}
