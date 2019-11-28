@@ -6,6 +6,7 @@ import Editor from '../Components/Editor';
 import Dashboard from "../Components/Dashboard";
 import TemplatesList from '../Components/TemplatesList';
 import JTemplate1 from '../Components/Templates/JTemplate1';
+import ATemplate1 from "../Components/Templates/ATemplate1";
 
 
 export const routes = [
@@ -35,7 +36,12 @@ export const routes = [
     component: JTemplate1
   },
   {
-    path: '/templates',
+    path: "/atemplate1",
+    exact: true,
+    component: ATemplate1
+  },
+  {
+    path: "/templates",
     exact: true,
     component: TemplatesList
   }
