@@ -1,28 +1,34 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import SplashPage from '../Components/SplashPage';
-import DesignSystem from '../Components/DesignSystem';
-import TemplatesList from '../Components/TemplatesList';
-import JTemplate1 from '../Components/Templates/JTemplate1';
+import React from "react";
+import { Route } from "react-router-dom";
+import SplashPage from "../Components/SplashPage";
+import DesignSystem from "../Components/DesignSystem";
+import TemplatesList from "../Components/TemplatesList";
+import JTemplate1 from "../Components/Templates/JTemplate1";
+import ATemplate1 from "../Components/Templates/ATemplate1";
 
 export const routes = [
   {
-    path: '/',
+    path: "/",
     exact: true,
     component: SplashPage
   },
   {
-    path: '/design-system',
+    path: "/design-system",
     exact: true,
     component: DesignSystem
   },
   {
-    path: '/jtemplate1',
+    path: "/jtemplate1",
     exact: true,
     component: JTemplate1
   },
   {
-    path: '/templates',
+    path: "/atemplate1",
+    exact: true,
+    component: ATemplate1
+  },
+  {
+    path: "/templates",
     exact: true,
     component: TemplatesList
   }

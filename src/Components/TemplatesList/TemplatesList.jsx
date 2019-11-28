@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './TemplatesList.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./TemplatesList.module.scss";
 
 const TemplatesList = () => {
   return (
@@ -17,6 +17,13 @@ const TemplatesList = () => {
               <Link to="/JTemplate1">
                 <div className="card">
                   <h3 className="color-blue">template1</h3>
+                </div>
+              </Link>
+            </div>
+            <div className={styles.cardContainer}>
+              <Link to="/ATemplate1">
+                <div className="card">
+                  <h3 className="color-blue">template2</h3>
                 </div>
               </Link>
             </div>
