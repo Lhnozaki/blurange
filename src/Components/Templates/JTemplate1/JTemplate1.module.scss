@@ -1,0 +1,24 @@
+#container {
+  background-image: url('./JBackground1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .content {
+    color: white;
+    margin-top: 22%;
+    font-family: 'Nunito Sans';
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  .navigation {
+    background: rgb(34, 0, 0);
+    a {
+      color: white;
+      margin-right: 20px;
+    }
+  }
+}

@@ -19,9 +19,9 @@ function testConnection() {
 // migrate db
 testConnection()
   // run seeds
-  .then(() => {
-    knex.seed.run();
-  })
+  // .then(() => {
+  //   knex.seed.run();
+  // })
   // print status
   .then(() => {
     console.log("Migration and Seeds Finished");

@@ -1,0 +1,47 @@
+@import '../../scss/variables';
+
+#hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .heroContent {
+    margin-left: 10%;
+    width: fit-content;
+    text-align: left;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+      font-family: $type-base;
+    }
+  }
+}
+
+#aboutContent {
+  padding: 10vh 0;
+
+  .cardContainer {
+    width: 80%;
+    margin: 5vh auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-medium) {
+  #aboutContent {
+    .cardContainer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

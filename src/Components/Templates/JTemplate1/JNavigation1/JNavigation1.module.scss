@@ -1,0 +1,16 @@
+.navigation {
+  a {
+    margin-right: 20px;
+    color: white;
+    font-weight: bolder;
+    padding: 10px;
+
+    &:hover {
+      margin-right: 18px;
+      margin-left: -2px;
+      color: white;
+      border: white solid 2px;
+      padding: 10px;
+    }
+  }
+}
