@@ -6,8 +6,15 @@ import styles from "./ATemplate2.module.scss";
 export default function ATemplate2() {
   return (
     <div id={styles.container} className="templateWrapper">
-      <h1>Testing</h1>
-      <Link to="templates">Back</Link>
+      <div className={styles.menu}>
+        <button className={styles.menuBtn}>Dropdown</button>
+        <div className={styles.menuContent}>
+          <Link to="/templates">Go back</Link>
+          <Link to="/">Contact Me</Link>
+          <Link to="/">GitHub</Link>
+          <Link to="/">LinkedIn</Link>
+        </div>
+      </div>
     </div>
   );
 }
