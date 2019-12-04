@@ -40,6 +40,10 @@ app.use(methodOverride("_method"));
 app.use(decorator);
 app.use(cors());
 app.use(passport.initialize());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
 // app.use(
 //   session({
 //     store: new RedisStore({ client }),
