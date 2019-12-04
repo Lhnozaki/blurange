@@ -4,16 +4,16 @@ import styles from "./TemplatesList.module.scss";
 
 const TemplatesList = () => {
   const arrTemplateNames = [
-    'ATemplate1',
-    'ATemplate2',
-    'DTemplate1',
-    'DTemplate2',
-    'JTemplate1',
-    'JTemplate2',
-    'KTemplate1',
-    'KTemplate2',
-    'LTemplate1',
-    'LTemplate2'
+    "ATemplate1",
+    "ATemplate2",
+    "DTemplate1",
+    "DTemplate2",
+    "JTemplate1",
+    "JTemplate2",
+    "KTemplate1",
+    "KTemplate2",
+    "LTemplate1",
+    "LTemplate2"
   ];
   return (
     <article className="container">
@@ -37,13 +37,6 @@ const TemplatesList = () => {
                   </Link>
                 );
               })}
-            </div>
-            <div className={styles.cardContainer}>
-              <Link to="/ATemplate1">
-                <div className="card">
-                  <h3 className="color-blue">template2</h3>
-                </div>
-              </Link>
             </div>
           </section>
         </div>
