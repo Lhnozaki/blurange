@@ -13,6 +13,7 @@ import JContact1 from '../Components/Templates/JTemplate1/JContact1';
 import ATemplate1 from '../Components/Templates/ATemplate1';
 import ATemplate2 from '../Components/Templates/ATemplate2';
 
+
 export const routes = [
   {
     path: '/',
