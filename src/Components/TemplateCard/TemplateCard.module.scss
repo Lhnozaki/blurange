@@ -1,0 +1,9 @@
+#templateCard {
+  transition: all 0.2s ease-out;
+  position: relative;
+  text-align: left;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+}

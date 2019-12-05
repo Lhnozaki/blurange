@@ -6,7 +6,7 @@ const SplashPage = () => {
         <article className="container">
             <section id={styles.hero}>
                 <div className={styles.heroContent}>
-                    <h1><span className="color-light-blue">Blur</span><span className="color-orange">ange</span></h1>
+                    <h1><span className="color-light-blue">Blur</span><span className="color-orange">range</span></h1>
                     <h3>Your code doesn't repeat itself, why should you?</h3>
                     <button className="cta">get started for free</button>
                 </div>
@@ -15,7 +15,7 @@ const SplashPage = () => {
                 <h3 className='title'>3 steps to go live</h3>
                 <div className={styles.cardContainer}>
                     <div className="card">
-                        <h3 className="color-blue">1. Pick A Theme</h3>
+                        <h3 className="color-blue">1. Pick a theme</h3>
                         <p>Take the stress of design off your mind. We have a multitude of different templates for you to choose from.</p>
                     </div>
                     <div className="card">

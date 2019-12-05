@@ -5,9 +5,10 @@ import Header from '../Components/Header';
 import LoginModal from '../Components/LoginModal';
 import './App.scss';
 import MobileNav from '../Components/MobileNav';
+import { Redirect } from 'react-router-dom';
 
 function App() {
-  const [isAuth, setAuth] = useState(false);
+  const [isAuth, setAuth] = useState(true);
   const [loginOn, setLoginOn] = useState(false);
   const [credentials, setCredentials] = useState({});
 
@@ -17,6 +18,7 @@ function App() {
       <MobileNav />
       {loginOn && <LoginModal setLoginOn={setLoginOn} setAuth={setAuth} credentials={credentials} setCredentials={setCredentials} />}
       <Routes />
+      {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}
     </div>
   );
 }

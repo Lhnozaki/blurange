@@ -1,3 +1,5 @@
+@import "../../scss/variables";
+
 .navigation {
   height: 100vh;
   width: 100%;
@@ -6,4 +8,10 @@
   left: 0;
   background: red;
   z-index: 999;
+}
+
+@media (min-width: $breakpoint-small) {
+  .navigation {
+    display: none;
+  }
 }
