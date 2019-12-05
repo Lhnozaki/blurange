@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function TextInput({ title, placeholder, name, value, handleChange }) {
-    const [inputValue, setInputValue] = useState(value)
+export default function TextInput({ title, placeholder, name, value, handleChange, userInfo, setUserInfo }) {
+    useEffect(() => {
+        setUserInfo({ ...userInfo, [name]: 'hi' });
+    }, []);
+
+    const [inputValue, setInputValue] = useState(value);
 
     return (
         <div className="input-container">

@@ -61,12 +61,12 @@ export const routes = [
     component: JContact1
   },
   {
-    path: "/atemplate1",
+    path: "/templates/atemplate1",
     exact: true,
     component: ATemplate1
   },
   {
-    path: "/atemplate2",
+    path: "/templates/atemplate2",
     exact: true,
     component: ATemplate2
   },
