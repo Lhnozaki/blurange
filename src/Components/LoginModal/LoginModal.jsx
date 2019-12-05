@@ -13,8 +13,20 @@ const LoginModal = ({
   ...props
 }) => {
   function handleSubmit(event) {
+    const url =
+      "https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=f58bc8b0116e9bac9dd2";
+    const width = 600,
+      height = 600;
+    const left = window.innerWidth / 2 - width / 2;
+    const top = window.innerHeight / 2 - height / 2;
     event.preventDefault();
-    console.log("credentials", credentials);
+    // props.authenticateGitHub;
+    window.open(
+      url,
+      `toolbar=no, location=no, directories=no, status=no, menubar=no,
+      scrollbars=no, resizable=no, copyhistory=no, width=${width},
+      height=${height}, top=${top}, left=${left}`
+    );
     setAuth(true);
     setLoginOn(false);
   }
@@ -25,7 +37,7 @@ const LoginModal = ({
   return (
     <div className={styles.loginOverlay}>
       <div className={styles.loginModal}>
-        <button className={styles.github} onClick={props.authenticateGitHub}>
+        <button className={styles.github} onClick={e => handleSubmit(e)}>
           <span>
             <svg
               height="32"
