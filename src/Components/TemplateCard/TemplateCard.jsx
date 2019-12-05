@@ -20,7 +20,7 @@ const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, 
             <h3 className="color-blue">
                 template <span>{i + 1}</span>
             </h3>
-            <Link to={`/template/${template}`}>preview</Link>
+            <Link to={`/templates/${template}`}>preview</Link>
         </div>
 
     )
