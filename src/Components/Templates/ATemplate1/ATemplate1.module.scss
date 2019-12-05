@@ -1,0 +1,95 @@
+#container {
+  background: rgb(223, 213, 201);
+  position: relative;
+
+  .canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    -webkit-box-shadow: 0px 38px 48px 5px rgba(0, 0, 0, 0.18);
+    box-shadow: 0px 38px 48px 5px rgba(0, 0, 0, 0.18);
+    width: 80vw;
+    height: 80vh;
+  }
+
+  .navigation {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid gray;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      font-size: 0.8rem;
+      margin-left: 10px;
+      margin-right: 10px;
+      #centerText {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .leftContent {
+      width: 50%;
+      height: 70%;
+      padding-left: 6vw;
+      padding-right: 6vw;
+      border-right: 1px solid black;
+      vertical-align: middle;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      section {
+        font-size: 1.7rem;
+        line-height: 2rem;
+        padding-top: 17.5vh;
+        padding-bottom: 17.5vh;
+      }
+    }
+
+    .rightContent {
+      -ms-overflow-style: none;
+      width: 50%;
+      height: 100%;
+      overflow-y: scroll;
+      padding-right: 6vw;
+      padding-left: 6vw;
+
+      section {
+        padding-top: 25vh;
+        padding-bottom: 25vh;
+      }
+    }
+
+    .rightContent::-webkit-scrollbar {
+      display: none;
+    }
+
+    h1 {
+      font-size: 2rem;
+      flex-grow: 1;
+      font-family: "Rubik";
+    }
+
+    h2 {
+      font-size: 0.7rem;
+      font-family: "Nunito Sans";
+    }
+  }
+}

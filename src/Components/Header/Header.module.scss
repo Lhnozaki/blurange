@@ -5,13 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 20px;
+  height: 8vh;
   position: fixed;
   top: 0;
   left: 0;
   background: $off-white;
   color: $dark-accent;
   box-shadow: $box-shadow;
+  z-index: 999;
 }
 
 .siteBranding {

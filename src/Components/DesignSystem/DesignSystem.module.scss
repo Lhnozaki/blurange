@@ -144,12 +144,29 @@ section {
     }
 }
 
-.altLink {
-    padding: 10px;
-    background: $blue;
-    color: white;
+.a {
+    background: none;
+    color: $light-blue;
+    transition: none;
+    box-shadow: none;
+    border-radius: 0;
 
     &:hover {
+        color: $blue;
+        transform: none;
+        background: none;
+    }
+}
+
+.aAlt {
+    padding: 10px;
+    border-radius: 0;
+    background: $blue;
+    color: white;
+    transition: none;
+
+    &:hover {
+        transform: none;
         color: $orange;
     }
 }

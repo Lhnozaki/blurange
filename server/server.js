@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const decorator = require("./database/decorator");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -11,12 +12,11 @@ const flash = require("connect-flash");
 const saltRounds = 12;
 
 ///// ROUTING /////
-const githubAuth = require("./routes/auth-routes/github/oauth-github");
-const linkedinAuth = require("./routes/auth-routes/linkedin/oauth-linkedin");
+const githubAuth = require("./routes/api/auth/github");
+const linkedinAuth = require("./routes/api/auth/linkedin");
 
 ///// DOTENV & PASSPORT /////
 require("dotenv").config();
-require("./config/passport")(passport);
 
 ///// REDIS /////
 const RedisStore = require("connect-redis")(session);
@@ -26,14 +26,20 @@ const redis = require("redis");
 ///// PORT /////
 const PORT = process.env.EXPRESS_HOST_PORT;
 
+//Config passport
+const passportConfig = require("./config/passport");
+
 ///// APP /////
 const app = express();
 
 ///// MIDDLEWARE /////
+app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(decorator);
+app.use(passport.initialize());
+
 // app.use(
 //   session({
 //     store: new RedisStore({ client }),
@@ -44,8 +50,8 @@ app.use(decorator);
 // );
 
 ///// ROUTES /////
-app.use("/auth", githubAuth);
-app.use("/auth", linkedinAuth);
+app.use("/api/auth", githubAuth);
+app.use("/api/auth", linkedinAuth);
 
 ///// Smoke Test /////
 app.get("/", (req, res) => {

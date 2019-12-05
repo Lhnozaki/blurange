@@ -1,0 +1,57 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999999;
+  color: white;
+}
+
+.back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: white;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.logoBox {
+  transform: rotate(45deg);
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  color: white;
+  font-weight: bolder;
+  border: solid white 2px;
+}
+
+.logoInitial1 {
+  transform: rotate(-45deg);
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+.logoInitial2 {
+  transform: rotate(-45deg);
+  padding-bottom: 3px;
+  padding-right: 3px;
+}
+
+.logoSlash {
+  border: white solid 1px;
+  height: 25px;
+  width: 1px;
+}

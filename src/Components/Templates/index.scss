@@ -1,0 +1,323 @@
+// Imports
+.templateWrapper {
+  //RESET ALL GLOBAL STYLING
+
+  //_global.scss
+  // apply this to all inputs
+  input,
+  select,
+  option,
+  textarea {
+    border: initial;
+    background: initial;
+    border-radius: initial;
+    box-shadow: initial;
+    padding: initial;
+    font-family: initial;
+
+    &:focus {
+      border: initial;
+    }
+
+    &[placeholder] {
+      color: initial;
+    }
+  }
+
+  // apply this globally to all links
+  a {
+    text-decoration: initial;
+    color: initial;
+    font-size: initial;
+
+    &:hover {
+      color: initial;
+    }
+  }
+
+  .altLink {
+    // don't put background  or padding in real app just for example
+    background: initial;
+    padding: initial;
+    color: initial;
+
+    &:hover {
+      color: initial;
+    }
+  }
+
+  // apply this globally to all buttons
+  button {
+    background: initial;
+    border: initial;
+    border-radius: initial;
+    padding: initial;
+    color: initial;
+    font-size: initial;
+    box-shadow: initial;
+    transition: initial;
+    width: initial;
+    &.cta {
+      padding: initial;
+      font-size: initial;
+      border: initial;
+    }
+
+    &.alt-btn {
+      background: initial;
+      border: initial;
+      color: initial;
+
+      &:hover {
+        color: initial;
+        background: initial;
+      }
+    }
+
+    &:hover {
+      transform: initial;
+      background: initial;
+    }
+  }
+
+  .card {
+    border: initial;
+    background: initial;
+    padding: initial;
+    border-radius: initial;
+    box-shadow: initial;
+  }
+
+  .color-blue {
+    color: initial;
+  }
+
+  .color-light-blue {
+    color: initial;
+  }
+
+  .color-orange {
+    color: initial;
+  }
+
+  //_helpers.scss
+  // GRIDS
+  // Add to the parent of the grid
+  .auto-grid {
+    display: initial;
+    grid-template-columns: initial;
+  }
+
+  .grid-gap-sm {
+    grid-gap: initial;
+  }
+
+  .grid-gap-md {
+    grid-gap: initial;
+  }
+
+  .grid-gap-lg {
+    grid-gap: initial;
+  }
+
+  // POSITIONS
+  // Attach these to the parents
+
+  // Works well with one child
+  .center-block {
+    display: initial;
+    place-items: initial;
+  }
+
+  // Works well with multiple children
+  .center-content {
+    display: initial;
+    justify-self: initial;
+    align-self: initial;
+  }
+
+  // IMAGES
+  // Attach to the img
+  .full-img {
+    height: initial;
+    width: initial;
+    object-fit: initial;
+  }
+
+  // TURN THE ELEMENT TO UPPERCASE
+  .uppercase {
+    text-transform: initial;
+  }
+
+  // CONTAINERS
+
+  .container-sm,
+  .container-md,
+  .container-lg {
+    padding: initial;
+  }
+
+  @media (min-width: initial) {
+    .container-sm {
+      padding: initial;
+    }
+
+    .container-md {
+      padding: initial;
+    }
+    .container-lg {
+      padding: initial;
+    }
+  }
+
+  //reset.scss
+  html {
+    box-sizing: initial;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: initial;
+    padding: initial;
+    background: initial;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  label {
+    text-align: initial;
+  }
+
+  ul {
+    list-style: initial;
+    padding: initial;
+  }
+
+  //typography.scss
+  /* TYPOGRAPHY */
+  body {
+    font-family: initial;
+    line-height: initial;
+    color: initial;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: initial;
+    margin: initial;
+    //max-width: $type-linewidth;
+    color: initial;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: initial;
+  }
+
+  /* Traditional typographic scale
+       48, 36, 24, 21, 18, 16 */
+
+  h1 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 48 / 16 = 3em */
+  h2 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 36 / 16 = 2.25em */
+  h3 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 24 / 16 = 1.5em */
+  h4 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 21 / 16 = 1.3125em */
+  h5 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 18 / 16 = 1.125em */
+  h6 {
+    font-size: initial;
+    line-height: initial;
+  }
+
+  /* 16 / 16 = 1em */
+
+  /* Paragraphs */
+  p {
+    margin: initial;
+    max-width: initial;
+  }
+
+  .title {
+    margin-bottom: initial;
+    width: initial;
+    margin: initial;
+    padding-bottom: initial;
+    border-bottom: initial;
+    font-size: initial;
+  }
+
+  .subhead {
+    text-align: initial;
+  }
+
+  //Main reset to desired
+
+  min-height: 100vh;
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow: auto;
+    font-family: cursive;
+  }
+
+  button:focus {
+    outline: 0;
+  }
+
+  *:focus {
+    outline: none;
+  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  background: white;
+}
