@@ -7,18 +7,23 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999999999999999;
   color: white;
 }
 
 .back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
   color: white;
-  opacity: 0.5;
+  opacity: 0.3;
   &:hover {
     opacity: 1;
   }
 }
 
-.logo {
+.logoBox {
+  transform: rotate(45deg);
   height: 50px;
   width: 50px;
   display: flex;
@@ -26,10 +31,27 @@
   justify-content: space-between;
   padding: 5px;
   position: fixed;
-  top: 15px;
+  top: 30px;
   left: 30px;
   color: white;
   font-weight: bolder;
   border: solid white 2px;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.075);
+}
+
+.logoInitial1 {
+  transform: rotate(-45deg);
+  padding-top: 3px;
+  padding-left: 3px;
+}
+
+.logoInitial2 {
+  transform: rotate(-45deg);
+  padding-bottom: 3px;
+  padding-right: 3px;
+}
+
+.logoSlash {
+  border: white solid 1px;
+  height: 25px;
+  width: 1px;
 }

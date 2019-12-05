@@ -1,7 +1,7 @@
 @import '../../scss/variables';
 
 #hero {
-  height: 100vh;
+  padding-bottom: 0;
   width: 100%;
   display: flex;
   align-items: center;
@@ -23,8 +23,6 @@
 }
 
 #aboutContent {
-  padding: 10vh 0;
-
   .cardContainer {
     width: 80%;
     margin: 5vh auto 0 auto;

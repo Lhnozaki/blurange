@@ -1,0 +1,25 @@
+#container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url('./JBackground1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  .content {
+    color: white;
+    font-family: 'Nunito Sans';
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 8rem;
+  }
+
+  .navigation {
+    a {
+      color: white;
+      margin-right: 20px;
+    }
+  }
+}
