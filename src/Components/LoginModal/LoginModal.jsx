@@ -15,14 +15,17 @@ const LoginModal = ({
   function handleSubmit(event) {
     const url =
       "https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=f58bc8b0116e9bac9dd2";
+    const width = 600,
+      height = 600;
+    const left = window.innerWidth / 2 - width / 2;
+    const top = window.innerHeight / 2 - height / 2;
     event.preventDefault();
     // props.authenticateGitHub;
     window.open(
       url,
-      ""
-      // `toolbar=no, location=no, directories=no, status=no, menubar=no,
-      // scrollbars=no, resizable=no, copyhistory=no, width=${width},
-      // height=${height}, top=${top}, left=${left}`
+      `toolbar=no, location=no, directories=no, status=no, menubar=no,
+      scrollbars=no, resizable=no, copyhistory=no, width=${width},
+      height=${height}, top=${top}, left=${left}`
     );
     setAuth(true);
     setLoginOn(false);

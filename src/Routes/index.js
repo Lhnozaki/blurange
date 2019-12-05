@@ -1,39 +1,64 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import SplashPage from "../Components/SplashPage";
-import DesignSystem from "../Components/DesignSystem";
-import Editor from "../Components/Editor";
-import Dashboard from "../Components/Dashboard";
-import TemplatesList from "../Components/TemplatesList";
-import JTemplate1 from "../Components/Templates/JTemplate1";
-import ATemplate1 from "../Components/Templates/ATemplate1";
-import ATemplate2 from "../Components/Templates/ATemplate2";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import SplashPage from '../Components/SplashPage';
+import DesignSystem from '../Components/DesignSystem';
+import Editor from '../Components/EditorComponents/Editor';
+import Dashboard from "../Components/DashboardComponents/Dashboard";
+import TemplatesList from '../Components/TemplatesList';
+import JHome1 from '../Components/Templates/JTemplate1/JHome1';
+import JAbout1 from '../Components/Templates/JTemplate1/JAbout1';
+import JPortfolio1 from '../Components/Templates/JTemplate1/JPortfolio1';
+import JResume1 from '../Components/Templates/JTemplate1/JResume1';
+import JContact1 from '../Components/Templates/JTemplate1/JContact1';
+import ATemplate1 from '../Components/Templates/ATemplate1';
+import ATemplate2 from '../Components/Templates/ATemplate2';
+
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     exact: true,
     component: SplashPage
   },
   {
-    path: "/design-system",
+    path: '/design-system',
     exact: true,
     component: DesignSystem
   },
   {
-    path: "/editor",
+    path: '/editor',
     exact: true,
     component: Editor
   },
   {
-    path: "/dashboard",
+    path: '/dashboard',
     exact: true,
     component: Dashboard
   },
   {
-    path: "/jtemplate1",
+    path: '/templates/jtemplate1',
     exact: true,
-    component: JTemplate1
+    component: JHome1
+  },
+  {
+    path: '/templates/jtemplate1/about',
+    exact: true,
+    component: JAbout1
+  },
+  {
+    path: '/templates/jtemplate1/portfolio',
+    exact: true,
+    component: JPortfolio1
+  },
+  {
+    path: '/templates/jtemplate1/resume',
+    exact: true,
+    component: JResume1
+  },
+  {
+    path: '/templates/jtemplate1/contact',
+    exact: true,
+    component: JContact1
   },
   {
     path: "/atemplate1",
@@ -55,16 +80,16 @@ export const routes = [
 // Create auth routes and render if authorized in the home page
 export const authRoutes = [
   {
-    path: "/",
+    path: '/',
     exact: true
   },
   {
-    path: "/design-system",
+    path: '/design-system',
     exact: true,
     component: DesignSystem
   },
   {
-    path: "/editor",
+    path: '/editor',
     exact: true,
     component: Editor
   }
