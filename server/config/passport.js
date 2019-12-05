@@ -1,43 +1,19 @@
-const LocalStrategy = require("passport-local").Strategy;
-const knex = require("../database/knex");
-const bcrypt = require("bcryptjs");
+const passport = require("passport");
+const GitHubStrategy = require("passport-github").Strategy;
 
-module.exports = function(passport) {
-  passport.use(
-    new LocalStrategy(function(username, password, done) {
-      return new User({ username: username })
-        .fetch()
-        .then(user => {
-          if (user === null) {
-            return done(null, false, { message: "bad username or password" });
-          } else {
-            user = user.toJSON();
+require("dotenv").config();
 
-            bcrypt.compare(password, user.password).then(res => {
-              // Happy route: username exists, password matches
-              if (res) {
-                return done(null, user); // this is the user that goes to serialize
-              }
-              // Error Route: Username exists, password does not match
-              else {
-                return done(null, false, {
-                  message: "bad username or password"
-                });
-              }
-            });
-          }
-        })
-        .catch(err => {
-          return done(err);
-        });
-    })
-  );
-
-  passport.serializeUser(function(user, done) {
-    return done(null, { id: user.id, username: user.username });
-  });
-
-  passport.deserializeUser(function(user, done) {
-    return done(null, user);
-  });
-};
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: "/auth/github/callback"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+      console.log(JSON.stringify(profile));
+      user = { ...profile };
+      return cb(null, profile);
+    }
+  )
+);

@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './TemplatesList.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./TemplatesList.module.scss";
 
 const TemplatesList = () => {
   const arrTemplateNames = [

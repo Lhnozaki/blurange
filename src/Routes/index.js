@@ -58,7 +58,17 @@ export const routes = [
     component: JContact1
   },
   {
-    path: '/templates',
+    path: "/atemplate1",
+    exact: true,
+    component: ATemplate1
+  },
+  {
+    path: "/atemplate2",
+    exact: true,
+    component: ATemplate2
+  },
+  {
+    path: "/templates",
     exact: true,
     component: TemplatesList
   }
