@@ -1,7 +1,19 @@
 .templatesContainer {
   width: 100%;
-  //   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 10vh;
+}
+
+.continueBtn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

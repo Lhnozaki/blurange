@@ -12,7 +12,7 @@ const Editor = () => {
         <div className={styles.editor}>
             <Timeline editorStatus={editorStatus} />
             <Sidebar setEditorStatus={setEditorStatus} />
-            <EditorView editorStatus={editorStatus} />
+            <EditorView setEditorStatus={setEditorStatus} editorStatus={editorStatus} />
         </div>
     )
 }
