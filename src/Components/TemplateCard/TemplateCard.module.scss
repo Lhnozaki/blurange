@@ -1,9 +1,9 @@
-.templateCard {
-  div {
-    transition: all 0.2s ease-out;
+#templateCard {
+  transition: all 0.2s ease-out;
+  position: relative;
+  text-align: left;
 
-    &:hover {
-      transform: scale(1.02);
-    }
+  &:hover {
+    transform: scale(1.01);
   }
 }
