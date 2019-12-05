@@ -4,6 +4,7 @@ import Timeline from '../Timeline';
 import Sidebar from '../Sidebar';
 import EditorView from '../EditorView';
 
+
 const Editor = () => {
     const [editorStatus, setEditorStatus] = useState(0);
 
