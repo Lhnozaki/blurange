@@ -10,6 +10,8 @@ import JAbout1 from '../Components/Templates/JTemplate1/JAbout1';
 import JPortfolio1 from '../Components/Templates/JTemplate1/JPortfolio1';
 import JResume1 from '../Components/Templates/JTemplate1/JResume1';
 import JContact1 from '../Components/Templates/JTemplate1/JContact1';
+import ATemplate1 from '../Components/Templates/ATemplate1';
+import ATemplate2 from '../Components/Templates/ATemplate2';
 
 export const routes = [
   {
