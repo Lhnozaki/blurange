@@ -14,10 +14,6 @@ const saltRounds = 12;
 ///// ROUTING /////
 const githubAuth = require("./routes/api/auth/github");
 const linkedinAuth = require("./routes/api/auth/linkedin");
-const loginLogout = require("./routes/api/auth/authentication");
-
-//Config passport
-const passportConfig = require("./config/passport");
 
 ///// DOTENV & PASSPORT /////
 require("dotenv").config();
@@ -30,20 +26,20 @@ const redis = require("redis");
 ///// PORT /////
 const PORT = process.env.EXPRESS_HOST_PORT;
 
+//Config passport
+const passportConfig = require("./config/passport");
+
 ///// APP /////
 const app = express();
 
 ///// MIDDLEWARE /////
+app.use(cors());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(decorator);
-app.use(cors());
 app.use(passport.initialize());
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  next();
-});
+
 // app.use(
 //   session({
 //     store: new RedisStore({ client }),
@@ -54,7 +50,6 @@ app.use((req, res, next) => {
 // );
 
 ///// ROUTES /////
-app.use("/api/auth", loginLogout);
 app.use("/api/auth", githubAuth);
 app.use("/api/auth", linkedinAuth);
 
