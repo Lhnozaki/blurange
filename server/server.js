@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const decorator = require("./database/decorator");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -11,13 +12,15 @@ const flash = require("connect-flash");
 const saltRounds = 12;
 
 ///// ROUTING /////
-const githubAuth = require("./routes/api/auth-routes/github/oauth-github");
-const linkedinAuth = require("./routes/api/auth-routes/linkedin/oauth-linkedin");
-const loginLogout = require("./routes/api/auth-routes/authentication/index");
+const githubAuth = require("./routes/api/auth/github");
+const linkedinAuth = require("./routes/api/auth/linkedin");
+const loginLogout = require("./routes/api/auth/authentication");
+
+//Config passport
+const passportConfig = require("./config/passport");
 
 ///// DOTENV & PASSPORT /////
 require("dotenv").config();
-require("./config/passport")(passport);
 
 ///// REDIS /////
 const RedisStore = require("connect-redis")(session);
@@ -35,6 +38,8 @@ app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(decorator);
+app.use(cors());
+app.use(passport.initialize());
 // app.use(
 //   session({
 //     store: new RedisStore({ client }),

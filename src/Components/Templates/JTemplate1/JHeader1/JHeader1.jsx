@@ -17,7 +17,11 @@ export default function JHeader1() {
           />
         </div>
       </Link>
-      <div className={styles.logo}>JB</div>
+      <div className={styles.logoBox}>
+        <div className={styles.logoInitial1}>J</div>
+        <div className={styles.logoSlash}></div>
+        <div className={styles.logoInitial2}>B</div>
+      </div>
       <div className={styles.rightHeader}>
         <JNavigation1 />
       </div>
