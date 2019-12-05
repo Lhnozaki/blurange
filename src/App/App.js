@@ -4,6 +4,7 @@ import Routes from '../Routes';
 import Header from '../Components/Header';
 import LoginModal from '../Components/LoginModal';
 import './App.scss';
+import MobileNav from '../Components/MobileNav';
 
 function App() {
   const [isAuth, setAuth] = useState(false);
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header setAuth={setAuth} isAuth={isAuth} setLoginOn={setLoginOn} credentials={credentials} />
+      <MobileNav />
       {loginOn && <LoginModal setLoginOn={setLoginOn} setAuth={setAuth} credentials={credentials} setCredentials={setCredentials} />}
       <Routes />
     </div>
