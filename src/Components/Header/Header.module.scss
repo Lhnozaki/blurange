@@ -13,7 +13,7 @@
   background: $off-white;
   color: $dark-accent;
   box-shadow: $box-shadow;
-  z-index: 999;
+  z-index: 999999;
 }
 
 .siteBranding {
@@ -37,5 +37,11 @@
     &:first-of-type {
       margin-right: 10px;
     }
+  }
+}
+
+@media(min-width: $breakpoint-small) {
+  .mobileMenuBtn {
+    display: none;
   }
 }

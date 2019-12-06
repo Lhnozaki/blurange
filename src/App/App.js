@@ -11,12 +11,26 @@ function App() {
   const [isAuth, setAuth] = useState(true);
   const [loginOn, setLoginOn] = useState(false);
   const [credentials, setCredentials] = useState({});
+  const [showMenu, setMenu] = useState(false);
 
   return (
     <div className="App">
-      <Header setAuth={setAuth} isAuth={isAuth} setLoginOn={setLoginOn} credentials={credentials} />
-      <MobileNav />
-      {loginOn && <LoginModal setLoginOn={setLoginOn} setAuth={setAuth} credentials={credentials} setCredentials={setCredentials} />}
+      <Header
+        setAuth={setAuth}
+        isAuth={isAuth}
+        setLoginOn={setLoginOn}
+        credentials={credentials}
+        setMenu={setMenu}
+        showMenu={showMenu}
+      />
+      <MobileNav showMenu={showMenu} />
+      {loginOn &&
+        <LoginModal
+          setLoginOn={setLoginOn}
+          setAuth={setAuth}
+          credentials={credentials}
+          setCredentials={setCredentials} />
+      }
       <Routes />
       {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}
     </div>
