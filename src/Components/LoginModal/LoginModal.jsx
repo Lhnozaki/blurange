@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 
+require("dotenv").config();
+
 import { authenticateGitHub } from "../../actions";
 
 const LoginModal = ({
@@ -13,8 +15,7 @@ const LoginModal = ({
   ...props
 }) => {
   function handleSubmit(event) {
-    const url =
-      "https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=f58bc8b0116e9bac9dd2";
+    const url = `https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=${process.env.GITHUB_CLIENT_ID}`;
     const width = 600,
       height = 600;
     const left = window.innerWidth / 2 - width / 2;
