@@ -20,8 +20,8 @@ const callback = (accessToken, refreshToken, profile, cb) => {
 passport.use(
   new GitHubStrategy(
     {
-      clientID: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      clientID: process.env.REACT_APP_GITHUB_CLIENT_ID,
+      clientSecret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
       callbackURL: "/api/auth/github/callback"
     },
     callback
