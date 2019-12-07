@@ -9,7 +9,6 @@ router.get(
 
 router.get("/github/callback", passport.authenticate("github"), (req, res) => {
   // Successful authentication, redirect home.
-  // console.log(req);
   res.redirect("http://localhost:3000");
 });
 
