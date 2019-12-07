@@ -13,6 +13,7 @@ const LoginModal = ({
   ...props
 }) => {
 
+  // disable scroll if modal is toggled
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 

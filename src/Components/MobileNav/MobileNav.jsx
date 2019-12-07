@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MobileNav.module.scss';
 import { useSpring, animated } from 'react-spring';
 
 
 const MobileNav = ({ isAuth, showMenu, toggleLoginStatus }) => {
+    const slided = useRef();
+
+    useEffect(() => {
+
+        if (!showMenu) {
+            slided.current = true;
+            document.body.style.overflow = 'initial';
+        } else {
+            document.body.style.overflow = 'hidden'
+        }
+
+
+    }, [showMenu]);
+
+
     const slideIn = useSpring({
         transform: showMenu ? 'translateY(0)' : 'translateY(-100%)'
     })
