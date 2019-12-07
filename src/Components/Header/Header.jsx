@@ -10,11 +10,11 @@ const Header = ({ isAuth, credentials, setMenu, showMenu, toggleLoginStatus }) =
         <header className={styles.header}>
             <Link className={styles.siteBranding} to="/">blurange</Link>
             <div className={styles.rightHeader}>
+                <Navigation isAuth={isAuth} />
+                {isAuth && <p className={styles.loggedInAs}>hi <span className="color-orange">{credentials.username}</span></p>}
                 <button className={styles.mobileMenuBtn} onClick={() => setMenu(!showMenu)}>
                     {showMenu ? 'close' : 'menu'}
                 </button>
-                <Navigation isAuth={isAuth} />
-                {isAuth && <p className={styles.loggedInAs}>hi <span className="color-orange">{credentials.username}</span></p>}
                 <div className={styles.loginBtns}>
                     <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login'}</button>
                     {!isAuth && <button className="alt-btn">sign up</button>}
