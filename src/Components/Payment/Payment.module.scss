@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.paymentModal {
+    position: absolute;
+    top: calc(50% - 25vh);
+    left: calc(50% - 20vw);
+    height: 50vh;
+    width: 40vw;
+    background: $grey-accent;
+    box-shadow: $box-shadow;
+    z-index: 99999999;
+}
