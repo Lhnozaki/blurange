@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 
@@ -13,6 +13,17 @@ const LoginModal = ({
   setShowOAuth,
   ...props
 }) => {
+
+  // disable scroll if modal is toggled
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'initial';
+    }
+  }, []);
+
+
   function handleSubmit(event) {
     event.preventDefault();
     props.authenticateGitHub();

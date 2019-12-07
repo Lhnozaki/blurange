@@ -22,7 +22,7 @@ textarea {
 // apply this globally to all links
 a {
   text-decoration: none;
-  color: $light-blue;
+  color: $blue;
   font-size: 1.1rem;
 
   &:hover {
@@ -43,7 +43,7 @@ a {
 
 // apply this globally to all buttons
 button {
-  background: $light-blue;
+  background: $blue;
   border: none;
   border-radius: $btn-border-radius;
   padding: 10px 20px;
@@ -89,7 +89,7 @@ button {
 }
 
 .color-light-blue {
-  color: $light-blue;
+  color: $blue;
 }
 
 .color-orange {
