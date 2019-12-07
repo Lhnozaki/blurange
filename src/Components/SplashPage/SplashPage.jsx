@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './SplashPage.module.scss';
 
 const SplashPage = () => {
@@ -8,7 +9,7 @@ const SplashPage = () => {
                 <div className={styles.heroContent}>
                     <h1><span className="color-light-blue">Blur</span><span className="color-orange">range</span></h1>
                     <h3>Your code doesn't repeat itself, why should you?</h3>
-                    <button className="cta">get started for free</button>
+                    <Link to="/editor"><button className="cta">get started for free</button></Link>
                 </div>
             </section>
             <section id={styles.aboutContent}>
