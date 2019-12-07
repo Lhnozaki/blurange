@@ -12,12 +12,10 @@ const OAuthModal = ({ showOAuth, setShowOAuth, ...props }) => {
 
   const OAuthRef = useRef();
 
-  //   const githubAuthURL = `<div>sup bra</div>`;
-
   useEffect(() => {
     setTimeout(() => {
       console.log(props);
-      OAuthRef.current.innerHTML = props.githubURL;
+      OAuthRef.current.innerHTML = props.githubURL ? props.githubURL : "None";
     }, 1000);
   }, []);
 
@@ -34,7 +32,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(OAuthModal);
+export default connect(mapStateToProps, null)(OAuthModal);

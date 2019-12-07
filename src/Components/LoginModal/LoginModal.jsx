@@ -1,7 +1,6 @@
 import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
-
 import { authenticateGitHub } from "../../actions";
 
 const LoginModal = ({
@@ -13,16 +12,14 @@ const LoginModal = ({
   setShowOAuth,
   ...props
 }) => {
-
   // disable scroll if modal is toggled
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = 'initial';
-    }
+      document.body.style.overflow = "initial";
+    };
   }, []);
-
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -70,7 +67,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(LoginModal);
+export default connect(null, mapDispatchToProps)(LoginModal);
