@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 
@@ -14,6 +14,17 @@ const LoginModal = ({
   setCredentials,
   ...props
 }) => {
+
+  // disable scroll if modal is toggled
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'initial';
+    }
+  }, []);
+
+
   function handleSubmit(event) {
     const url = `https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=${process.env.GITHUB_CLIENT_ID}`;
     const width = 600,
