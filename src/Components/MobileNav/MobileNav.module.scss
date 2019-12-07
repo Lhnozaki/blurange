@@ -13,6 +13,22 @@
   left: 0;
   background: $off-white;
   z-index: 999;
+
+  a {
+    margin-bottom: 20px;
+  }
+
+  .loginBtns {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    button {
+      &:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
 }
 
 @media (min-width: $breakpoint-small) {
