@@ -31,16 +31,22 @@
 }
 
 .loginBtns {
-  width: fit-content;
-
-  button {
-    &:first-of-type {
-      margin-right: 10px;
-    }
-  }
+  display: none;
 }
 
 @media(min-width: $breakpoint-small) {
+  .loginBtns {
+    display: block;
+
+    width: fit-content;
+
+    button {
+      &:first-of-type {
+        margin-right: 10px;
+      }
+    }
+  }
+
   .mobileMenuBtn {
     display: none;
   }

@@ -3,15 +3,8 @@ import styles from './Header.module.scss'
 import Navigation from '../Navigation'
 import { Link } from "react-router-dom";
 
-const Header = ({ setAuth, isAuth, credentials, setLoginOn, setMenu, showMenu }) => {
-    function toggleLoginStatus() {
-        if (isAuth) {
-            setLoginOn(false);
-            setAuth(false);
-        } else {
-            setLoginOn(true);
-        }
-    }
+const Header = ({ isAuth, credentials, setMenu, showMenu, toggleLoginStatus }) => {
+
 
     return (
         <header className={styles.header}>

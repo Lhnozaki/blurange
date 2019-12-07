@@ -13,6 +13,15 @@ function App() {
   const [credentials, setCredentials] = useState({});
   const [showMenu, setMenu] = useState(false);
 
+  function toggleLoginStatus() {
+    if (isAuth) {
+      setLoginOn(false);
+      setAuth(false);
+    } else {
+      setLoginOn(true);
+    }
+  }
+
   return (
     <div className="App">
       <Header
@@ -22,8 +31,9 @@ function App() {
         credentials={credentials}
         setMenu={setMenu}
         showMenu={showMenu}
+        toggleLoginStatus={toggleLoginStatus}
       />
-      <MobileNav showMenu={showMenu} />
+      <MobileNav showMenu={showMenu} isAuth={isAuth} toggleLoginStatus={toggleLoginStatus} />
       {loginOn &&
         <LoginModal
           setLoginOn={setLoginOn}
