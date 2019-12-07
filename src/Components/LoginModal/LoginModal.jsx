@@ -13,23 +13,23 @@ const LoginModal = ({
   setShowOAuth,
   ...props
 }) => {
-
   // disable scroll if modal is toggled
   useEffect(() => {
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = 'initial';
-    }
+      document.body.style.overflow = "initial";
+    };
   }, []);
-
 
   function handleSubmit(event) {
     event.preventDefault();
     props.authenticateGitHub();
     setAuth(true);
     setLoginOn(false);
-    setShowOAuth(true);
+    // setShowOAuth(true);
+    const url = `https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`;
+    return (window.location = url);
   }
 
   function handleChange(e) {

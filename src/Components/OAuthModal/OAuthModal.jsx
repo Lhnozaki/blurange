@@ -12,12 +12,14 @@ const OAuthModal = ({ showOAuth, setShowOAuth, ...props }) => {
 
   const OAuthRef = useRef();
 
-  //   const githubAuthURL = `<div>sup bra</div>`;
+  const githubAuthURL = `https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=f58bc8b0116e9bac9dd2`;
+
+  const iframe = `<iframe src=${githubAuthURL} />`;
 
   useEffect(() => {
     setTimeout(() => {
       console.log(props);
-      OAuthRef.current.innerHTML = props.githubURL;
+      OAuthRef.current.innerHTML = iframe;
     }, 1000);
   }, []);
 

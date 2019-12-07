@@ -1,10 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-router.get("/test", (req, res) => {
-  console.log("this route works");
-});
-
 router.get(
   "/github",
   passport.authenticate("github", { scope: ["repo"] }),
@@ -13,6 +9,7 @@ router.get(
 
 router.get("/github/callback", passport.authenticate("github"), (req, res) => {
   // Successful authentication, redirect home.
+  // console.log(req);
   res.redirect("http://localhost:3000");
 });
 
