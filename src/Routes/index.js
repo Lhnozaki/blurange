@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import SplashPage from '../Components/SplashPage';
 import DesignSystem from '../Components/DesignSystem';
 import Editor from '../Components/EditorComponents/Editor';
-import Dashboard from "../Components/DashboardComponents/Dashboard";
+import Dashboard from '../Components/DashboardComponents/Dashboard';
 import TemplatesList from '../Components/TemplatesList';
 import JHome1 from '../Components/Templates/JTemplate1/JHome1';
 import JAbout1 from '../Components/Templates/JTemplate1/JAbout1';
@@ -12,7 +12,6 @@ import JResume1 from '../Components/Templates/JTemplate1/JResume1';
 import JContact1 from '../Components/Templates/JTemplate1/JContact1';
 import ATemplate1 from '../Components/Templates/ATemplate1';
 import ATemplate2 from '../Components/Templates/ATemplate2';
-
 
 export const routes = [
   {
@@ -61,17 +60,17 @@ export const routes = [
     component: JContact1
   },
   {
-    path: "/templates/atemplate1",
+    path: '/templates/atemplate1',
     exact: true,
     component: ATemplate1
   },
   {
-    path: "/templates/atemplate2",
+    path: '/templates/atemplate2',
     exact: true,
     component: ATemplate2
   },
   {
-    path: "/templates",
+    path: '/templates',
     exact: true,
     component: TemplatesList
   }
