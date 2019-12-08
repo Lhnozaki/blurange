@@ -5,7 +5,6 @@ import { authenticateGitHub } from "../../actions";
 
 require("dotenv").config();
 
-
 const LoginModal = ({
   setLoginOn,
   isAuth,
@@ -37,6 +36,7 @@ const LoginModal = ({
   function handleChange(e) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   }
+
   return (
     <>
       <div className={styles.loginOverlay}>
