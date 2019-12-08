@@ -1,10 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-router.get("/test", (req, res) => {
-  console.log("this route works");
-});
-
 router.get(
   "/github",
   passport.authenticate("github", { scope: ["repo"] }),

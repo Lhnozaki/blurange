@@ -13,8 +13,7 @@ passport.deserializeUser((user, cb) => {
 });
 
 const callback = (accessToken, refreshToken, profile, cb) => {
-  console.log(JSON.stringify(profile));
-  user = { ...profile };
+  user = { ...profile, accessToken };
   return cb(null, profile);
 };
 

@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './MobileNav.module.scss';
 import { useSpring, animated } from 'react-spring';
+// import Navigation from '../Navigation'
 
 
 const MobileNav = ({ isAuth, showMenu, toggleLoginStatus }) => {
@@ -27,7 +28,7 @@ const MobileNav = ({ isAuth, showMenu, toggleLoginStatus }) => {
     return (
         <animated.nav className={styles.navigation} style={slideIn}>
             <Link to="/">home</Link>
-            {isAuth && <Link to="/editor">editor</Link>}
+            <Link to="/editor">editor</Link>
             {isAuth && <Link to="/dashboard">dashboard</Link>}
             <div className={styles.loginBtns}>
                 <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login'}</button>
