@@ -1,8 +1,10 @@
 import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
-
 import { authenticateGitHub } from "../../actions";
+
+require("dotenv").config();
+
 
 const LoginModal = ({
   setLoginOn,
@@ -70,7 +72,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(LoginModal);
+export default connect(null, mapDispatchToProps)(LoginModal);

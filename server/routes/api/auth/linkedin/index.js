@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
+require("dotenv").config();
 
 router.get(
   "/linkedin",
@@ -10,7 +11,7 @@ router.get(
 router.get(
   "/linkedin/callback",
   passport.authenticate("linkedin", {
-    successRedirect: "http://localhost:3000/editor/info"
+    successRedirect: `${process.env.LINKEDIN_REDIRECT_URL}`
   })
 );
 
