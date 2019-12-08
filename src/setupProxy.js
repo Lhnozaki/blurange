@@ -5,14 +5,14 @@ module.exports = function(app) {
   app.use(
     "/api/auth/github",
     proxy({
-      target: "http://localhost:8080/",
+      target: `${process.env.REACT_APP_BACKEND_PROXY}`,
       changeOrigin: true
     })
   );
   app.use(
     "/api/auth/github/callback",
     proxy({
-      target: "http://localhost:8080/",
+      target: `${process.env.REACT_APP_BACKEND_PROXY}`,
       changeOrigin: true
     })
   );
