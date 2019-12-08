@@ -1,3 +1,6 @@
+///// DOTENV  /////
+require("dotenv").config();
+
 const express = require("express");
 const cors = require("cors");
 const decorator = require("./database/decorator");
@@ -9,14 +12,11 @@ const methodOverride = require("method-override");
 const bcrypt = require("bcryptjs");
 const knex = require("./database/knex");
 const flash = require("connect-flash");
-const saltRounds = 12;
 
 ///// ROUTING /////
 const githubAuth = require("./routes/api/auth/github");
 const linkedinAuth = require("./routes/api/auth/linkedin");
-
-///// DOTENV & PASSPORT /////
-require("dotenv").config();
+const paymentsRoute = require("./routes/api/payment");
 
 ///// REDIS /////
 const RedisStore = require("connect-redis")(session);
@@ -34,6 +34,8 @@ const app = express();
 
 ///// MIDDLEWARE /////
 app.use(cors());
+app.use(express.json());
+app.use(bodyParser.text());
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
@@ -52,6 +54,7 @@ app.use(passport.initialize());
 ///// ROUTES /////
 app.use("/api/auth", githubAuth);
 app.use("/api/auth", linkedinAuth);
+app.use("/api/charge", paymentsRoute);
 
 ///// Smoke Test /////
 app.get("/", (req, res) => {
