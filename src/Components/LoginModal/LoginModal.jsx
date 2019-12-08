@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 import { authenticateGitHub } from "../../actions";
 
+require("dotenv").config();
+
+
 const LoginModal = ({
   setLoginOn,
   isAuth,
