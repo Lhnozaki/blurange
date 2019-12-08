@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
+require("dotenv").config();
 
 router.get(
   "/github",
@@ -9,7 +10,7 @@ router.get(
 
 router.get("/github/callback", passport.authenticate("github"), (req, res) => {
   // Successful authentication, redirect home.
-  res.redirect("http://localhost:3000");
+  res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
 });
 
 module.exports = router;
