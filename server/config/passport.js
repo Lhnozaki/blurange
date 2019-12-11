@@ -1,6 +1,7 @@
 const passport = require("passport");
 const GitHubStrategy = require("passport-github").Strategy;
 const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
+const User = require("../database/models/User");
 
 require("dotenv").config();
 
@@ -24,7 +25,17 @@ passport.use(
       clientSecret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
       callbackURL: "/api/auth/github/callback"
     },
-    callback
+    (accessToken, refreshToken, profile, cb) => {
+      const github = profile.username;
+      const name = profile.displayName;
+      const password = accessToken;
+      const location = profile._json.location;
+      console.log(profile);
+      new User({ github, name, password, location }).save().then(() => {
+        console.log("New user created");
+      });
+      return cb(null, profile);
+    }
   )
 );
 
