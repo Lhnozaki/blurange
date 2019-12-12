@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
+require("dotenv").config();
 
 router.get("/github", passport.authenticate("github", { scope: ["repo"] }));
 

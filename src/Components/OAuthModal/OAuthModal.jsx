@@ -36,7 +36,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(OAuthModal);
+export default connect(mapStateToProps, null)(OAuthModal);
