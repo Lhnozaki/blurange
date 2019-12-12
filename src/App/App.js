@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
 import Routes from "../Routes";
 import Header from "../Components/Header";
@@ -10,7 +10,7 @@ import { Redirect } from "react-router-dom";
 import { StripeProvider, Elements } from "react-stripe-elements";
 
 function App() {
-  const [isAuth, setAuth] = useState(true);
+  const [isAuth, setAuth] = useState(false);
   const [loginOn, setLoginOn] = useState(false);
   const [credentials, setCredentials] = useState({});
   const [showOAuth, setShowOAuth] = useState(false);

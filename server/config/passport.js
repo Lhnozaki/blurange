@@ -13,11 +13,6 @@ passport.deserializeUser((user, cb) => {
   cb(null, user);
 });
 
-const callback = (accessToken, refreshToken, profile, cb) => {
-  user = { ...profile, accessToken };
-  return cb(null, profile);
-};
-
 passport.use(
   new GitHubStrategy(
     {
@@ -30,11 +25,29 @@ passport.use(
       const name = profile.displayName;
       const password = accessToken;
       const location = profile._json.location;
-      console.log(profile);
-      new User({ github, name, password, location }).save().then(() => {
-        console.log("New user created");
-      });
-      return cb(null, profile);
+      console.log(github, name, password, location);
+      return new User({ github: github })
+        .fetch({ require: false })
+        .then(data => {
+          if (data === null) {
+            console.log("User created");
+            return new User({ github, name, password, location })
+              .save()
+              .then(data => {
+                console.log("github data: ", data);
+                return cb(null, profile);
+              })
+              .catch(err => {
+                console.log("User wasnt created: ", err);
+              });
+          } else {
+            console.log("User exists");
+            return cb(null, profile);
+          }
+        })
+        .catch(err => {
+          console.log("Error getting user: ", err);
+        });
     }
   )
 );
@@ -47,6 +60,9 @@ passport.use(
       callbackURL: "/api/auth/linkedin/callback",
       scope: ["r_emailaddress", "r_liteprofile", "w_member_social"]
     },
-    callback
+    (accessToken, refreshToken, profile, cb) => {
+      user = { ...profile, accessToken };
+      return cb(null, profile);
+    }
   )
 );
