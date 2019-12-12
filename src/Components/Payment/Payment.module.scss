@@ -1,11 +1,12 @@
 @import "../../scss/variables";
 
 .paymentModal {
+  margin-top: 20px;
   position: absolute;
   top: calc(50% - 35vh);
   left: calc(50% - 20vw);
-  height: 60vh;
-  width: 40vw;
+  height: 85%;
+  width: 50%;
   background: $grey-accent;
   box-shadow: $box-shadow;
   z-index: 99999999;
@@ -15,9 +16,9 @@
     margin-bottom: 40px;
   }
   .bt {
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
+    // position: absolute;
+    // bottom: 10%;
+    // left: 10%;
     p {
       text-align: center;
       width: 100%;
