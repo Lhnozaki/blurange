@@ -1,12 +1,54 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 .paymentModal {
-    position: absolute;
-    top: calc(50% - 25vh);
-    left: calc(50% - 20vw);
-    height: 50vh;
-    width: 40vw;
-    background: $grey-accent;
-    box-shadow: $box-shadow;
-    z-index: 99999999;
+  margin-top: 20px;
+  position: absolute;
+  top: calc(50% - 35vh);
+  left: calc(50% - 20vw);
+  height: 85%;
+  width: 50%;
+  background: $grey-accent;
+  box-shadow: $box-shadow;
+  z-index: 99999999;
+  padding: 50px;
+  h3 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .bt {
+    // position: absolute;
+    // bottom: 10%;
+    // left: 10%;
+    p {
+      text-align: center;
+      width: 100%;
+    }
+    button {
+      width: 100%;
+    }
+  }
+  input {
+    width: 100%;
+    line-height: 30px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 20px;
+    background: none;
+    margin-bottom: 30px;
+    &::placeholder {
+      color: #aab7c4;
+    }
+  }
+}
+
+.par {
+  border-bottom: 1px solid grey;
+  background: none;
+}
+
+.error {
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
 }

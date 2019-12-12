@@ -1,6 +1,7 @@
 const passport = require("passport");
 const GitHubStrategy = require("passport-github").Strategy;
 const LinkedInStrategy = require("passport-linkedin-oauth2").Strategy;
+const User = require("../database/models/User");
 
 require("dotenv").config();
 
@@ -12,11 +13,6 @@ passport.deserializeUser((user, cb) => {
   cb(null, user);
 });
 
-const callback = (accessToken, refreshToken, profile, cb) => {
-  user = { ...profile, accessToken };
-  return cb(null, profile);
-};
-
 passport.use(
   new GitHubStrategy(
     {
@@ -24,7 +20,35 @@ passport.use(
       clientSecret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
       callbackURL: "/api/auth/github/callback"
     },
-    callback
+    (accessToken, refreshToken, profile, cb) => {
+      const github = profile.username;
+      const name = profile.displayName;
+      const password = accessToken;
+      const location = profile._json.location;
+      console.log(github, name, password, location);
+      return new User({ github: github })
+        .fetch({ require: false })
+        .then(data => {
+          if (data === null) {
+            console.log("User created");
+            return new User({ github, name, password, location })
+              .save()
+              .then(data => {
+                console.log("github data: ", data);
+                return cb(null, profile);
+              })
+              .catch(err => {
+                console.log("User wasnt created: ", err);
+              });
+          } else {
+            console.log("User exists");
+            return cb(null, profile);
+          }
+        })
+        .catch(err => {
+          console.log("Error getting user: ", err);
+        });
+    }
   )
 );
 
@@ -36,6 +60,9 @@ passport.use(
       callbackURL: "/api/auth/linkedin/callback",
       scope: ["r_emailaddress", "r_liteprofile", "w_member_social"]
     },
-    callback
+    (accessToken, refreshToken, profile, cb) => {
+      user = { ...profile, accessToken };
+      return cb(null, profile);
+    }
   )
 );

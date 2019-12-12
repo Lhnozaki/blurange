@@ -5,7 +5,6 @@ import { authenticateGitHub } from "../../actions";
 
 require("dotenv").config();
 
-
 const LoginModal = ({
   setLoginOn,
   isAuth,
@@ -26,17 +25,16 @@ const LoginModal = ({
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.authenticateGitHub();
     setAuth(true);
     setLoginOn(false);
-    // setShowOAuth(true);
-    const url = `https://github.com/login/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fapi%2Fauth%2Fgithub%2Fcallback&scope=repo&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`;
-    return (window.location = url);
+    props.authenticateGitHub();
+    window.location = "/api/auth/github";
   }
 
   function handleChange(e) {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   }
+
   return (
     <>
       <div className={styles.loginOverlay}>
