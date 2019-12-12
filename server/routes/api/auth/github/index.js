@@ -6,7 +6,7 @@ router.get("/github", passport.authenticate("github", { scope: ["repo"] }));
 
 router.get("/github/callback", passport.authenticate("github"), (req, res) => {
   // Successful authentication, redirect home.
-  res.redirect("https://nocan.design");
+  res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
 });
 
 module.exports = router;
