@@ -11,9 +11,9 @@ const EditorInfo = ({ setEditorStatus, handleChange, userInfo, currentVal, setUs
         <div className={styles.container}>
             <form onSubmit={handleSubmit}>
                 <div className="auto-grid grid-gap-md">
-                    <TextInput title="first" name="firstName" value="hi" placeholder="first name" handleChange={handleChange} setUserInfo={setUserInfo}/>
-                    <TextInput title="last" name="lastName" value="yo" placeholder="last name" handleChange={handleChange} setUserInfo={setUserInfo} />
-                    <TextInput title="email" name="email" value="bruh" placeholder="last name" handleChange={handleChange} setUserInfo={setUserInfo}/>
+                    <TextInput type="text" title="first" name="firstName" value="hi" placeholder="first name" handleChange={handleChange} setUserInfo={setUserInfo}/>
+                    <TextInput type="text" title="last" name="lastName" value="yo" placeholder="last name" handleChange={handleChange} type="text" setUserInfo={setUserInfo} />
+                    <TextInput type="email" title="email" name="email" value="bruh" placeholder="email" handleChange={handleChange} setUserInfo={setUserInfo}/>
                 </div>
                 <button onClick={() => handleSubmit} className={styles.continueBtn}>continue</button>
             </form>
@@ -21,3 +21,6 @@ const EditorInfo = ({ setEditorStatus, handleChange, userInfo, currentVal, setUs
     )
 }
 export default EditorInfo;
+
+// <TextInput title="first" name="firstName" value="hi" placeholder="first name" handleChange={handleChange} setUserInfo={setUserInfo}/>
+// <TextInput title="last" name="lastName" value="yo" placeholder="last name" handleChange={handleChange} setUserInfo={setUserInfo} />
