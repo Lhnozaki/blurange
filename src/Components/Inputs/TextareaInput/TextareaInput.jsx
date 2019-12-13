@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import {fakeInfo} from '../../../fakeLinkedinInfo.js';
 
-export default function TextInput({ title, placeholder, name, handleChange, userInfo, setUserInfo, type }) {
+export default function TextareaInput({ title, placeholder, name, handleChange, userInfo, setUserInfo }) {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -22,7 +22,7 @@ export default function TextInput({ title, placeholder, name, handleChange, user
         <div className="input-container">
             <label>{title}</label>
             {/* Fix the binding for the value */}
-            <input type={type} name={name} placeholder={placeholder} value={inputValue} onChange={e => handleChange(e, inputValue, setInputValue)} />
+            <textarea name={name} placeholder={placeholder} value={inputValue} onChange={e => handleChange(e, inputValue, setInputValue)} />
         </div>
     )
 }

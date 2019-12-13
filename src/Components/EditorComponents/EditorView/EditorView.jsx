@@ -10,6 +10,8 @@ const EditorView = ({ setEditorStatus, editorStatus }) => {
         setVal(value)
         setUserInfo({ ...userInfo, [name]: val });
     }
+
+    console.log('user info', userInfo)
     function renderEditorStatus() {
         if (editorStatus === 0) {
             return <EditorTemplates setEditorStatus={setEditorStatus} userInfo={userInfo} setUserInfo={setUserInfo} />;
