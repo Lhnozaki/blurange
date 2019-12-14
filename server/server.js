@@ -42,14 +42,13 @@ app.use(methodOverride("_method"));
 app.use(decorator);
 app.use(passport.initialize());
 
-// app.use(
-//   session({
-//     store: new RedisStore({ client }),
-//     secret: process.env.REDIS_SECRET,
-//     resave: false,
-//     saveUninitialized: false
-//   })
-// );
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+  })
+);
 
 ///// ROUTES /////
 app.use("/api/auth", githubAuth);

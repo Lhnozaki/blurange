@@ -18,7 +18,7 @@ passport.use(
     {
       clientID: process.env.REACT_APP_GITHUB_CLIENT_ID,
       clientSecret: process.env.REACT_APP_GITHUB_CLIENT_SECRET,
-      callbackURL: "/api/auth/github/callback"
+      callbackURL: `${process.env.GITHUB_REDIRECT_LINK}/api/auth/github/callback`
     },
     (accessToken, refreshToken, profile, cb) => {
       const github = profile.username;
@@ -57,12 +57,18 @@ passport.use(
     {
       clientID: process.env.REACT_APP_LINKEDIN_KEY,
       clientSecret: process.env.REACT_APP_LINKEDIN_SECRET,
-      callbackURL: "/api/auth/linkedin/callback",
-      scope: ["r_emailaddress", "r_liteprofile", "w_member_social"]
+      callbackURL: `${process.env.LINKEDIN_REDIRECT_LINK}/api/auth/linkedin/callback`,
+      scope: ["r_emailaddress", "r_basicprofile"],
+      state: true
     },
-    (accessToken, refreshToken, profile, cb) => {
+    (accessToken, refreshToken, profile, done) => {
       user = { ...profile, accessToken };
-      return cb(null, profile);
+      console.log("Linkedin works");
+      process.nextTick(() => {
+        console.log("To be put into database: ", user);
+        //record in database
+        return done(null, profile);
+      });
     }
   )
 );
