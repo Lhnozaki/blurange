@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 import { authenticateGitHub } from "../../actions";
