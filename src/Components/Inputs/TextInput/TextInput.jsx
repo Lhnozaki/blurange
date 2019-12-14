@@ -8,6 +8,7 @@ export default function TextInput({ title, placeholder, value, name, handleChang
         setInputValue(value);
         console.log(title, value)
         setUserInfo({ ...userInfo, [name]: value });
+        // console.log('user info', userInfo)
     }, []);
 
     return (

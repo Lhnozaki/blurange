@@ -16,7 +16,7 @@ const EditorInfo = ({ setEditorStatus, handleChange, userInfo, currentVal, setUs
                 <div className="auto-grid grid-gap-md">
                     <TextInput type="text" title="first" name="firstName" value="hi" placeholder="first name" handleChange={handleChange} userInfo={userInfo} setUserInfo={setUserInfo} />
                     <TextInput type="text" title="last" name="lastName" value="yo" placeholder="last name" handleChange={handleChange} userInfo={userInfo} setUserInfo={setUserInfo} />
-                    <TextareaInput title="about me" name="about" value="tell us about yourself" placeholder="about me" handleChange={handleChange} userInfo={userInfo} setUserInfo={setUserInfo} />
+
                 </div>
                 <button className={styles.continueBtn}>continue</button>
             </form>
