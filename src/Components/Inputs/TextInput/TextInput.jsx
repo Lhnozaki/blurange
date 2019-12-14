@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { fakeInfo } from '../../../fakeLinkedinInfo.js';
 
 export default function TextInput({ title, placeholder, value, name, handleChange, userInfo, setUserInfo, type }) {
 
@@ -7,6 +6,7 @@ export default function TextInput({ title, placeholder, value, name, handleChang
 
     useEffect(() => {
         setInputValue(value);
+        console.log(title, value)
         setUserInfo({ ...userInfo, [name]: value });
     }, []);
 

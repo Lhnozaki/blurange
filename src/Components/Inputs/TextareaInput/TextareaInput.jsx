@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import { fakeInfo } from '../../../fakeLinkedinInfo.js';
 
 export default function TextareaInput({ title, placeholder, value, name, handleChange, userInfo, setUserInfo }) {
 
