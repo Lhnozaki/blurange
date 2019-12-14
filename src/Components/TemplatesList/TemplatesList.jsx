@@ -31,7 +31,7 @@ const TemplatesList = () => {
           <div className={styles.cardContainer}>
             {arrTemplateNames.map((template, idx) => {
               return (
-                <Link to={`/templates/${template}`}>
+                <Link to={`/templates/${template}`} key={idx}>
                   <div className="card">
                     <h3 className="color-blue">
                       template <span>{idx + 1}</span>

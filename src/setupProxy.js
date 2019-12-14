@@ -16,4 +16,18 @@ module.exports = function(app) {
       changeOrigin: true
     })
   );
+  app.use(
+    "/api/auth/linkedin",
+    proxy({
+      target: `${process.env.REACT_APP_BACKEND_PROXY}`,
+      changeOrigin: true
+    })
+  );
+  app.use(
+    "/api/auth/linkedin/callback",
+    proxy({
+      target: `${process.env.REACT_APP_BACKEND_PROXY}`,
+      changeOrigin: true
+    })
+  );
 };

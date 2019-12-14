@@ -62,10 +62,10 @@ passport.use(
       state: true
     },
     (accessToken, refreshToken, profile, done) => {
-      user = { ...profile, accessToken };
+      console.log(profile);
       console.log("Linkedin works");
       process.nextTick(() => {
-        console.log("To be put into database: ", user);
+        console.log("To be put into database: ");
         //record in database
         return done(null, profile);
       });
