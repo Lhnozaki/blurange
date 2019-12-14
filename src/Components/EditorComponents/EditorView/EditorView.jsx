@@ -4,14 +4,15 @@ import EditorTemplates from '../EditorTemplates';
 import EditorInfo from '../EditorInfo';
 import EditorDeploy from '../EditorDeploy';
 const EditorView = ({ setEditorStatus, editorStatus }) => {
+
     const [userInfo, setUserInfo] = useState({});
-    function handleChange(e, val, setVal) {
+
+    function handleChange(e, setVal) {
         let { name, value } = e.target
         setVal(value)
-        setUserInfo({ ...userInfo, [name]: val });
+        setUserInfo({ ...userInfo, [name]: value });
     }
 
-    console.log('user info', userInfo)
     function renderEditorStatus() {
         if (editorStatus === 0) {
             return <EditorTemplates setEditorStatus={setEditorStatus} userInfo={userInfo} setUserInfo={setUserInfo} />;
