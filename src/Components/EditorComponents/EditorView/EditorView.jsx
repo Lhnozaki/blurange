@@ -5,8 +5,6 @@ import EditorInfo from '../EditorInfo';
 import EditorDeploy from '../EditorDeploy';
 const EditorView = ({ setEditorStatus, editorStatus }) => {
 
-    const [userInfo, setUserInfo] = useState({});
-
     function handleChange(e, setVal) {
         let { name, value } = e.target
         setVal(value)

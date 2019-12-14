@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import SplashPage from "../Components/SplashPage";
 import DesignSystem from "../Components/DesignSystem";
-import Editor from "../Components/EditorComponents/Editor";
 import Dashboard from "../Components/DashboardComponents/Dashboard";
 import TemplatesList from "../Components/TemplatesList";
 import JHome1 from "../Components/Templates/JTemplate1/JHome1";
@@ -13,6 +12,9 @@ import JContact1 from "../Components/Templates/JTemplate1/JContact1";
 import ATemplate1 from "../Components/Templates/ATemplate1";
 import ATemplate2 from "../Components/Templates/ATemplate2";
 import LTemplate1 from "../Components/Templates/LTemplate1";
+import EditorTemplates from "../Components/EditorComponents/EditorTemplates";
+import EditorDeploy from '../Components/EditorComponents/EditorDeploy';
+import EditorInfo from '../Components/EditorComponents/EditorInfo';
 
 export const routes = [
   {
@@ -26,9 +28,19 @@ export const routes = [
     component: DesignSystem
   },
   {
-    path: "/editor",
+    path: "/editor/templates",
     exact: true,
-    component: Editor
+    component: EditorTemplates
+  },
+  {
+    path: "/editor/info",
+    exact: true,
+    component: EditorInfo
+  },
+  {
+    path: "/editor/deploy",
+    exact: true,
+    component: EditorDeploy
   },
   {
     path: "/dashboard",
@@ -94,9 +106,9 @@ export const authRoutes = [
     component: DesignSystem
   },
   {
-    path: "/editor",
+    path: "/editor/templates",
     exact: true,
-    component: Editor
+    component: EditorTemplates
   }
 ];
 
