@@ -16,7 +16,7 @@ export default function ATemplate2() {
         </div>
       </div>
 
-      <div className={styles.slider}>
+      <div className={styles.slider} id="scroll">
         <div className={styles.slide} id={styles.slide1}>
           <h1>Hi, my name is Andrew.</h1>
           <p>
