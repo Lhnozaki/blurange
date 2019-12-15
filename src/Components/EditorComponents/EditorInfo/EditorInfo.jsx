@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
-import { authenticateLinkedin } from "../../../actions";
+import { authenticateLinkedin, getGithubAccount } from "../../../actions";
 
 const EditorInfo = ({
   setEditorStatus,
@@ -11,8 +11,11 @@ const EditorInfo = ({
   userInfo,
   currentVal,
   setUserInfo,
+  githubAccount,
   ...props
 }) => {
+  const [githubRepos] = useState();
+
   function handleSubmit(e) {
     e.preventDefault();
     setEditorStatus(2);
@@ -24,6 +27,18 @@ const EditorInfo = ({
     console.log(props.authenticateLinkedin());
     window.location = "/api/auth/linkedin";
   }
+
+  useEffect(() => {
+    props.getGithubAccount();
+    fetch(`https://api.github.com/users/kevinchguo/repos?per_page=1000`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -37,7 +52,7 @@ const EditorInfo = ({
             type="text"
             title="first"
             name="firstName"
-            value="hi"
+            value={props.githubAccount}
             placeholder="first name"
             handleChange={handleChange}
             userInfo={userInfo}
@@ -68,15 +83,22 @@ const EditorInfo = ({
   );
 };
 
+const mapStateToProps = state => {
+  return { githubAccount: state };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     authenticateLinkedin: () => {
       return dispatch(authenticateLinkedin());
+    },
+    getGithubAccount: () => {
+      return dispatch(getGithubAccount());
     }
   };
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(EditorInfo);

@@ -5,12 +5,13 @@ const User = require("../database/models/User");
 
 require("dotenv").config();
 
-passport.serializeUser((user, cb) => {
-  cb(null, user);
+passport.serializeUser((data, cb) => {
+  console.log("serialized: ", data);
+  cb(null, { username: data });
 });
 
-passport.deserializeUser((user, cb) => {
-  cb(null, user);
+passport.deserializeUser((data, cb) => {
+  cb(null, data);
 });
 
 passport.use(
@@ -25,24 +26,23 @@ passport.use(
       const name = profile.displayName;
       const password = accessToken;
       const location = profile._json.location;
-      console.log(github, name, password, location);
       return new User({ github: github })
         .fetch({ require: false })
         .then(data => {
           if (data === null) {
+            data = data.toJSON();
             console.log("User created");
             return new User({ github, name, password, location })
               .save()
               .then(data => {
-                console.log("github data: ", data);
-                return cb(null, profile);
+                return cb(null, data.github);
               })
               .catch(err => {
                 console.log("User wasnt created: ", err);
               });
           } else {
-            console.log("User exists");
-            return cb(null, profile);
+            data = data.toJSON();
+            return cb(null, data.github);
           }
         })
         .catch(err => {
@@ -58,7 +58,7 @@ passport.use(
       clientID: process.env.REACT_APP_LINKEDIN_KEY,
       clientSecret: process.env.REACT_APP_LINKEDIN_SECRET,
       callbackURL: `${process.env.LINKEDIN_REDIRECT_LINK}/api/auth/linkedin/callback`,
-      scope: ["r_emailaddress", "r_basicprofile"],
+      scope: ["r_basicprofile"],
       state: true
     },
     (accessToken, refreshToken, profile, done) => {

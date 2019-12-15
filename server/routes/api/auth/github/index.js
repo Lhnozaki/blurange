@@ -1,11 +1,23 @@
 const router = require("express").Router();
 const passport = require("passport");
+const User = require("../../../../database/models/User");
+
 require("dotenv").config();
 
 router.get("/github", passport.authenticate("github", { scope: ["repo"] }));
 
 router.get("/github/callback", passport.authenticate("github"), (req, res) => {
   // Successful authentication, redirect home.
+  res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
+});
+
+router.get("/github/account", (req, res) => {
+  const user = req.session.passport.user.username;
+  res.json({ user });
+});
+
+router.get("/github/logout", (req, res) => {
+  req.logout();
   res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
 });
 
