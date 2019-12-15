@@ -44,16 +44,12 @@
 
 .slider {
   display: flex;
-  overflow-x: scroll;
   scroll-behavior: smooth;
+  overflow-y: hidden;
   width: 100vw;
   height: 85vh;
   -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
-}
-
-.slider::-webkit-scrollbar {
-  display: none;
 }
 
 .slide {
@@ -61,24 +57,32 @@
   height: 100%;
   flex-shrink: 0;
   margin-right: 5px;
-  // scroll-snap-align: start;
   scroll-behavior: smooth;
-}
-
-#slide1 {
-  background-image: url("./pictures/1.jpg");
   background-size: cover;
   background-repeat: none;
   color: white;
 
   h1 {
-    position: relative;
-    left: 5%;
-    top: 10%;
     font-family: "Nunito Sans";
     font-size: 3rem;
     color: white;
     text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+    padding: 20px;
+  }
+}
+
+#slide1 {
+  background-image: url("./pictures/1.jpg");
+
+  h1 {
+    position: relative;
+    left: 5%;
+    top: 10%;
     border-bottom: 3px white solid;
     width: 70%;
   }
@@ -88,46 +92,29 @@
     position: relative;
     left: 5%;
     top: 10%;
-    background-color: rgba(0, 0, 0, 0.75);
-    margin-top: 30px;
-    padding: 20px;
   }
 }
 
 #slide2 {
   background-image: url("./pictures/2.jpg");
-  background-size: cover;
-  background-repeat: none;
-  color: white;
 
   h1 {
     position: relative;
     left: 60%;
     top: 10%;
-    font-family: "Nunito Sans";
-    font-size: 3rem;
-    color: white;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
     width: 70%;
   }
-  border-bottom: 3px white solid;
 
   p {
     width: 60vw;
     position: relative;
     top: 60%;
     left: 15%;
-    background-color: rgba(0, 0, 0, 0.342);
-    margin-top: 30px;
-    padding: 20px;
   }
 }
 
 #slide3 {
   background-image: url("./pictures/3.jpg");
-  background-size: cover;
-  background-repeat: none;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,10 +122,6 @@
 
   h1 {
     position: relative;
-    font-family: "Nunito Sans";
-    font-size: 3rem;
-    color: white;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
     top: -20%;
   }
 
@@ -146,51 +129,28 @@
     width: 30vw;
     position: relative;
     top: -20%;
-    background-color: rgba(0, 0, 0, 0.753);
-    margin-top: 30px;
-    padding: 20px;
   }
 }
 
 #slide4 {
   background-image: url("./pictures/4.jpg");
-  background-size: cover;
-  background-repeat: none;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
-  h1 {
-    font-family: "Nunito Sans";
-    font-size: 3rem;
-    color: white;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
-  }
-
   p {
     width: 30vw;
-    background-color: rgba(0, 0, 0, 0.75);
-    margin-top: 30px;
-    padding: 20px;
   }
 }
 
 #slide5 {
   background-image: url("./pictures/5.jpg");
-  background-size: cover;
-  background-repeat: none;
-  color: white;
 
   h1 {
     position: relative;
     left: 5%;
     top: 10%;
-    font-family: "Nunito Sans";
-    font-size: 3rem;
-    color: white;
-    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
     width: 70%;
   }
 
@@ -199,8 +159,5 @@
     position: relative;
     left: 5%;
     top: 10%;
-    background-color: rgba(56, 56, 56, 0.342);
-    margin-top: 30px;
-    padding: 20px;
   }
 }
