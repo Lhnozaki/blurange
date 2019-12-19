@@ -51,8 +51,8 @@ app.use(
 );
 
 ///// ROUTES /////
-app.use("/api/auth", githubAuth);
-app.use("/api/auth", linkedinAuth);
+app.use("/api/auth/github", githubAuth);
+app.use("/api/auth/linkedin", linkedinAuth);
 app.use("/api/charge", paymentsRoute);
 
 ///// Smoke Test /////

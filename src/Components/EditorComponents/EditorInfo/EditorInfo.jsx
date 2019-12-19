@@ -14,8 +14,6 @@ const EditorInfo = ({
   githubAccount,
   ...props
 }) => {
-  const [githubRepos] = useState();
-
   function handleSubmit(e) {
     e.preventDefault();
     setEditorStatus(2);
@@ -29,8 +27,7 @@ const EditorInfo = ({
   }
 
   useEffect(() => {
-    props.getGithubAccount();
-    fetch(`https://api.github.com/users/kevinchguo/repos?per_page=1000`)
+    fetch(`https://api.github.com/users/${githubAccount}/repos?per_page=1000`)
       .then(res => res.json())
       .then(data => {
         console.log(data);
@@ -52,7 +49,7 @@ const EditorInfo = ({
             type="text"
             title="first"
             name="firstName"
-            value={props.githubAccount}
+            value={"hello"}
             placeholder="first name"
             handleChange={handleChange}
             userInfo={userInfo}
@@ -84,16 +81,13 @@ const EditorInfo = ({
 };
 
 const mapStateToProps = state => {
-  return { githubAccount: state };
+  return { githubAccount: state.githubAccount };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     authenticateLinkedin: () => {
       return dispatch(authenticateLinkedin());
-    },
-    getGithubAccount: () => {
-      return dispatch(getGithubAccount());
     }
   };
 };
