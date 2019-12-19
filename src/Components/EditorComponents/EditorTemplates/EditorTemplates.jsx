@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import styles from './EditorTemplates.module.scss';
 import TemplateCard from '../../TemplateCard';
+import { Link } from 'react-router-dom';
 
-const EditorTemplates = ({ editorStatus, setEditorStatus, setUserInfo }) => {
+const EditorTemplates = () => {
     const arrTemplateNames = [
         'ATemplate1',
         'ATemplate2',
@@ -24,19 +25,22 @@ const EditorTemplates = ({ editorStatus, setEditorStatus, setUserInfo }) => {
     }
 
 
+
     return (
         // Maybe break list of templates into a different component
         // need to fix the back button to redirect to previous route rather than the templates page
-        <div className={styles.container}>
+        <div className="container-sm">
             <div className={styles.templatesContainer}>
                 {
                     arrTemplateNames.map((template, i) => (
-                        <TemplateCard i={i} key={i} template={template} isSelected={isSelected} setSelected={setSelected} toggleSelectedState={toggleSelectedState} setUserInfo={setUserInfo} />
+                        <TemplateCard i={i} key={i} template={template} isSelected={isSelected} setSelected={setSelected} toggleSelectedState={toggleSelectedState} />
                     ))
                 }
 
             </div>
-            <button onClick={() => setEditorStatus(1)} className={styles.continueBtn}>continue</button>
+            <div className="editor-button-container">
+                <button><Link to="/editor/info">continue</Link></button>
+            </div>
         </div>
 
     )
