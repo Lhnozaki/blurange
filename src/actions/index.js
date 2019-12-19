@@ -13,6 +13,7 @@ export const authenticateGitHub = () => async dispatch => {
 
 export const getGithubAccount = () => async dispatch => {
   await Axios.get("/api/auth/github/account").then(data => {
+    console.log(data);
     dispatch({
       type: GITHUB_ACCOUNT,
       payload: data.data.user

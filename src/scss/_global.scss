@@ -100,3 +100,16 @@ button {
   display: flex;
   flex-direction: column;
 }
+
+//  Editor buttons
+.editor-button-container {
+  margin-top: 50px;
+
+  button {
+    margin: 0 10px;
+
+    a {
+      color: $off-white;
+    }
+  }
+}

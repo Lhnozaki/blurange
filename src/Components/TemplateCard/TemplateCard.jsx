@@ -10,7 +10,8 @@ const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, 
 
     function selectTemplate() {
         toggleSelectedState(i)
-        setUserInfo({ ...userInfo, template: template });
+        // switch this to hit the redux store and update userInfo rather than a local function
+        // setUserInfo({ ...userInfo, template: template });
     }
 
 

@@ -3,17 +3,20 @@ import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
+import { Link } from "react-router-dom";
+
 import { authenticateLinkedin, getGithubAccount } from "../../../actions";
 
 const EditorInfo = ({
   setEditorStatus,
   handleChange,
-  userInfo,
   currentVal,
-  setUserInfo,
   githubAccount,
+  state,
   ...props
 }) => {
+  const [userInfo, setUserInfo] = useState({});
+
   function handleSubmit(e) {
     e.preventDefault();
     setEditorStatus(2);
@@ -27,14 +30,19 @@ const EditorInfo = ({
   }
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${githubAccount}/repos?per_page=1000`)
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => {
-        console.log(err.message);
-      });
+    console.log(state);
+    if (state.githubAccount) {
+      fetch(
+        `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
+      )
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err.message);
+        });
+    }
   }, []);
 
   return (
@@ -74,14 +82,21 @@ const EditorInfo = ({
             setUserInfo={setUserInfo}
           />
         </div>
-        <button className={styles.continueBtn}>continue</button>
+        <div className="editor-button-container">
+          <button>
+            <Link to="/editor/templates">go back</Link>
+          </button>
+          <button>
+            <Link to="/editor/deploy">continue</Link>
+          </button>
+        </div>
       </form>
     </div>
   );
 };
 
 const mapStateToProps = state => {
-  return { githubAccount: state.githubAccount };
+  return { state: state };
 };
 
 const mapDispatchToProps = dispatch => {
