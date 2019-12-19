@@ -6,6 +6,7 @@ const DELAY = 3000;
 function testConnection() {
   return new Promise(resolve => {
     setTimeout(() => {
+      console.log("Preping for development");
       console.log("Polling for DB Connection...");
       knex.migrate
         .latest()
