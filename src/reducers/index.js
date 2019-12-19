@@ -1,11 +1,13 @@
-import { GITHUB_AUTH } from "../actions";
+import { GITHUB_AUTH, GITHUB_ACCOUNT, LINKEDIN_AUTH } from "../actions";
 
-const initialState = { githubURL: {} };
+const initialState = { profileData: {}, githubAccount: {} };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GITHUB_AUTH:
-      return Object.assign({}, state, { githubURL: action.payload });
+    case LINKEDIN_AUTH:
+      return Object.assign({}, state, { profileData: action.payload });
+    case GITHUB_ACCOUNT:
+      return Object.assign({}, state, { githubAccount: action.payload });
   }
 };
 

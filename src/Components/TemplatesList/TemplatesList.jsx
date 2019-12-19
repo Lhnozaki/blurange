@@ -31,7 +31,8 @@ const TemplatesList = () => {
           <div className={styles.cardContainer}>
             {arrTemplateNames.map((template, idx) => {
               return (
-                <a href={`../../Templates/${template}/index.html`} key={idx}>
+       <Link to={`/templates/${template}`} key={idx}>
+
                   <div className="card">
                     <h3 className="color-blue">
                       template <span>{idx + 1}</span>
@@ -48,3 +49,5 @@ const TemplatesList = () => {
 };
 
 export default TemplatesList;
+
+<!--                 <a href={`../../Templates/${template}/index.html`} key={idx}> -->
