@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./TemplatesList.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './TemplatesList.module.scss';
 
 const TemplatesList = () => {
   const arrTemplateNames = [
@@ -8,7 +8,7 @@ const TemplatesList = () => {
     'ATemplate2',
     'DTemplate1',
     'DTemplate2',
-    'jtemplate1',
+    'Jtemplate1',
     'JTemplate2',
     'KTemplate1',
     'KTemplate2',
@@ -31,13 +31,14 @@ const TemplatesList = () => {
           <div className={styles.cardContainer}>
             {arrTemplateNames.map((template, idx) => {
               return (
-                <Link to={`/templates/${template}`} key={idx}>
+       <Link to={`/templates/${template}`} key={idx}>
+
                   <div className="card">
                     <h3 className="color-blue">
                       template <span>{idx + 1}</span>
                     </h3>
                   </div>
-                </Link>
+                </a>
               );
             })}
           </div>
@@ -48,3 +49,5 @@ const TemplatesList = () => {
 };
 
 export default TemplatesList;
+
+<!--                 <a href={`../../Templates/${template}/index.html`} key={idx}> -->
