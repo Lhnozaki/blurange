@@ -51,13 +51,14 @@ app.use(
   })
 );
 
-app.use('/api/auth', githubAuth);
-app.use('/api/auth', linkedinAuth);
+app.use('/api/auth/github', githubAuth);
+app.use('/api/auth/linkedin', linkedinAuth);
 app.use('/api/charge', paymentsRoute);
 app.use('/atemplate1', atemplate1);
 
 
 ///// Smoke Test /////
+
 app.get('/', (req, res) => {
   console.log('test61');
   res.status(200).json({ success: true });
