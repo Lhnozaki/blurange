@@ -13,6 +13,12 @@ const EditorTemplates = props => {
     "DTemplate1",
   ];
 
+  const links = [
+    "https://andrew2.nocan.design",
+    "https://andrew.nocan.design",
+    "https://google.com"
+  ]
+
   const [isSelected, setSelected] = useState(null);
 
   function toggleSelectedState(index) {
@@ -36,6 +42,7 @@ const EditorTemplates = props => {
             isSelected={isSelected}
             setSelected={setSelected}
             toggleSelectedState={toggleSelectedState}
+            links={links}
           />
         ))}
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TemplateCard.module.scss';
 
-const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, setUserInfo }) => {
+const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, setUserInfo, links }) => {
 
     function renderSelectedState(index) {
         return isSelected === index ? { borderWidth: '2px', borderColor: 'rgba(178, 190, 195, 0.7' } : { borderWidth: '1px', borderColor: 'rgba(178, 190, 195, 0.4)' }
@@ -19,9 +19,9 @@ const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, 
 
         <div className="card" id={styles.templateCard} style={renderSelectedState(i)} onClick={() => selectTemplate()}>
             <div className={styles.imageContainer}>
-                <Link to={`/templates/${template}`}>
+                <a href={links[i]} alt="image" target="_blank">
                     <img src="https://images.unsplash.com/photo-1558981420-bf351ce8e3ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" />
-                </Link>
+                </a>
             </div>
             <h3 className="color-blue">
                 template <span>{i + 1}</span>
