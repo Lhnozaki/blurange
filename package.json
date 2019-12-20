@@ -8,7 +8,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
-    "aws-sdk": "^2.578.0",
+    "aws-sdk": "^2.593.0",
     "axios": "^0.19.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -35,6 +35,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-linkedin-oauth2": "^2.0.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
     "pg": "^7.14.0",
     "query-string-object": "^0.2.5",
     "react": "^16.12.0",
@@ -50,6 +51,7 @@
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
     "stripe": "^7.14.0",
+    "url": "^0.11.0",
     "webkit-npm": "^3.1.1"
   },
   "scripts": {
