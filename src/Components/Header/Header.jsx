@@ -16,7 +16,7 @@ const Header = ({ isAuth, credentials, setMenu, showMenu, toggleLoginStatus }) =
                     {showMenu ? 'close' : 'menu'}
                 </button>
                 <div className={styles.loginBtns}>
-                    <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login'}</button>
+                    <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login  with github'}</button>
                     {!isAuth && <button className="alt-btn">sign up</button>}
                 </div>
             </div>

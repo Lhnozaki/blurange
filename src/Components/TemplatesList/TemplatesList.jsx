@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./TemplatesList.module.scss";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './TemplatesList.module.scss';
 
 const TemplatesList = () => {
   const arrTemplateNames = [
@@ -8,7 +8,7 @@ const TemplatesList = () => {
     'ATemplate2',
     'DTemplate1',
     'DTemplate2',
-    'jtemplate1',
+    'Jtemplate1',
     'JTemplate2',
     'KTemplate1',
     'KTemplate2',
@@ -48,3 +48,4 @@ const TemplatesList = () => {
 };
 
 export default TemplatesList;
+

@@ -1,4 +1,4 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 #hero {
   height: 100vh;
@@ -48,6 +48,34 @@
       // width: 90%;
       // margin: 0 auto;
     }
+  }
+}
+
+#companiesContent {
+  overflow: hidden;
+  padding: 10vh 0;
+}
+
+.brandContainer {
+  width: 100vw;
+  justify-content: space-between;
+  display: flex;
+  font-weight: 700;
+  animation: slideCompany 30s linear infinite;
+
+  h3 {
+    text-transform: uppercase;
+    margin-left: 60px;
+    font-size: 5rem;
+  }
+}
+
+@keyframes slideCompany {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
