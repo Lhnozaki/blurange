@@ -18,10 +18,14 @@ const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, 
     return (
 
         <div className="card" id={styles.templateCard} style={renderSelectedState(i)} onClick={() => selectTemplate()}>
+            <div className={styles.imageContainer}>
+                <Link to={`/templates/${template}`}>
+                    <img src="https://images.unsplash.com/photo-1558981420-bf351ce8e3ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="" />
+                </Link>
+            </div>
             <h3 className="color-blue">
                 template <span>{i + 1}</span>
             </h3>
-            <Link to={`/templates/${template}`}>preview</Link>
         </div>
 
     )

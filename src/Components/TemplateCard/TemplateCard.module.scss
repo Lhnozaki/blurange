@@ -3,6 +3,15 @@
   position: relative;
   text-align: left;
 
+  .imageContainer {
+    height: 40vh;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   &:hover {
     transform: scale(1.01);
   }

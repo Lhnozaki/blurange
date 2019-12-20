@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SplashPage.module.scss';
-
 const SplashPage = () => {
+
   return (
     <article className="container">
       <section id={styles.hero}>
@@ -41,7 +41,7 @@ const SplashPage = () => {
           <h3>nike</h3>
         </div>
       </section>
-      <section id={styles.aboutContent}>
+      <section id={styles.aboutContent} className="scroll-element">
         <h3 className='title'>3 steps to go live</h3>
         <div className={styles.cardContainer}>
           <div >

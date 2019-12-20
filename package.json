@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "express-router": "0.0.1",
     "express-session": "^1.17.0",
+    "giftbag": "^1.0.5",
     "http-proxy-middleware": "^0.20.0",
     "knex": "^0.20.2",
     "method-override": "^3.0.0",
