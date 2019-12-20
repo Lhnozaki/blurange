@@ -57,7 +57,7 @@ app.use("/api/charge", paymentsRoute);
 
 ///// Smoke Test /////
 app.get("/", (req, res) => {
-  res.status(200).json({ success: true });
+  res.status(200).json({ success: true, name: "blurange" });
 });
 
 ///// LISTEN /////
