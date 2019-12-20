@@ -14,12 +14,18 @@
     h1 {
       font-size: 5rem;
     }
-
     h3 {
       font-size: 3rem;
       font-family: $type-base;
     }
   }
+}
+
+.blur {
+  background-image: linear-gradient(to right, #0468b7, #ffb43d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #aboutContent {
