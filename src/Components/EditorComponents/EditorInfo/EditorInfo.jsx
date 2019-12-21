@@ -4,12 +4,14 @@ import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
 import { Link } from "react-router-dom";
+import { obj, img } from "../../../reducers/index";
 
 import {
   authenticateLinkedin,
   getGithubAccount,
   AddImage,
-  UploadImage
+  UploadImage,
+  AddProfile
 } from "../../../actions";
 
 const EditorInfo = ({
@@ -23,9 +25,19 @@ const EditorInfo = ({
   const [userInfo, setUserInfo] = useState({});
 
   function handleSubmit(e) {
+    console.log(state);
     e.preventDefault();
     setEditorStatus(2);
-    console.log("user info", userInfo);
+    AddProfile(state).then(() => {
+      if (img !== undefined) {
+        console.log("IMAGE", img);
+        let imgData = {
+          profile_id: obj.id,
+          url: img.data.location
+        };
+        AddImage(imgData);
+      }
+    });
   }
 
   function linkedinLogin(e) {
@@ -37,36 +49,24 @@ const EditorInfo = ({
   function handleUpload(e) {
     const formData = new FormData();
     formData.append("profileImage", e.target.files[0]);
-    this.props.UploadImage(formData);
-  }
-
-  function handleClick(e) {
-    e.preventDefault();
-    this.props.AddCreature(this.state).then(() => {
-      if (img !== undefined) {
-        console.log("IMAGE", img);
-        let imgData = {
-          creature_id: obj.id,
-          url: img.data.location
-        };
-        this.props.AddImage(imgData);
-      }
-    });
+    UploadImage(formData);
   }
 
   useEffect(() => {
     console.log(state);
-    if (state.githubAccount) {
-      fetch(
-        `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
-      )
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
+    if (state) {
+      if (state.githubAccount) {
+        fetch(
+          `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
+        )
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.log(err.message);
+          });
+      }
     }
   }, []);
 
@@ -74,7 +74,6 @@ const EditorInfo = ({
     <div className={styles.container}>
       <div className={styles.infoCta}>
         <h3>Fill in info or</h3>
-        <button onClick={linkedinLogin}>login with linkedin</button>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="auto-grid grid-gap-md">
@@ -119,9 +118,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy" onClick={handleClick}>
-              continue
-            </Link>
+            <Link to="/editor/deploy">continue</Link>
           </button>
         </div>
       </form>
@@ -143,6 +140,9 @@ const mapDispatchToProps = dispatch => {
     },
     AddImage: () => {
       return dispatch(AddImage());
+    },
+    AddProfile: () => {
+      return dispatch(AddProfile());
     }
   };
 };

@@ -18,3 +18,19 @@
     margin-left: 20px;
   }
 }
+
+.upload {
+  margin-top: 20px;
+  &::-webkit-file-upload-button {
+    display: inline-block;
+    padding: 10px;
+    -webkit-user-select: none;
+    cursor: pointer;
+    width: 30%;
+    color: darken(aquamarine, 50%);
+    text-align: center;
+    background: aquamarine;
+    margin: 0;
+    border: 1px solid darken(aquamarine, 20%);
+  }
+}

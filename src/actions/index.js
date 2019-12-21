@@ -6,6 +6,7 @@ export const LINKEDIN_AUTH = "LINKEDIN_AUTH";
 export const GITHUB_ACCOUNT = "GITHUB_ACCOUNT";
 export const UPLOAD_IMAGE = "UPLOAD_IMAGE";
 export const ADD_IMAGE = "ADD_IMAGE";
+export const ADD_PROFILE = "ADD_PROFILE";
 
 export const authenticateGitHub = () => async dispatch => {
   await Axios.get("/api/auth/github").catch(err => {
@@ -56,6 +57,19 @@ export const AddImage = data => async dispatch => {
       dispatch({
         type: ADD_IMAGE,
         payload: img
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+export const AddProfile = data => async dispatch => {
+  await Axios.post("/api/profile", data)
+    .then(data => {
+      dispatch({
+        type: ADD_PROFILE,
+        payload: data
       });
     })
     .catch(err => {
