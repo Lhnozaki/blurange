@@ -11,14 +11,13 @@ const EditorTemplates = props => {
     "ATemplate1",
     "ATemplate2",
     "DTemplate1",
-    "DTemplate2",
-    "JTemplate1",
-    "JTemplate2",
-    "KTemplate1",
-    "KTemplate2",
-    "LTemplate1",
-    "LTemplate2"
   ];
+
+  const links = [
+    "https://andrew2.nocan.design",
+    "https://andrew.nocan.design",
+    "https://google.com"
+  ]
 
   const [isSelected, setSelected] = useState(null);
 
@@ -43,6 +42,7 @@ const EditorTemplates = props => {
             isSelected={isSelected}
             setSelected={setSelected}
             toggleSelectedState={toggleSelectedState}
+            links={links}
           />
         ))}
       </div>
