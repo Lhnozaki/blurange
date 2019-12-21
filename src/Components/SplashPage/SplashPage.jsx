@@ -2,20 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SplashPage.module.scss';
 import SvgBanner from '../SvgBanner';
+import Gallery from '../Gallery';
 
 const SplashPage = () => {
   return (
     <article className="container">
-      <section id={styles.hero}>
+      <section id={styles.hero} className="container-lg">
         <div className={styles.heroContent}>
           <h1><span className="color-light-blue">Blur</span><span className="color-orange">range</span></h1>
           <h3>Your code doesn't repeat itself, why should you?</h3>
           <Link to="/editor"><button className="cta">get started for free</button></Link>
         </div>
+        <div className={styles.galleryContainer}>
+        <Gallery/>
+      </div>
       </section>
       <section id={styles.companiesContent}>
-        <h1 className="uppercase text-center title">Companies Using Blurange</h1>
+        <h3 className="title">Companies Using Blurange</h3>
         <div className={styles.brandContainer}>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
           <SvgBanner/>
           <SvgBanner/>
           <SvgBanner/>
@@ -52,3 +60,9 @@ const SplashPage = () => {
 }
 
 export default SplashPage;
+
+
+// <section id={styles.gallery}> 
+// <Gallery/>
+// <h3>By <strong>Developers</strong> For <strong>Developers</strong></h3>
+// </section>
