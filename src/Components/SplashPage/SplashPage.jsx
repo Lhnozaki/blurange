@@ -47,15 +47,6 @@ const SplashPage = () => {
           </div>
         </div>
       </section>
-      <section id={styles.features}>
-        <h3 className="title">What you get out of the box</h3>
-        <div className={styles.container}>
-          <div className={styles.imageRight}>
-            <img src="" alt="" />
-            <div className={styles.content}></div>
-          </div>
-        </div>
-      </section>
     </article>
   )
 }
