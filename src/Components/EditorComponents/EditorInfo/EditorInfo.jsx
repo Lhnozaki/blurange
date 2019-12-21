@@ -5,7 +5,12 @@ import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
 import { Link } from "react-router-dom";
 
-import { authenticateLinkedin, getGithubAccount } from "../../../actions";
+import {
+  authenticateLinkedin,
+  getGithubAccount,
+  AddImage,
+  UploadImage
+} from "../../../actions";
 
 const EditorInfo = ({
   setEditorStatus,
@@ -27,6 +32,26 @@ const EditorInfo = ({
     e.preventDefault();
     console.log(props.authenticateLinkedin());
     window.location = "/api/auth/linkedin";
+  }
+
+  function handleUpload(e) {
+    const formData = new FormData();
+    formData.append("profileImage", e.target.files[0]);
+    this.props.UploadImage(formData);
+  }
+
+  function handleClick(e) {
+    e.preventDefault();
+    this.props.AddCreature(this.state).then(() => {
+      if (img !== undefined) {
+        console.log("IMAGE", img);
+        let imgData = {
+          creature_id: obj.id,
+          url: img.data.location
+        };
+        this.props.AddImage(imgData);
+      }
+    });
   }
 
   useEffect(() => {
@@ -53,6 +78,13 @@ const EditorInfo = ({
       </div>
       <form onSubmit={handleSubmit}>
         <div className="auto-grid grid-gap-md">
+          <input
+            type="file"
+            name="profileImage"
+            accept="image/*"
+            className={styles.upload}
+            onChange={handleUpload}
+          />
           <TextInput
             type="text"
             title="first"
@@ -87,7 +119,9 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy">continue</Link>
+            <Link to="/editor/deploy" onClick={handleClick}>
+              continue
+            </Link>
           </button>
         </div>
       </form>
@@ -103,6 +137,12 @@ const mapDispatchToProps = dispatch => {
   return {
     authenticateLinkedin: () => {
       return dispatch(authenticateLinkedin());
+    },
+    UploadImage: () => {
+      return dispatch(UploadImage());
+    },
+    AddImage: () => {
+      return dispatch(AddImage());
     }
   };
 };

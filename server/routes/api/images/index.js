@@ -4,7 +4,7 @@ const aws = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const path = require("path");
-const Image = require("../../../database/models/Users");
+const Image = require("../../../database/models/Image");
 const url = require("url");
 
 require("dotenv").config();
@@ -34,7 +34,7 @@ const creatureImageUpload = multer({
   fileFilter: function(req, file, cb) {
     checkFileType(file, cb);
   }
-}).single("creatureImage");
+}).single("profileImage");
 
 function checkFileType(file, cb) {
   // Allowed ext

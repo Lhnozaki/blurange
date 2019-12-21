@@ -11,7 +11,6 @@ exports.up = function(knex) {
     table.string("location");
     table.string("job_title");
     table.string("about");
-    table.string("img_url");
   });
 };
 
