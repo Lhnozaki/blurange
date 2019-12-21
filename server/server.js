@@ -17,6 +17,7 @@ const flash = require("connect-flash");
 const githubAuth = require("./routes/api/auth/github");
 const linkedinAuth = require("./routes/api/auth/linkedin");
 const paymentsRoute = require("./routes/api/payment");
+const imagesRoute = require("./routes/api/images");
 
 ///// REDIS /////
 const RedisStore = require("connect-redis")(session);
@@ -53,6 +54,7 @@ app.use(
 app.use("/api/auth/github", githubAuth);
 app.use("/api/auth/linkedin", linkedinAuth);
 app.use("/api/charge", paymentsRoute);
+app.use("/api/images", imagesRoute);
 
 ///// Smoke Test /////
 
