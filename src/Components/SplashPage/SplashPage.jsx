@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SplashPage.module.scss';
-const SplashPage = () => {
+import SvgBanner from '../SvgBanner';
 
+const SplashPage = () => {
   return (
     <article className="container">
       <section id={styles.hero}>
@@ -15,30 +16,18 @@ const SplashPage = () => {
       <section id={styles.companiesContent}>
         <h1 className="uppercase text-center title">Companies Using Blurange</h1>
         <div className={styles.brandContainer}>
-          <h3>google</h3>
-          <h3>netflix</h3>
-          <h3>microsoft</h3>
-          <h3>twitter</h3>
-          <h3>amazon</h3>
-          <h3>facebook</h3>
-          <h3>adidas</h3>
-          <h3>nike</h3>
-          <h3>google</h3>
-          <h3>netflix</h3>
-          <h3>microsoft</h3>
-          <h3>twitter</h3>
-          <h3>amazon</h3>
-          <h3>facebook</h3>
-          <h3>addidas</h3>
-          <h3>nike</h3>
-          <h3>google</h3>
-          <h3>netflix</h3>
-          <h3>microsoft</h3>
-          <h3>twitter</h3>
-          <h3>amazon</h3>
-          <h3>facebook</h3>
-          <h3>addidas</h3>
-          <h3>nike</h3>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
+          <SvgBanner/>
         </div>
       </section>
       <section id={styles.aboutContent} className="scroll-element">
@@ -50,11 +39,20 @@ const SplashPage = () => {
           </div>
           <div >
             <h3 className="color-blue">2. Keep it DRY</h3>
-            <p>Drop in a document, add it from your linkedin or github, we'll fill out the template for you just change what you want.</p>
+            <p>Drop in a document, add it from <strong>Github</strong>, we'll fill out the template for you just change what you want.</p>
           </div>
           <div >
             <h3 className="color-blue">3. Make it live</h3>
             <p>You can host it yourself or on our servers. We have custom domains too if you want them.</p>
+          </div>
+        </div>
+      </section>
+      <section id={styles.features}>
+        <h3 className="title">What you get out of the box</h3>
+        <div className={styles.container}>
+          <div className={styles.imageRight}>
+            <img src="" alt="" />
+            <div className={styles.content}></div>
           </div>
         </div>
       </section>

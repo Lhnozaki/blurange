@@ -46,29 +46,21 @@
     p {
       font-size: 1.5rem;
       line-height: 1.6;
-      // width: 90%;
-      // margin: 0 auto;
     }
   }
 }
 
 #companiesContent {
   overflow: hidden;
-  padding: 10vh 0;
+  padding: 15vh 0;
 }
 
 .brandContainer {
-  width: 100vw;
-  justify-content: space-between;
+  width: fit-content;
   display: flex;
+  align-items: center;
   font-weight: 700;
-  animation: slideCompany 30s linear infinite;
-
-  h3 {
-    text-transform: uppercase;
-    margin-left: 60px;
-    font-size: 5rem;
-  }
+  animation: slideCompany 150s linear infinite;
 }
 
 @keyframes slideCompany {
@@ -86,4 +78,8 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+}
+
+#features {
+  padding: 15vh 0;
 }
