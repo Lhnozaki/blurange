@@ -4,28 +4,39 @@
   height: calc(100vh - 8vh);
   width: 100%;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   overflow: hidden;
 
   .heroContent {
     width: fit-content;
     text-align: left;
+    animation: fadeIn 0.5s ease-in-out forwards;
 
     h1 {
-      font-size: 5rem;
+      font-size: 3rem;
     }
     h3 {
-      font-size: 3rem;
+      font-size: 2rem;
       font-family: $type-base;
       width: 90%;
     }
   }
 
   .galleryContainer{
-    z-index: -1;
     position: relative;
     height: 80vh;
-    width: 70%;
+    width: 100%;
+  }
+}
+
+
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
 
@@ -55,23 +66,49 @@
 }
 
 #aboutContent {
-  padding: 10vh 0;
+  padding-bottom: 10vh;
   transition: all 0.2s ease;
 
-  .cardContainer {
-    width: 80%;
+  h3{
+    font-size: 8vw;
+  }
+
+  .instructionContainer {
+    width: 90%;
     margin: 5vh auto 0 auto;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
 
-    h3 {
-      font-size: 2rem;
-    }
 
-    p {
-      font-size: 1.5rem;
-      line-height: 1.6;
+    .instruction{
+      padding: 10vh 0;
+        margin: 0 auto;
+
+      .illustration{
+        height: 50vh;
+        width: 100%;
+        
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+
+      .content{
+        margin-top: 50px;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+      }
     }
   }
 }
@@ -79,6 +116,10 @@
 #companiesContent {
   overflow: hidden;
   padding: 15vh 0;
+
+  h3{
+    font-size: 7vw;
+  }
 }
 
 .brandContainer {
@@ -101,14 +142,112 @@
   }
 }
 
-@media (min-width: $breakpoint-medium) {
-  #aboutContent {
-    .cardContainer {
-      grid-template-columns: repeat(3, 1fr);
-    }
+
+#bottomCta{
+  padding: 15vh 0;
+  width: 100%;
+  background: $dark-accent;
+  display: grid;
+  place-items: center;
+
+  .content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+  }
+
+  h2,
+  p{
+    color: $off-white;
+  }
+
+  h2{
+    margin: 0;
+  }
+ 
+  p{
+    margin: 20px auto 0 auto;
+    line-height: 1.5;
+    font-size: 1.3rem;
+  }
+
+  button{
+    margin: 30px 0 0 0;
+    background: $orange
   }
 }
 
-#features {
-  padding: 15vh 0;
+.footer{
+  background: $orange;
+  color: $off-white;
+  padding: 2.5vh 0;
+}
+
+@media(min-width: $breakpoint-small){
+  #hero{
+    flex-direction: row;
+
+    .hero-content{
+      h1 {
+        font-size: 5rem;
+      }
+      h3 {
+        font-size: 3rem;
+      }
+    }
+ 
+    .galleryContainer{
+      width: 70%;
+    }
+  }
+
+  #companiesContent{
+    h3{
+      font-size: 3rem;
+    }
+  }
+
+  #aboutContent{
+    h3{
+      font-size: 3rem;
+    }
+
+    .instructionContainer{
+      width: 60%;
+      
+      .instruction{
+        padding: 10vh 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .illustration{
+          width: 50%;
+          margin: 0 auto;
+        }
+
+        .content{
+          margin-top: 0;
+          width: 40%;
+          margin-left: 20px;
+        }
+        
+        &:nth-of-type(2){
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  #bottomCta{
+    .content{
+      width: 60%;
+    }
+
+    p{
+      font-size: 2rem;
+    }
+  }
 }

@@ -5,7 +5,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: slideIn 0.6s ease-out forwards;
 
     img{
         position: relative;
@@ -16,7 +16,7 @@
     }
 }
 
-@keyframes fadeIn{
+@keyframes slideIn{
     from{
         transform: translateX(100%);
     }to{

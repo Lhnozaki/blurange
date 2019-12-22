@@ -14,10 +14,27 @@
   color: $dark-accent;
   box-shadow: $box-shadow;
   z-index: 9999999999;
+  animation: slideInDown 0.5s  forwards;
+}
+
+@keyframes slideInDown{
+  from{
+    transform: translateY(-8vh);
+  }
+  to{
+    transform: translateY(0vh);
+  }
 }
 
 .siteBranding {
-  font-size: 2rem;
+  height: 45px;
+  width: 45px;
+
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .rightHeader {
