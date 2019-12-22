@@ -4,6 +4,8 @@ import { browserHistory } from "react-router";
 export const GITHUB_AUTH = "GITHUB_AUTH";
 export const LINKEDIN_AUTH = "LINKEDIN_AUTH";
 export const GITHUB_ACCOUNT = "GITHUB_ACCOUNT";
+export const UPLOAD_IMAGE = "UPLOAD_IMAGE";
+export const ADD_IMAGE = "ADD_IMAGE";
 
 export const authenticateGitHub = () => async dispatch => {
   await Axios.get("/api/auth/github").catch(err => {
@@ -28,6 +30,32 @@ export const authenticateLinkedin = () => async dispatch => {
       dispatch({
         type: LINKEDIN_AUTH,
         payload: linkedinData
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+export const UploadImage = data => async dispatch => {
+  await Axios.post("/api/images/upload", data)
+    .then(img => {
+      dispatch({
+        type: UPLOAD_IMAGE,
+        payload: img
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+export const AddImage = data => async dispatch => {
+  await Axios.post("/api/images/", data)
+    .then(img => {
+      dispatch({
+        type: ADD_IMAGE,
+        payload: img
       });
     })
     .catch(err => {
