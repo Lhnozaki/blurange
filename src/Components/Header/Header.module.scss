@@ -30,10 +30,32 @@
   height: 45px;
   width: 45px;
 
+  &:hover{
+    img{ 
+      transform-origin: center;
+      animation: spin .4s ease forwards;
+    }
+  }
+
   img{
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+}
+
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg) scale(1);
+    
+  }
+  50%{
+   transform:  rotate(360deg)  scale(0.6);
+  }
+  100%{
+    transform: rotate(720deg) scale(1);
+    
   }
 }
 
