@@ -42,11 +42,11 @@ const EditorInfo = ({
 
   function handleClick(e) {
     e.preventDefault();
-    this.props.AddCreature(this.state).then(() => {
-      if (img !== undefined) {
+    this.props.AddImage(this.state).then((img) => {
+      if (img) {
         console.log("IMAGE", img);
         let imgData = {
-          creature_id: obj.id,
+          image_id: img.id,
           url: img.data.location
         };
         this.props.AddImage(imgData);
@@ -56,18 +56,21 @@ const EditorInfo = ({
 
   useEffect(() => {
     console.log(state);
-    if (state.githubAccount) {
-      fetch(
-        `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
-      )
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
+    if(state){
+      if (state.githubAccount) {
+        fetch(
+          `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
+        )
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.log(err.message);
+          });
+      }
     }
+
   }, []);
 
   return (
