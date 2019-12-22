@@ -12,7 +12,7 @@ const SplashPage = () => {
     <article className="container">
       <section id={styles.hero} className="container-lg">
         <div className={styles.heroContent}>
-          <h1><span className="color-light-blue">Blur</span><span className="color-orange">range</span></h1>
+          <h1><span className="color-light-blue">Blu</span><span className="color-orange">range</span></h1>
           <h3>Your code doesn't repeat itself, why should you?</h3>
           <Link to="/editor"><button className="cta">get started for free</button></Link>
         </div>
@@ -21,7 +21,7 @@ const SplashPage = () => {
       </div>
       </section>
       <section id={styles.companiesContent}>
-        <h3 className="title">Companies Using Blurange</h3>
+        <h3 className="title">Companies using blurange</h3>
         <div className={styles.brandContainer}>
           <SvgBanner/>
           <SvgBanner/>

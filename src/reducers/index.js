@@ -1,4 +1,4 @@
-import { GITHUB_AUTH, GITHUB_ACCOUNT, LINKEDIN_AUTH } from "../actions";
+import { GITHUB_AUTH, GITHUB_ACCOUNT, LINKEDIN_AUTH, UPLOAD_IMAGE, ADD_IMAGE } from "../actions";
 
 const initialState = {
   profileData: {},
@@ -14,7 +14,6 @@ const reducer = (state = initialState, action) => {
     case GITHUB_ACCOUNT:
       return Object.assign({}, state, { githubAccount: action.payload });
     case UPLOAD_IMAGE:
-      img = action.payload;
       return Object.assign({}, state, { imageURL: action.payload });
     case ADD_IMAGE:
       return Object.assign({}, state, { images: [...action.payload] });
