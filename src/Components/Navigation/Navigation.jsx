@@ -8,7 +8,6 @@ export default function Navigation({ isAuth }) {
       <Link to="/">home</Link>
       <Link to="/editor/templates">editor</Link>
       {isAuth && <Link to="/dashboard">dashboard</Link>}
-      <Link to="/templates">templates</Link>
     </nav>
   );
 }
