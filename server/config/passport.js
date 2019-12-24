@@ -30,7 +30,6 @@ passport.use(
         .fetch({ require: false })
         .then(data => {
           if (data === null) {
-            data = data.toJSON();
             console.log("User created");
             return new User({ github, name, password, location })
               .save()

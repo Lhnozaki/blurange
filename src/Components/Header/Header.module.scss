@@ -1,4 +1,4 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 .header {
   width: 100%;
@@ -14,14 +14,14 @@
   color: $dark-accent;
   box-shadow: $box-shadow;
   z-index: 9999999999;
-  animation: slideInDown 0.5s  forwards;
+  animation: slideInDown 0.5s forwards;
 }
 
-@keyframes slideInDown{
-  from{
+@keyframes slideInDown {
+  from {
     transform: translateY(-8vh);
   }
-  to{
+  to {
     transform: translateY(0vh);
   }
 }
@@ -30,32 +30,46 @@
   height: 45px;
   width: 45px;
 
-  &:hover{
-    img{ 
+  &:hover {
+    img {
       transform-origin: center;
-      animation: spin .4s ease forwards;
+      animation: spin 0.4s ease forwards;
     }
   }
 
-  img{
+  img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
 }
 
+.github {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba($color: #000000, $alpha: 0.4);
+  margin-bottom: 30px;
+  color: $dark-accent;
 
-@keyframes spin{
-  0%{
+  &:hover {
+    background: rgba($color: #000000, $alpha: 0.4);
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg) scale(1);
-    
   }
-  50%{
-   transform:  rotate(360deg)  scale(0.6);
+  50% {
+    transform: rotate(360deg) scale(0.6);
   }
-  100%{
+  100% {
     transform: rotate(720deg) scale(1);
-    
   }
 }
 
@@ -73,7 +87,7 @@
   display: none;
 }
 
-@media(min-width: $breakpoint-small) {
+@media (min-width: $breakpoint-small) {
   .loginBtns {
     display: block;
 

@@ -1,30 +1,93 @@
-import React from 'react'
-import styles from './Header.module.scss'
-import Navigation from '../Navigation'
+import React, { useEffect, setState } from "react";
+import { connect } from "react-redux";
+import styles from "./Header.module.scss";
+import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
-import logo from '../../assests/logo192.png';
+import logo from "../../assests/logo192.png";
+import LoginModal from "../LoginModal";
 
-const Header = ({ isAuth, credentials, setMenu, showMenu, toggleLoginStatus }) => {
+import { getGithubAccount, authenticateGitHub } from "../../actions";
 
+const Header = ({
+  isAuth,
+  setAuth,
+  credentials,
+  setLoginOn,
+  setCredentials,
+  setMenu,
+  showMenu,
+  toggleLoginStatus,
+  state,
+  ...props
+}) => {
+  useEffect(() => {
+    props.getGithubAccount();
+    if (state) {
+      if (typeof state.getGithubAccount === "string") {
+        setAuth(true);
+      }
+    } else {
+    }
+  }, []);
 
-    return (
-        <header className={styles.header}>
-            <Link className={styles.siteBranding} to="/">
-                <img src={logo} alt="logo"/>
-            </Link>
-            <div className={styles.rightHeader}>
-                <Navigation isAuth={isAuth} />
-                {isAuth && <p className={styles.loggedInAs}>hi <span className="color-orange">{credentials.username}</span></p>}
-                <button className={styles.mobileMenuBtn} onClick={() => setMenu(!showMenu)}>
-                    {showMenu ? 'close' : 'menu'}
-                </button>
-                <div className={styles.loginBtns}>
-                    <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login  with github'}</button>
-                </div>
-            </div>
+  return (
+    <header className={styles.header}>
+      <Link className={styles.siteBranding} to="/">
+        <img src={logo} alt="logo" />
+      </Link>
+      <div className={styles.rightHeader}>
+        <Navigation isAuth={isAuth} />
+        {isAuth && (
+          <p className={styles.loggedInAs}>
+            {isAuth ? `${state.getGithubAccount}` : ""}
+            <span className="color-orange">{credentials.username}</span>
+          </p>
+        )}
+        <button
+          className={styles.mobileMenuBtn}
+          onClick={() => setMenu(!showMenu)}
+        >
+          {showMenu ? "close" : "menu"}
+        </button>
+        <div className={styles.loginBtns}>
+          <button onClick={toggleLoginStatus}>
+            {isAuth ? (
+              "logout"
+            ) : (
+              <LoginModal
+                className={styles.github}
+                isAuth={isAuth}
+                setLoginOn={setLoginOn}
+                setAuth={setAuth}
+                credentials={credentials}
+                setCredentials={setCredentials}
+              />
+            )}
+          </button>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-        </header>
-    )
-}
+const mapStateToProps = state => {
+  return {
+    state: state
+  };
+};
 
-export default Header;
+const mapDispatchToProps = dispatch => {
+  return {
+    authenticateGitHub: () => {
+      dispatch(authenticateGitHub());
+    },
+    getGithubAccount: () => {
+      dispatch(getGithubAccount());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

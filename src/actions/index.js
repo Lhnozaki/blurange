@@ -16,7 +16,6 @@ export const authenticateGitHub = () => async dispatch => {
 
 export const getGithubAccount = () => async dispatch => {
   await Axios.get("/api/auth/github/account").then(data => {
-    console.log(data);
     dispatch({
       type: GITHUB_ACCOUNT,
       payload: data.data.user
@@ -27,7 +26,6 @@ export const getGithubAccount = () => async dispatch => {
 export const authenticateLinkedin = () => async dispatch => {
   await Axios.get("/api/auth/linkedin")
     .then(linkedinData => {
-      console.log(linkedinData);
       dispatch({
         type: LINKEDIN_AUTH,
         payload: linkedinData
