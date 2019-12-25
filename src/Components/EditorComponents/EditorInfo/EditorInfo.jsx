@@ -27,7 +27,6 @@ const EditorInfo = ({
   function handleSubmit(e) {
     console.log(state);
     e.preventDefault();
-    setEditorStatus(2);
     AddProfile(state).then(() => {
       if (img !== undefined) {
         console.log("IMAGE", img);

@@ -16,17 +16,20 @@ const Header = ({
   setCredentials,
   setMenu,
   showMenu,
-  toggleLoginStatus,
   state,
   ...props
 }) => {
   useEffect(() => {
     props.getGithubAccount();
     if (state) {
-      if (typeof state.getGithubAccount === "string") {
-        setAuth(true);
+      if (typeof state.githubAccount === "string") {
+        if (!isAuth) {
+          setAuth(false);
+          setLoginOn(false);
+        } else {
+          setLoginOn(true);
+        }
       }
-    } else {
     }
   }, []);
 
@@ -39,7 +42,7 @@ const Header = ({
         <Navigation isAuth={isAuth} />
         {isAuth && (
           <p className={styles.loggedInAs}>
-            {isAuth ? `${state.getGithubAccount}` : ""}
+            {isAuth ? `Welcome, ${state.githubAccount}` : ""}
             <span className="color-orange">{credentials.username}</span>
           </p>
         )}
@@ -50,7 +53,7 @@ const Header = ({
           {showMenu ? "close" : "menu"}
         </button>
         <div className={styles.loginBtns}>
-          <button onClick={toggleLoginStatus}>
+          <button>
             {isAuth ? (
               "logout"
             ) : (

@@ -14,19 +14,8 @@ const LoginModal = ({
   setShowOAuth,
   ...props
 }) => {
-  // disable scroll if modal is toggled
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = "initial";
-    };
-  }, []);
-
   function handleSubmit(event) {
     event.preventDefault();
-    setAuth(true);
-    setLoginOn(false);
     props.authenticateGitHub();
     window.location = "/api/auth/github";
   }
@@ -37,7 +26,7 @@ const LoginModal = ({
 
   return (
     <>
-      <button className={styles.github} onClick={handleSubmit}>
+      <div className={styles.github} onClick={handleSubmit}>
         <span>
           <svg
             height="32"
@@ -50,10 +39,7 @@ const LoginModal = ({
           </svg>
         </span>
         Login with Github
-      </button>
-      <button className="alt-btn" onClick={() => setLoginOn(false)}>
-        go back
-      </button>
+      </div>
     </>
   );
 };

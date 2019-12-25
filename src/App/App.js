@@ -14,16 +14,16 @@ function App() {
   const [credentials, setCredentials] = useState({});
   const [showMenu, setMenu] = useState(false);
 
-  function toggleLoginStatus() {
-    if (isAuth) {
-      setLoginOn(false);
-      setAuth(false);
-      console.log("logged out");
-    } else {
-      setLoginOn(true);
-      console.log("logged in");
-    }
-  }
+  // function toggleLoginStatus() {
+  //   if (isAuth) {
+  //     setLoginOn(false);
+  //     setAuth(false);
+  //     console.log("logged out");
+  //   } else {
+  //     setLoginOn(true);
+  //     console.log("logged in");
+  //   }
+  // }
 
   return (
     <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
@@ -37,22 +37,8 @@ function App() {
             setCredentials={setCredentials}
             setMenu={setMenu}
             showMenu={showMenu}
-            toggleLoginStatus={toggleLoginStatus}
           />
-          {/* {loginOn && (
-            <LoginModal
-              isAuth={isAuth}
-              setLoginOn={setLoginOn}
-              setAuth={setAuth}
-              credentials={credentials}
-              setCredentials={setCredentials}
-            />
-          )} */}
-          <MobileNav
-            showMenu={showMenu}
-            isAuth={isAuth}
-            toggleLoginStatus={toggleLoginStatus}
-          />
+          <MobileNav showMenu={showMenu} isAuth={isAuth} />
 
           <Routes />
           {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}

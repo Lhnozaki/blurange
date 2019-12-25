@@ -7,9 +7,16 @@ export const GITHUB_ACCOUNT = "GITHUB_ACCOUNT";
 export const UPLOAD_IMAGE = "UPLOAD_IMAGE";
 export const ADD_IMAGE = "ADD_IMAGE";
 export const ADD_PROFILE = "ADD_PROFILE";
+export const LOGOUT_GITHUB = "LOGOUT_GITHUB";
 
 export const authenticateGitHub = () => async dispatch => {
   await Axios.get("/api/auth/github").catch(err => {
+    console.log(err.message);
+  });
+};
+
+export const logoutGithub = () => async dispatch => {
+  await Axios.get("/api/auth/github/logout").catch(err => {
     console.log(err.message);
   });
 };
