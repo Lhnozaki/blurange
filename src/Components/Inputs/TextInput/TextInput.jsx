@@ -4,12 +4,12 @@ export default function TextInput({ title, placeholder, value, name, handleChang
 
     const [inputValue, setInputValue] = useState('');
 
-    useEffect(() => {
-        setInputValue(value);
-        console.log(title, value)
-        setUserInfo({ ...userInfo, [name]: value });
-        // console.log('user info', userInfo)
-    }, []);
+    // useEffect(() => {
+    //     setInputValue(value);
+    //     console.log(title, value)
+    //     setUserInfo({ ...userInfo, [name]: value });
+    //     // console.log('user info', userInfo)
+    // }, []);
 
     return (
         <div className="input-container">

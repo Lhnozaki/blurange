@@ -15,13 +15,18 @@ import {
 
 const EditorInfo = ({
   setEditorStatus,
-  handleChange,
   currentVal,
   githubAccount,
   state,
   ...props
 }) => {
   const [userInfo, setUserInfo] = useState({});
+
+  function handleChange(e, setVal) {
+    let { name, value } = e.target
+    setVal(value)
+    setUserInfo({ ...userInfo, [name]: value });
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -56,7 +61,6 @@ const EditorInfo = ({
   }
 
   useEffect(() => {
-    console.log(state);
     if (state) {
       if (state.githubAccount) {
         fetch(
@@ -75,13 +79,13 @@ const EditorInfo = ({
   }, []);
 
   return (
-    <div id={styles.container} className="container-sm">
+    <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
         <h3>Fill in info or</h3>
         <button onClick={linkedinLogin}>login with linkedin</button>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="auto-grid grid-gap-md">
+        <div className={styles.infoContainer}>
           <TextInput
             type="text"
             title="first"
@@ -102,16 +106,32 @@ const EditorInfo = ({
             userInfo={userInfo}
             setUserInfo={setUserInfo}
           />
+          <ImageUpload title="profile image" name="profileImage" handleUpload={handleUpload} />
           <TextareaInput
             title="about"
             name="about"
-            value="tell us about yourself"
+            placeholder="Tell us about yourself."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="skills"
+            name="skills"
+            placeholder="Software skills go here."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="experience"
+            name="experience"
+            placeholder="What experience do you have?"
             handleChange={handleChange}
             userInfo={userInfo}
             setUserInfo={setUserInfo}
           />
         </div>
-        <ImageUpload name="profileImage" handleUpload={handleUpload} />
         <div className="editor-button-container">
           <button>
             <Link to="/editor/templates">go back</Link>

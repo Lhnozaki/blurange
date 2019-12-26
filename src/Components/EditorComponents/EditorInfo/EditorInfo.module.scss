@@ -1,8 +1,18 @@
+@import "../../../scss/variables";
+
 #container {
   width: 100%;
   position: relative;
   margin-top: 120px;
   padding-bottom: 10vh;
+}
+
+@media (min-width: $breakpoint-medium) {
+  .infoContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }
 
 .continueBtn {
