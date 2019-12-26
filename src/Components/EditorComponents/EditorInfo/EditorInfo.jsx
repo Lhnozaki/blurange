@@ -14,7 +14,6 @@ import {
 } from "../../../actions";
 
 const EditorInfo = ({
-  setEditorStatus,
   currentVal,
   githubAccount,
   state,
@@ -30,7 +29,6 @@ const EditorInfo = ({
 
   function handleSubmit(e) {
     e.preventDefault();
-    setEditorStatus(2);
     console.log("user info", userInfo);
   }
 
@@ -41,9 +39,12 @@ const EditorInfo = ({
   }
 
   function handleUpload(e) {
+    let { name, value } = e.target
+
     const formData = new FormData();
     formData.append("profileImage", e.target.files[0]);
-    this.props.UploadImage(formData);
+    props.UploadImage(formData);
+    setUserInfo({ ...userInfo, [name]: value });
   }
 
   function handleClick(e) {
@@ -81,8 +82,7 @@ const EditorInfo = ({
   return (
     <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
-        <h3>Fill in info or</h3>
-        <button onClick={linkedinLogin}>login with linkedin</button>
+        <h3>Fill in info</h3>
       </div>
       <form onSubmit={handleSubmit}>
         <div className={styles.infoContainer}>
@@ -137,7 +137,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy" onClick={handleClick}>
+            <Link to="/editor/deploy">
               continue
             </Link>
           </button>
