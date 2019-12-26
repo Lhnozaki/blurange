@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
+import ImageUpload from '../../Inputs/ImageUpload';
 import { Link } from "react-router-dom";
 
 import {
@@ -56,7 +57,7 @@ const EditorInfo = ({
 
   useEffect(() => {
     console.log(state);
-    if(state){
+    if (state) {
       if (state.githubAccount) {
         fetch(
           `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
@@ -74,20 +75,13 @@ const EditorInfo = ({
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div id={styles.container} className="container-sm">
       <div className={styles.infoCta}>
         <h3>Fill in info or</h3>
         <button onClick={linkedinLogin}>login with linkedin</button>
       </div>
       <form onSubmit={handleSubmit}>
         <div className="auto-grid grid-gap-md">
-          <input
-            type="file"
-            name="profileImage"
-            accept="image/*"
-            className={styles.upload}
-            onChange={handleUpload}
-          />
           <TextInput
             type="text"
             title="first"
@@ -117,6 +111,7 @@ const EditorInfo = ({
             setUserInfo={setUserInfo}
           />
         </div>
+        <ImageUpload name="profileImage" handleUpload={handleUpload} />
         <div className="editor-button-container">
           <button>
             <Link to="/editor/templates">go back</Link>
