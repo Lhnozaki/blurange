@@ -101,6 +101,10 @@ button {
   flex-direction: column;
 }
 
+textarea {
+  resize: none;
+}
+
 //  Editor buttons
 .editor-button-container {
   margin-top: 50px;

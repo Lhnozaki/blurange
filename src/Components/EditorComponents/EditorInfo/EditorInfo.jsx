@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
+import ImageUpload from '../../Inputs/ImageUpload';
 import { Link } from "react-router-dom";
 
 import {
@@ -13,8 +14,6 @@ import {
 } from "../../../actions";
 
 const EditorInfo = ({
-  setEditorStatus,
-  handleChange,
   currentVal,
   githubAccount,
   state,
@@ -22,9 +21,14 @@ const EditorInfo = ({
 }) => {
   const [userInfo, setUserInfo] = useState({});
 
+  function handleChange(e, setVal) {
+    let { name, value } = e.target
+    setVal(value)
+    setUserInfo({ ...userInfo, [name]: value });
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    setEditorStatus(2);
     console.log("user info", userInfo);
   }
 
@@ -35,9 +39,12 @@ const EditorInfo = ({
   }
 
   function handleUpload(e) {
+    let { name, value } = e.target
+
     const formData = new FormData();
     formData.append("profileImage", e.target.files[0]);
-    this.props.UploadImage(formData);
+    props.UploadImage(formData);
+    setUserInfo({ ...userInfo, [name]: value });
   }
 
   function handleClick(e) {
@@ -55,8 +62,7 @@ const EditorInfo = ({
   }
 
   useEffect(() => {
-    console.log(state);
-    if(state){
+    if (state) {
       if (state.githubAccount) {
         fetch(
           `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
@@ -74,20 +80,12 @@ const EditorInfo = ({
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
-        <h3>Fill in info or</h3>
-        <button onClick={linkedinLogin}>login with linkedin</button>
+        <h3>Fill in info</h3>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="auto-grid grid-gap-md">
-          <input
-            type="file"
-            name="profileImage"
-            accept="image/*"
-            className={styles.upload}
-            onChange={handleUpload}
-          />
+        <div className={styles.infoContainer}>
           <TextInput
             type="text"
             title="first"
@@ -108,10 +106,27 @@ const EditorInfo = ({
             userInfo={userInfo}
             setUserInfo={setUserInfo}
           />
+          <ImageUpload title="profile image" name="profileImage" handleUpload={handleUpload} />
           <TextareaInput
             title="about"
             name="about"
-            value="tell us about yourself"
+            placeholder="Tell us about yourself."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="skills"
+            name="skills"
+            placeholder="Software skills go here."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="experience"
+            name="experience"
+            placeholder="What experience do you have?"
             handleChange={handleChange}
             userInfo={userInfo}
             setUserInfo={setUserInfo}
@@ -122,7 +137,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy" onClick={handleClick}>
+            <Link to="/editor/deploy">
               continue
             </Link>
           </button>
