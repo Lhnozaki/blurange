@@ -7,17 +7,13 @@ import { Link } from "react-router-dom";
 import { getGithubAccount } from "../../../actions";
 
 const EditorTemplates = props => {
-  const arrTemplateNames = [
-    "ATemplate1",
-    "ATemplate2",
-    "DTemplate1",
-  ];
+  const arrTemplateNames = ["ATemplate1", "ATemplate2", "DTemplate1"];
 
   const links = [
     "https://andrew2.nocan.design",
     "https://andrew.nocan.design",
     "https://dewis.nocan.design"
-  ]
+  ];
 
   const [isSelected, setSelected] = useState(null);
 

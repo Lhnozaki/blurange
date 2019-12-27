@@ -14,31 +14,31 @@ const SplashPage = () => {
         <div className={styles.heroContent}>
           <h1><span className="color-light-blue">Blu</span><span className="color-orange">range</span></h1>
           <h3>Your code doesn't repeat itself, why should you?</h3>
-          <Link to="/editor"><button className="cta">get started for free</button></Link>
+          <Link to="/editor/templates"><button className="cta">get started for free</button></Link>
         </div>
         <div className={styles.galleryContainer}>
-        <Gallery/>
-      </div>
+          <Gallery />
+        </div>
       </section>
       <section id={styles.companiesContent}>
         <h3 className="title">Companies using blurange</h3>
         <div className={styles.brandContainer}>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
-          <SvgBanner/>
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
+          <SvgBanner />
         </div>
       </section>
       <section id={styles.aboutContent} className="scroll-element">
@@ -46,7 +46,7 @@ const SplashPage = () => {
         <div className={styles.instructionContainer}>
           <div className={styles.instruction}>
             <div className={styles.illustration}>
-              <img src={feature1} alt="first feature"/>
+              <img src={feature1} alt="first feature" />
             </div>
             <div className={styles.content}>
               <h3 className="color-blue">1. Pick a theme</h3>
@@ -55,7 +55,7 @@ const SplashPage = () => {
           </div>
           <div className={styles.instruction}>
             <div className={styles.illustration}>
-              <img src={feature2} alt="second feature"/></div>
+              <img src={feature2} alt="second feature" /></div>
             <div className={styles.content}>
               <h3 className="color-blue">2. Keep it DRY</h3>
               <p>Drop in a document, add it from <strong>Github</strong>, we'll fill out the template for you just change what you want.</p>
@@ -63,10 +63,10 @@ const SplashPage = () => {
           </div>
           <div className={styles.instruction}>
             <div className={styles.illustration}>
-              <img src={feature3} alt="three feature"/></div>
+              <img src={feature3} alt="three feature" /></div>
             <div className={styles.content}>
               <h3 className="color-blue">3. Make it live</h3>
-              <p>You can host it yourself or on our servers. We have custom domains too if you want&nbsp;them.</p> 
+              <p>You can host it yourself or on our servers. We have custom domains too if you want&nbsp;them.</p>
             </div>
           </div>
         </div>
