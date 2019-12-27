@@ -6,16 +6,37 @@ export const LINKEDIN_AUTH = "LINKEDIN_AUTH";
 export const GITHUB_ACCOUNT = "GITHUB_ACCOUNT";
 export const UPLOAD_IMAGE = "UPLOAD_IMAGE";
 export const ADD_IMAGE = "ADD_IMAGE";
+export const ADD_PROFILE = "ADD_PROFILE";
+export const LOGOUT_GITHUB = "LOGOUT_GITHUB";
 
 export const authenticateGitHub = () => async dispatch => {
-  await Axios.get("/api/auth/github").catch(err => {
-    console.log(err.message);
-  });
+  await Axios.get("/api/auth/github")
+    .then(data => {
+      dispatch({
+        type: GITHUB_AUTH,
+        payload: data
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+export const logoutGithub = () => async dispatch => {
+  await Axios.get("/api/auth/github/logout")
+    .then(data => {
+      dispatch({
+        type: LOGOUT_GITHUB,
+        payload: data
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
 };
 
 export const getGithubAccount = () => async dispatch => {
   await Axios.get("/api/auth/github/account").then(data => {
-    console.log(data);
     dispatch({
       type: GITHUB_ACCOUNT,
       payload: data.data.user
@@ -26,7 +47,6 @@ export const getGithubAccount = () => async dispatch => {
 export const authenticateLinkedin = () => async dispatch => {
   await Axios.get("/api/auth/linkedin")
     .then(linkedinData => {
-      console.log(linkedinData);
       dispatch({
         type: LINKEDIN_AUTH,
         payload: linkedinData
@@ -56,6 +76,19 @@ export const AddImage = data => async dispatch => {
       dispatch({
         type: ADD_IMAGE,
         payload: img
+      });
+    })
+    .catch(err => {
+      console.log(err.message);
+    });
+};
+
+export const AddProfile = data => async dispatch => {
+  await Axios.post("/api/profile", data)
+    .then(data => {
+      dispatch({
+        type: ADD_PROFILE,
+        payload: data
       });
     })
     .catch(err => {
