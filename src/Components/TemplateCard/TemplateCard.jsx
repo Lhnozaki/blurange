@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TemplateCard.module.scss';
 
-const TemplateCard = ({ i, isSelected, toggleSelectedState, links }) => {
+const TemplateCard = ({ i, isSelected, toggleSelectedState, links, template }) => {
 
     function renderSelectedState(index) {
         return isSelected === index ? { borderWidth: '2px', borderColor: '#ffb43d' } : { borderWidth: '1px', borderColor: 'rgba(178, 190, 195, 0.4)' }
@@ -21,7 +21,7 @@ const TemplateCard = ({ i, isSelected, toggleSelectedState, links }) => {
                 </a>
             </div>
             <h3 className="color-blue">
-                template <span>{i + 1}</span>
+                {template}
             </h3>
         </div>
 

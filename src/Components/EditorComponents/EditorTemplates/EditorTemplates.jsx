@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { getGithubAccount } from "../../../actions";
 
 const EditorTemplates = props => {
-  const arrTemplateNames = ["ATemplate1", "ATemplate2", "DTemplate1"];
+  const arrTemplateNames = ["Aewis", "Andrip", "Dewis"];
 
   const links = [
     "https://andrew2.nocan.design",
