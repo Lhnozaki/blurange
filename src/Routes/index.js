@@ -6,6 +6,7 @@ import Dashboard from "../Components/DashboardComponents/Dashboard";
 import EditorTemplates from "../Components/EditorComponents/EditorTemplates";
 import EditorDeploy from '../Components/EditorComponents/EditorDeploy';
 import EditorInfo from '../Components/EditorComponents/EditorInfo';
+import EditorPayments from '../Components/EditorComponents/EditorPayments';
 
 export const routes = [
   {
@@ -27,6 +28,11 @@ export const routes = [
     path: "/editor/info",
     exact: true,
     component: EditorInfo
+  },
+  {
+    path: '/editor/payments',
+    exact: true,
+    component: EditorPayments
   },
   {
     path: "/editor/deploy",

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
+import ImageUpload from "../../Inputs/ImageUpload";
 import { Link } from "react-router-dom";
 import { obj, img } from "../../../reducers/index";
 
@@ -13,15 +14,14 @@ import {
   AddProfile
 } from "../../../actions";
 
-const EditorInfo = ({
-  setEditorStatus,
-  handleChange,
-  currentVal,
-  githubAccount,
-  state,
-  ...props
-}) => {
+const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
   const [userInfo, setUserInfo] = useState({});
+
+  function handleChange(e, setVal) {
+    let { name, value } = e.target;
+    setVal(value);
+    setUserInfo({ ...userInfo, [name]: value });
+  }
 
   function handleSubmit(e) {
     console.log(state);
@@ -45,6 +45,8 @@ const EditorInfo = ({
   }
 
   function handleUpload(e) {
+    let { name, value } = e.target;
+
     const formData = new FormData();
     formData.append("profileImage", e.target.files[0]);
     UploadImage(formData);
@@ -69,19 +71,12 @@ const EditorInfo = ({
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
-        <h3>Fill in info or</h3>
+        <h2 className="editor-title">Fill in info</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="auto-grid grid-gap-md">
-          <input
-            type="file"
-            name="profileImage"
-            accept="image/*"
-            className={styles.upload}
-            onChange={handleUpload}
-          />
+        <div className={styles.infoContainer}>
           <TextInput
             type="text"
             title="first"
@@ -102,10 +97,31 @@ const EditorInfo = ({
             userInfo={userInfo}
             setUserInfo={setUserInfo}
           />
+          <ImageUpload
+            title="profile image"
+            name="profileImage"
+            handleUpload={handleUpload}
+          />
           <TextareaInput
             title="about"
             name="about"
-            value="tell us about yourself"
+            placeholder="Tell us about yourself."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="skills"
+            name="skills"
+            placeholder="Software skills go here."
+            handleChange={handleChange}
+            userInfo={userInfo}
+            setUserInfo={setUserInfo}
+          />
+          <TextareaInput
+            title="experience"
+            name="experience"
+            placeholder="What experience do you have?"
             handleChange={handleChange}
             userInfo={userInfo}
             setUserInfo={setUserInfo}
@@ -116,7 +132,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy">continue</Link>
+            <Link to="/editor/payments">continue</Link>
           </button>
         </div>
       </form>

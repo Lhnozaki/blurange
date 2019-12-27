@@ -1,5 +1,8 @@
-.templatesContainer {
+#editorTemplates {
   margin-top: 120px;
+}
+
+.templatesContainer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

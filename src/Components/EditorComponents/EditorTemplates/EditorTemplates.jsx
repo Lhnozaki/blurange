@@ -32,7 +32,8 @@ const EditorTemplates = props => {
   return (
     // Maybe break list of templates into a different component
     // need to fix the back button to redirect to previous route rather than the templates page
-    <div className="container-sm">
+    <div className="container-sm" id={styles.editorTemplates}>
+      <h2 className="editor-title">Pick a template</h2>
       <div className={styles.templatesContainer}>
         {arrTemplateNames.map((template, i) => (
           <TemplateCard

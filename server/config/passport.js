@@ -29,13 +29,11 @@ passport.use(
       return new User({ github: github })
         .fetch({ require: false })
         .then(data => {
-          console.log("Data from database: ", data);
           if (data === null) {
             return new User({ github, name, token, location })
               .save()
               .then(data => {
-                console.log("User created", data);
-                i;
+                console.log("User created");
                 return cb(null, data.github);
               })
               .catch(err => {
