@@ -5,26 +5,22 @@ import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
 import logo from "../../assests/logo192.png";
 import LoginModal from "../LoginModal";
+import LogoutModal from "../LogoutModal";
 
 import { getGithubAccount, authenticateGitHub } from "../../actions";
 
-const Header = ({
-  isAuth,
-  setAuth,
-  setLoginOn,
-  setMenu,
-  showMenu,
-  state,
-  ...props
-}) => {
+const Header = ({ isAuth, setAuth, setMenu, showMenu, state, ...props }) => {
   useEffect(() => {
-    console.log(state);
-    // if (state) {
-    //   if (state.githubAccount && typeof state.githubAccount === "string") {
-    //     setAuth(true);
-    //   }
-    // }
-  }, []);
+    if (props) {
+      if (props.githubAccount) {
+        if (typeof props.githubAccount.githubAccount === "string") {
+          setAuth(true);
+        } else {
+          setAuth(false);
+        }
+      }
+    }
+  }, [props]);
 
   return (
     <header className={styles.header}>
@@ -34,7 +30,15 @@ const Header = ({
       <div className={styles.rightHeader}>
         <Navigation isAuth={isAuth} />
         {isAuth && (
-          <p className={styles.loggedInAs}>{isAuth && `Welcome, hi`}</p>
+          <span className={styles.loggedInAs}>
+            Welcome, &nbsp;
+            <a
+              target="_blank"
+              href={`https://github.com/${props.githubAccount.githubAccount}`}
+            >
+              {props.githubAccount.githubAccount}
+            </a>
+          </span>
         )}
         <button
           className={styles.mobileMenuBtn}
@@ -44,12 +48,11 @@ const Header = ({
         </button>
         <div className={styles.loginBtns}>
           {isAuth ? (
-            "Logout"
+            <LogoutModal isAuth={isAuth} setAuth={setAuth} />
           ) : (
             <LoginModal
               className={styles.github}
               isAuth={isAuth}
-              setLoginOn={setLoginOn}
               setAuth={setAuth}
             />
           )}
@@ -60,7 +63,7 @@ const Header = ({
 };
 
 const mapStateToProps = state => {
-  return { state: state };
+  return { githubAccount: state };
 };
 
 export default connect(

@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 import { authenticateGitHub } from "../../actions";
-
 require("dotenv").config();
 
-const LoginModal = ({ ...props }) => {
-    
+const LoginModal = ({ isAuth, setAuth, ...props }) => {
   function handleSubmit(event) {
     event.preventDefault();
-    // props.authenticateGitHub();
+    props.authenticateGitHub();
+    setAuth(true);
     window.location = "/api/auth/github";
   }
 

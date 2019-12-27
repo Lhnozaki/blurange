@@ -4,7 +4,8 @@ import {
   LINKEDIN_AUTH,
   UPLOAD_IMAGE,
   ADD_IMAGE,
-  ADD_PROFILE
+  ADD_PROFILE,
+  LOGOUT_GITHUB
 } from "../actions";
 
 const initialState = {
@@ -31,6 +32,8 @@ const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         creatures: [...action.payload]
       });
+    case LOGOUT_GITHUB:
+      return Object.assign({}, state, { githubAccount: undefined });
   }
 };
 
