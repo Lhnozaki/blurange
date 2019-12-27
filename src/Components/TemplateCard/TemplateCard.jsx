@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './TemplateCard.module.scss';
 
-const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, setUserInfo, links }) => {
+const TemplateCard = ({ i, isSelected, toggleSelectedState, links }) => {
 
     function renderSelectedState(index) {
         return isSelected === index ? { borderWidth: '2px', borderColor: 'rgba(178, 190, 195, 0.7' } : { borderWidth: '1px', borderColor: 'rgba(178, 190, 195, 0.4)' }
@@ -10,8 +9,6 @@ const TemplateCard = ({ template, i, isSelected, userInfo, toggleSelectedState, 
 
     function selectTemplate() {
         toggleSelectedState(i)
-        // switch this to hit the redux store and update userInfo rather than a local function
-        // setUserInfo({ ...userInfo, template: template });
     }
 
 

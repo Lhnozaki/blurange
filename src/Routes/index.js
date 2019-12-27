@@ -40,23 +40,6 @@ export const routes = [
   }
 ];
 
-// Create auth routes and render if authorized in the home page
-export const authRoutes = [
-  {
-    path: "/",
-    exact: true
-  },
-  {
-    path: "/design-system",
-    exact: true,
-    component: DesignSystem
-  },
-  {
-    path: "/editor/templates",
-    exact: true,
-    component: EditorTemplates
-  }
-];
 
 const Routes = () => {
   return (

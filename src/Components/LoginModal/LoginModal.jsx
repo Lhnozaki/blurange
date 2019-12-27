@@ -9,8 +9,6 @@ const LoginModal = ({
   setLoginOn,
   isAuth,
   setAuth,
-  credentials,
-  setCredentials,
   setShowOAuth,
   ...props
 }) => {
@@ -31,9 +29,6 @@ const LoginModal = ({
     window.location = "/api/auth/github";
   }
 
-  function handleChange(e) {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
-  }
 
   return (
     <>
