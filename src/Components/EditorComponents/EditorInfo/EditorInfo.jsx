@@ -137,7 +137,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy">
+            <Link to="/editor/payments">
               continue
             </Link>
           </button>
