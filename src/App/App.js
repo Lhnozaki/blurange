@@ -3,7 +3,6 @@ import { withRouter } from "react-router";
 import Routes from "../Routes";
 import Header from "../Components/Header";
 import LoginModal from "../Components/LoginModal";
-import OAuthModal from "../Components/OAuthModal";
 import MobileNav from "../Components/MobileNav";
 import "./App.scss";
 import { StripeProvider, Elements } from "react-stripe-elements";
@@ -47,9 +46,7 @@ function App() {
               setShowOAuth={setShowOAuth}
             />
           )}
-          {showOAuth && (
-            <OAuthModal showOAuth={showOAuth} setShowOAuth={setShowOAuth} />
-          )}
+
           <MobileNav
             showMenu={showMenu}
             isAuth={isAuth}
