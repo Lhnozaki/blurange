@@ -7,17 +7,13 @@ import { Link } from "react-router-dom";
 import { getGithubAccount } from "../../../actions";
 
 const EditorTemplates = props => {
-  const arrTemplateNames = [
-    "ATemplate1",
-    "ATemplate2",
-    "DTemplate1",
-  ];
+  const arrTemplateNames = ["ATemplate1", "ATemplate2", "DTemplate1"];
 
   const links = [
-    "https://andrew2.nocan.design",
-    "https://andrew.nocan.design",
-    "https://google.com"
-  ]
+    "/Templates/ATemplate1",
+    "/Templates/ATemplate2",
+    "/Templates/JTemplate1"
+  ];
 
   const [isSelected, setSelected] = useState(null);
 
@@ -63,7 +59,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(EditorTemplates);
+export default connect(null, mapDispatchToProps)(EditorTemplates);

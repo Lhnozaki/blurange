@@ -22,7 +22,7 @@ export default function ATemplate1() {
         </nav>
         <div className={styles.content}>
           <div className={styles.leftContent}>
-            <section>Hi, my name is Andrew.</section>
+            <section>Hi, my name is NAME.</section>
           </div>
           <div className={styles.rightContent}>
             <section>

@@ -4,9 +4,12 @@ import SplashPage from "../Components/SplashPage";
 import DesignSystem from "../Components/DesignSystem";
 import Dashboard from "../Components/DashboardComponents/Dashboard";
 import EditorTemplates from "../Components/EditorComponents/EditorTemplates";
-import EditorDeploy from '../Components/EditorComponents/EditorDeploy';
-import EditorInfo from '../Components/EditorComponents/EditorInfo';
-import EditorPayments from '../Components/EditorComponents/EditorPayments';
+import EditorDeploy from "../Components/EditorComponents/EditorDeploy";
+import EditorInfo from "../Components/EditorComponents/EditorInfo";
+import EditorPayments from "../Components/EditorComponents/EditorPayments";
+import ATemplate1 from "../Components/Templates/ATemplate1";
+import ATemplate2 from "../Components/Templates/ATemplate2";
+// import JTemplate1 from "../Components/Templates/JTemplate1";
 
 export const routes = [
   {
@@ -30,7 +33,7 @@ export const routes = [
     component: EditorInfo
   },
   {
-    path: '/editor/payments',
+    path: "/editor/payments",
     exact: true,
     component: EditorPayments
   },
@@ -43,7 +46,22 @@ export const routes = [
     path: "/dashboard",
     exact: true,
     component: Dashboard
+  },
+  {
+    path: "/Templates/ATemplate1",
+    exact: true,
+    component: ATemplate1
+  },
+  {
+    path: "/Templates/ATemplate2",
+    exact: true,
+    components: ATemplate2
   }
+  // {
+  //   path: "/Templates/JTemplate1",
+  //   exact: true,
+  //   components: JTemplate1
+  // }
 ];
 
 // Create auth routes and render if authorized in the home page
