@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
 import Routes from "../Routes";
 import Header from "../Components/Header";
@@ -6,7 +6,6 @@ import LoginModal from "../Components/LoginModal";
 import OAuthModal from "../Components/OAuthModal";
 import MobileNav from "../Components/MobileNav";
 import "./App.scss";
-import { Redirect } from "react-router-dom";
 import { StripeProvider, Elements } from "react-stripe-elements";
 
 function App() {
@@ -58,7 +57,6 @@ function App() {
           />
 
           <Routes />
-          {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}
         </div>
       </Elements>
     </StripeProvider>
