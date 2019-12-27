@@ -8,7 +8,7 @@ const EditorPayments = () => {
 
     return (
         <div id={styles.editorPayments} className="container-sm">
-            <h2 className="title">Choose a plan</h2>
+            <h2 className="editor-title">Choose a plan</h2>
             {showPay && <Payment setShowPay={setShowPay} showPay={showPay} />}
             <button onClick={() => setShowPay(!showPay)}>pay</button>
             <div className="editor-button-container">

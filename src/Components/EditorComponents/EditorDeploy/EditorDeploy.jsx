@@ -7,7 +7,7 @@ const EditorDeploy = () => {
 
     return (
         <div id={styles.editorDeploy} className="container-sm">
-            <div>Editor Deploy</div>
+            <h2 className="editor-title">Editor Deploy</h2>
             <button>deploy</button>
             <div className="editor-button-container">
                 <button><Link to="/editor/payments">go back</Link></button>

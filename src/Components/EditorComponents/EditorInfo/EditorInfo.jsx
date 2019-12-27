@@ -82,7 +82,7 @@ const EditorInfo = ({
   return (
     <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
-        <h3>Fill in info</h3>
+        <h2 className="editor-title">Fill in info</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <div className={styles.infoContainer}>

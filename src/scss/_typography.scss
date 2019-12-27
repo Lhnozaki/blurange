@@ -70,13 +70,17 @@ p {
   max-width: $type-linewidth;
 }
 
-
 .title {
   margin-bottom: 3rem;
   width: fit-content;
   margin: 0 auto 30px auto;
   padding-bottom: 10px;
   border-bottom: 4px solid $orange;
+  font-size: 3rem;
+}
+
+.editor-title {
+  color: $blue;
   font-size: 3rem;
 }
 
