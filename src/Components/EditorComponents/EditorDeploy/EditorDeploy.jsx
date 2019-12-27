@@ -6,7 +6,7 @@ import styles from './EditorDeploy.module.scss';
 const EditorDeploy = () => {
 
     return (
-        <div id={styles.editorDeploy} className="container-sm">
+        <div id={styles.editorDeploy} className="container-lg">
             <h2 className="editor-title">Editor Deploy</h2>
             <button>deploy</button>
             <div className="editor-button-container">
