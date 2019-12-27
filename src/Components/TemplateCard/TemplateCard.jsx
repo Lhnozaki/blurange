@@ -4,7 +4,7 @@ import styles from './TemplateCard.module.scss';
 const TemplateCard = ({ i, isSelected, toggleSelectedState, links }) => {
 
     function renderSelectedState(index) {
-        return isSelected === index ? { borderWidth: '2px', borderColor: 'rgba(178, 190, 195, 0.7' } : { borderWidth: '1px', borderColor: 'rgba(178, 190, 195, 0.4)' }
+        return isSelected === index ? { borderWidth: '2px', borderColor: '#ffb43d' } : { borderWidth: '1px', borderColor: 'rgba(178, 190, 195, 0.4)' }
     }
 
     function selectTemplate() {
