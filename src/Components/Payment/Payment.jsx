@@ -68,8 +68,6 @@ class Payment extends Component {
         Message: "Payment Successful!",
         success: !this.state.success
       });
-
-      // this.props.setShowPay(false);
     }
   }
 
@@ -118,50 +116,56 @@ class Payment extends Component {
 
   render() {
     return (
-      <div className={styles.paymentModal}>
-        <h3>Please enter your card details for payment</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="Name"
-            autoComplete="new-password"
-            onChange={this.handleNameInputs}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            autoComplete="new-password"
-            onChange={this.handleEmailInputs}
-          />
-          <div className={styles.par}>
-            <CardElement
-              onChange={this.handleChange}
-              {...this.createOptions()}
+      <div className={styles.paymentContainer}>
+        <div className="card" id={styles.paymentModal}>
+          <h3>Please enter your card details for payment</h3>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              placeholder="Name"
+              autoComplete="new-password"
+              onChange={this.handleNameInputs}
             />
-          </div>
-          <div
-            className={styles.error}
-            style={
-              this.state.Message === "Payment Successful!"
-                ? { color: "green" }
-                : { color: "red" }
-            }
-            role="alert"
-          >
-            {this.state.Message ? this.state.Message : ""}
-          </div>
+            <input
+              type="email"
+              placeholder="Email"
+              autoComplete="new-password"
+              onChange={this.handleEmailInputs}
+            />
+            <div className={styles.par}>
+              <CardElement
+                onChange={this.handleChange}
+                {...this.createOptions()}
+              />
+            </div>
+            <div
+              className={styles.error}
+              style={
+                this.state.Message === "Payment Successful!"
+                  ? { color: "green" }
+                  : { color: "red" }
+              }
+              role="alert"
+            >
+              {this.state.Message ? this.state.Message : ""}
+            </div>
 
-          <div className={styles.bt}>
-            <p>
-              By clicking "Pay", you agree to{" "}
-              <a href="www.stripe.com">our terms </a>
-              and the{" "}
-              <a href="www.stripe.com">Stripe Connected Account Agreement</a>.
+            <div className={styles.bt}>
+              <p>
+                By clicking "Pay", you agree to{" "}
+                <a href="www.stripe.com">our terms </a>
+                and the{" "}
+                <a href="www.stripe.com">Stripe Connected Account Agreement</a>.
             </p>
-            <button>Pay</button>
-          </div>
-        </form>
+              <div className={styles.buttonContainer}>
+                <button>Pay</button>
+                <button onClick={() => this.props.setShowPay(false)}>Cancel</button>
+              </div>
+            </div>
+          </form>
+        </div >
       </div>
+
     );
   }
 }
