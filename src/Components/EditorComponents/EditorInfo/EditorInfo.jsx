@@ -17,6 +17,8 @@ import {
 const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
   const [userInfo, setUserInfo] = useState({});
 
+  let githubRepos;
+
   function handleChange(e, setVal) {
     let { name, value } = e.target;
     setVal(value);
@@ -56,19 +58,23 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
     console.log(state);
     if (state) {
       if (state.githubAccount) {
-        fetch(
-          `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
-        )
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-          })
-          .catch(err => {
-            console.log(err.message);
-          });
+        if (typeof state.githubAccount === "string") {
+          fetch(
+            `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
+          )
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              githubRepos = data;
+            })
+            .catch(err => {
+              console.log(err.message);
+            });
+        }
       }
     }
   }, []);
+  console.log(githubRepos);
 
   return (
     <div id={styles.container} className="container-lg">
