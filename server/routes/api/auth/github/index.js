@@ -6,10 +6,14 @@ require("dotenv").config();
 
 router.get("/", passport.authenticate("github", { scope: ["repo"] }));
 
-router.get("/callback", passport.authenticate("github"), (req, res) => {
-  // Successful authentication, redirect home.
-  res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
-});
+router.get(
+  "/callback",
+  passport.authenticate("github", { failureRedirect: "/" }),
+  (req, res) => {
+    // Successful authentication, redirect home.
+    res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
+  }
+);
 
 router.get("/account", (req, res) => {
   const user = req.session.passport.user.username;

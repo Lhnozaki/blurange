@@ -11,26 +11,19 @@ import { getGithubAccount, authenticateGitHub } from "../../actions";
 const Header = ({
   isAuth,
   setAuth,
-  credentials,
   setLoginOn,
-  setCredentials,
   setMenu,
   showMenu,
   state,
   ...props
 }) => {
   useEffect(() => {
-    props.getGithubAccount();
-    if (state) {
-      if (typeof state.githubAccount === "string") {
-        if (!isAuth) {
-          setAuth(false);
-          setLoginOn(false);
-        } else {
-          setLoginOn(true);
-        }
-      }
-    }
+    console.log(state);
+    // if (state) {
+    //   if (state.githubAccount && typeof state.githubAccount === "string") {
+    //     setAuth(true);
+    //   }
+    // }
   }, []);
 
   return (
@@ -41,10 +34,7 @@ const Header = ({
       <div className={styles.rightHeader}>
         <Navigation isAuth={isAuth} />
         {isAuth && (
-          <p className={styles.loggedInAs}>
-            {isAuth ? `Welcome, ${state.githubAccount}` : ""}
-            <span className="color-orange">{credentials.username}</span>
-          </p>
+          <p className={styles.loggedInAs}>{isAuth && `Welcome, hi`}</p>
         )}
         <button
           className={styles.mobileMenuBtn}
@@ -53,20 +43,16 @@ const Header = ({
           {showMenu ? "close" : "menu"}
         </button>
         <div className={styles.loginBtns}>
-          <button>
-            {isAuth ? (
-              "logout"
-            ) : (
-              <LoginModal
-                className={styles.github}
-                isAuth={isAuth}
-                setLoginOn={setLoginOn}
-                setAuth={setAuth}
-                credentials={credentials}
-                setCredentials={setCredentials}
-              />
-            )}
-          </button>
+          {isAuth ? (
+            "Logout"
+          ) : (
+            <LoginModal
+              className={styles.github}
+              isAuth={isAuth}
+              setLoginOn={setLoginOn}
+              setAuth={setAuth}
+            />
+          )}
         </div>
       </div>
     </header>
@@ -74,23 +60,10 @@ const Header = ({
 };
 
 const mapStateToProps = state => {
-  return {
-    state: state
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    authenticateGitHub: () => {
-      dispatch(authenticateGitHub());
-    },
-    getGithubAccount: () => {
-      dispatch(getGithubAccount());
-    }
-  };
+  return { state: state };
 };
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  null
 )(Header);

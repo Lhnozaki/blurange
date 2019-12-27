@@ -8,7 +8,6 @@ import { obj, img } from "../../../reducers/index";
 
 import {
   authenticateLinkedin,
-  getGithubAccount,
   AddImage,
   UploadImage,
   AddProfile

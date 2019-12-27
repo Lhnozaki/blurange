@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router";
+import { connect } from "react-redux";
 import Routes from "../Routes";
 import Header from "../Components/Header";
-import LoginModal from "../Components/LoginModal";
 import MobileNav from "../Components/MobileNav";
 import "./App.scss";
-import { Redirect } from "react-router-dom";
 import { StripeProvider, Elements } from "react-stripe-elements";
 
-function App() {
+import { getGithubAccount } from "../actions";
+
+function App({ state, ...props }) {
   const [isAuth, setAuth] = useState(false);
-  const [loginOn, setLoginOn] = useState(false);
   const [credentials, setCredentials] = useState({});
   const [showMenu, setMenu] = useState(false);
 
-  // function toggleLoginStatus() {
-  //   if (isAuth) {
-  //     setLoginOn(false);
-  //     setAuth(false);
-  //     console.log("logged out");
-  //   } else {
-  //     setLoginOn(true);
-  //     console.log("logged in");
-  //   }
-  // }
+  useEffect(() => {
+    props.getGithubAccount();
+  }, []);
 
   return (
     <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
@@ -32,7 +25,6 @@ function App() {
           <Header
             setAuth={setAuth}
             isAuth={isAuth}
-            setLoginOn={setLoginOn}
             credentials={credentials}
             setCredentials={setCredentials}
             setMenu={setMenu}
@@ -48,4 +40,15 @@ function App() {
   );
 }
 
-export default withRouter(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    getGithubAccount: () => {
+      dispatch(getGithubAccount());
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(withRouter(App));
