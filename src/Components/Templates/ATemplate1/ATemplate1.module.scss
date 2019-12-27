@@ -1,6 +1,7 @@
 #container {
   background: rgb(223, 213, 201);
   position: relative;
+  z-index: 9999999999999;
 
   .canvas {
     position: absolute;

@@ -1,25 +1,84 @@
+@import "../../../../scss/variables";
+
 #container {
   height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
-  background-color: cornflowerblue;
+  background-image: url(./JContactBack1.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   .content {
     color: white;
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans";
     text-align: center;
   }
-
   h1 {
-    font-size: 8rem;
+    font-size: 4rem;
+    text-shadow: 1px 1px 50px black;
   }
+}
+#aboutContent {
+  padding: 10vh 0;
 
-  .navigation {
-    a {
-      color: white;
-      margin-right: 20px;
+  .cardContainer {
+    width: 80%;
+    margin: 5vh auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+h1 {
+  color: white;
+}
+
+.card {
+  border: 1px solid #e1a87a;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  h2 {
+    color: white;
+    font-size: 2em;
+    letter-spacing: 0.025em;
+    line-height: 1em;
+    margin-bottom: 18px;
+  }
+  p {
+    font-size: 14px;
+    color: white;
+  }
+  a {
+    color: #e1a87a;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+}
+
+.navigation {
+  a {
+    color: white;
+    margin-right: 20px;
+  }
+}
+
+.imgContainer {
+  width: 150px;
+  height: 150px;
+  margin-top: 10%;
+  background-image: url(./JContact1.png);
+  background-size: cover;
+  box-shadow: 1px 1px 5px black;
+}
+
+@media (min-width: $breakpoint-medium) {
+  #aboutContent {
+    .cardContainer {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
