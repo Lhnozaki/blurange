@@ -9,20 +9,20 @@ export default function ATemplate1() {
       <div className={styles.canvas}>
         <nav className={styles.navigation}>
           <div className="leftHeader">
-            <Link to="/templates">Back</Link>
-            <Link to="/">Contact Me</Link>
+            <Link to="/editor/templates">Back</Link>
+            <Link to="/editor/templates">Contact Me</Link>
           </div>
-          <Link to="/">
+          <Link to="/editor/templates">
             <h1>YOUR NAME HERE</h1>
           </Link>
           <div className="rightHeader">
-            <Link to="/">GitHub</Link>
-            <Link to="/">LinkedIn</Link>
+            <Link to="/editor/templates">GitHub</Link>
+            <Link to="/editor/templates">LinkedIn</Link>
           </div>
         </nav>
         <div className={styles.content}>
           <div className={styles.leftContent}>
-            <section>Hi, my name is Andrew.</section>
+            <section>Hi, my name is NAME.</section>
           </div>
           <div className={styles.rightContent}>
             <section>

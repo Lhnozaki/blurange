@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from './JNavigation1.module.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./JNavigation1.module.scss";
 
 export default function JNavigation1() {
   return (
     <nav className={styles.navigation}>
-      <Link to="/templates/jtemplate1">HOME</Link>
-      <Link to="/templates/jtemplate1/about">ABOUT</Link>
-      <Link to="/templates/jtemplate1/portfolio">PORTFOLIO</Link>
-      <Link to="/templates/jtemplate1/resume">RESUME</Link>
-      <Link to="/templates/jtemplate1/contact">CONTACT</Link>
+      <Link to="/Templates/JTemplate1">HOME</Link>
+      <Link to="/Templates/JTemplate1/JAbout1">ABOUT</Link>
+      <Link to="/Templates/JTemplate1/JPortfolio1">PORTFOLIO</Link>
+      <Link to="/Templates/JTemplate1/JResume1">RESUME</Link>
+      <Link to="/Templates/JTemplate1/JContact1">CONTACT</Link>
     </nav>
   );
 }
