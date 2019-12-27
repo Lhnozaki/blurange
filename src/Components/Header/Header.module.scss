@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  height: 8vh;
+  height: 10vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -14,6 +14,7 @@
   color: $dark-accent;
   box-shadow: $box-shadow;
   z-index: 999;
+
   animation: slideInDown 0.5s forwards;
 }
 

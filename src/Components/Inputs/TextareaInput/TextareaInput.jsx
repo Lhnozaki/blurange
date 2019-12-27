@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from "react";
 
-export default function TextareaInput({ title, placeholder, value, name, handleChange, userInfo, setUserInfo }) {
+export default function TextareaInput({
+  title,
+  placeholder,
+  name,
+  handleChange
+}) {
+  const [inputValue, setInputValue] = useState("");
 
-    const [inputValue, setInputValue] = useState('');
-
-    // useEffect(() => {
-    //     setInputValue(value);
-    //     setUserInfo({ ...userInfo, [name]: value });
-    // }, []);
-
-
-    return (
-        <div className="input-container">
-            <label>{title}</label>
-            {/* Fix the binding for the value */}
-            <textarea rows="10" cols="50" name={name} placeholder={placeholder} value={inputValue} onChange={e => handleChange(e, setInputValue)} />
-        </div>
-    )
+  return (
+    <div className="input-container">
+      <label>{title}</label>
+      <textarea
+        rows="10"
+        cols="50"
+        name={name}
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={e => handleChange(e, setInputValue)}
+      />
+    </div>
+  );
 }

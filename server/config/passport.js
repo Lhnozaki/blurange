@@ -24,23 +24,23 @@ passport.use(
     (accessToken, refreshToken, profile, cb) => {
       const github = profile.username;
       const name = profile.displayName;
-      const password = accessToken;
+      const token = accessToken;
       const location = profile._json.location;
       return new User({ github: github })
         .fetch({ require: false })
         .then(data => {
           if (data === null) {
-            data = data.toJSON();
-            console.log("User created");
-            return new User({ github, name, password, location })
+            return new User({ github, name, token, location })
               .save()
               .then(data => {
+                console.log("User created");
                 return cb(null, data.github);
               })
               .catch(err => {
                 console.log("User wasnt created: ", err);
               });
           } else {
+            console.log("User exists");
             data = data.toJSON();
             return cb(null, data.github);
           }

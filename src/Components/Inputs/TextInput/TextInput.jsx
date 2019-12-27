@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from "react";
 
-export default function TextInput({ title, placeholder, value, name, handleChange, userInfo, setUserInfo, type }) {
+export default function TextInput({
+  title,
+  placeholder,
+  name,
+  handleChange,
+  type
+}) {
+  const [inputValue, setInputValue] = useState("");
 
-    const [inputValue, setInputValue] = useState('');
-
-    // useEffect(() => {
-    //     setInputValue(value);
-    //     console.log(title, value)
-    //     setUserInfo({ ...userInfo, [name]: value });
-    //     // console.log('user info', userInfo)
-    // }, []);
-
-    return (
-        <div className="input-container">
-            <label>{title}</label>
-            {/* Fix the binding for the value */}
-            <input type={type} name={name} placeholder={placeholder} value={inputValue} onChange={e => handleChange(e, setInputValue)} />
-        </div>
-    )
+  return (
+    <div className="input-container">
+      <label>{title}</label>
+      {/* Fix the binding for the value */}
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={inputValue}
+        onChange={e => handleChange(e, setInputValue)}
+      />
+    </div>
+  );
 }

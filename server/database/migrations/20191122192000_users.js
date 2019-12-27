@@ -6,7 +6,7 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     table.string("name", 25).notNullable();
-    table.string("password").notNullable();
+    table.string("token").notNullable();
     table.string("linkedin");
     table.string("location");
     table.string("job_title");

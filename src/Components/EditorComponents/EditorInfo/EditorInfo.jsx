@@ -3,33 +3,41 @@ import { connect } from "react-redux";
 import styles from "./EditorInfo.module.scss";
 import TextInput from "../../Inputs/TextInput";
 import TextareaInput from "../../Inputs/TextareaInput";
-import ImageUpload from '../../Inputs/ImageUpload';
+import ImageUpload from "../../Inputs/ImageUpload";
 import { Link } from "react-router-dom";
+import { obj, img } from "../../../reducers/index";
 
 import {
   authenticateLinkedin,
-  getGithubAccount,
   AddImage,
-  UploadImage
+  UploadImage,
+  AddProfile
 } from "../../../actions";
 
-const EditorInfo = ({
-  currentVal,
-  githubAccount,
-  state,
-  ...props
-}) => {
+const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
   const [userInfo, setUserInfo] = useState({});
 
+  let githubRepos;
+
   function handleChange(e, setVal) {
-    let { name, value } = e.target
-    setVal(value)
+    let { name, value } = e.target;
+    setVal(value);
     setUserInfo({ ...userInfo, [name]: value });
   }
 
   function handleSubmit(e) {
+    console.log(state);
     e.preventDefault();
-    console.log("user info", userInfo);
+    AddProfile(state).then(() => {
+      if (img !== undefined) {
+        console.log("IMAGE", img);
+        let imgData = {
+          profile_id: obj.id,
+          url: img.data.location
+        };
+        AddImage(imgData);
+      }
+    });
   }
 
   function linkedinLogin(e) {
@@ -39,45 +47,34 @@ const EditorInfo = ({
   }
 
   function handleUpload(e) {
-    let { name, value } = e.target
+    let { name, value } = e.target;
 
     const formData = new FormData();
     formData.append("profileImage", e.target.files[0]);
-    props.UploadImage(formData);
-    setUserInfo({ ...userInfo, [name]: value });
-  }
-
-  function handleClick(e) {
-    e.preventDefault();
-    this.props.AddImage(this.state).then((img) => {
-      if (img) {
-        console.log("IMAGE", img);
-        let imgData = {
-          image_id: img.id,
-          url: img.data.location
-        };
-        this.props.AddImage(imgData);
-      }
-    });
+    UploadImage(formData);
   }
 
   useEffect(() => {
+    console.log(state);
     if (state) {
       if (state.githubAccount) {
-        fetch(
-          `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
-        )
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-          })
-          .catch(err => {
-            console.log(err.message);
-          });
+        if (typeof state.githubAccount === "string") {
+          fetch(
+            `https://api.github.com/users/${state.githubAccount}/repos?per_page=1000`
+          )
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              githubRepos = data;
+            })
+            .catch(err => {
+              console.log(err.message);
+            });
+        }
       }
     }
-
   }, []);
+  console.log(githubRepos);
 
   return (
     <div id={styles.container} className="container-lg">
@@ -106,7 +103,11 @@ const EditorInfo = ({
             userInfo={userInfo}
             setUserInfo={setUserInfo}
           />
-          <ImageUpload title="profile image" name="profileImage" handleUpload={handleUpload} />
+          <ImageUpload
+            title="profile image"
+            name="profileImage"
+            handleUpload={handleUpload}
+          />
           <TextareaInput
             title="about"
             name="about"
@@ -137,9 +138,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/payments">
-              continue
-            </Link>
+            <Link to="/editor/payments">continue</Link>
           </button>
         </div>
       </form>
@@ -161,6 +160,9 @@ const mapDispatchToProps = dispatch => {
     },
     AddImage: () => {
       return dispatch(AddImage());
+    },
+    AddProfile: () => {
+      return dispatch(AddProfile());
     }
   };
 };
