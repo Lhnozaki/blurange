@@ -1,6 +1,22 @@
 @import "../../scss/variables";
 
 #planCard {
+
+  .content{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  ul{
+    text-align: left;
+
+    li{
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+  }
+  
   h3#planCardTitle {
     font-size: 2rem;
   }

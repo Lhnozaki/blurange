@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PlanCard.module.scss';
 
-const PlanCard = ({ title, monthly, yearly, isMonthly, setShowPay, showPay, setCurrentPlan }) => {
+const PlanCard = ({ title, monthly, yearly, isMonthly, setShowPay, showPay, setCurrentPlan, content }) => {
     function togglePay(){
         setCurrentPlan(title)
         setShowPay(!showPay);
@@ -9,8 +9,17 @@ const PlanCard = ({ title, monthly, yearly, isMonthly, setShowPay, showPay, setC
 
     return <div id={styles.planCard} className="card">
         <h3 id={styles.planCardTitle} className="title">{title}</h3>
-        <h5 className={styles.price}>{isMonthly ? `${monthly} paid monthly` : `${yearly} a month paid annually`}</h5>
-        {!isMonthly && <p className={styles.savings}>save 20%</p>}
+        <div className={styles.content}>
+            <ul>
+            {
+                content.map((item, i) => (
+                    <li key={i}>{item}</li>
+                ))
+            }
+            </ul>
+            {!isMonthly && <p className={styles.savings}>save 20%</p>}
+            <h5 className={styles.price}>{isMonthly ? monthly : yearly}</h5>
+        </div>
         <button onClick={togglePay}>choose plan</button>
     </div>
 }

@@ -21,9 +21,9 @@ const EditorPayments = () => {
                 <button style={{ background: isMonthly ? orange : blue }} onClick={() => setMonthly(true)} className={styles.paymentButton}>monthly</button>
             </div>
             <div id={styles.planCards} className="auto-grid grid-gap-lg">
-                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Starter" monthly="$5" yearly="$3" />
-                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Pro" monthly="$10" yearly="$7" />
-                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Drip" monthly="$10000" yearly="$15" />
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Starter" monthly="Free" yearly="Free" content={['Create sites using prebuilt templates', 'Hosting with nocann subdomain', 'Pay as you grow']}/>
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Pro" monthly="$10 paid monthly" yearly="$7 a month paid annually" content={['Everything in starter','Custom Domains' ,'Priority suppport']}/>
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Drip" monthly="$10000 paid monthly" yearly="$15 a month paid annually" content={['Costs more', 'Bragging rights for expensive plan', 'Custom templates']}/>
             </div>
             {showPay && <Payment setShowPay={setShowPay} showPay={showPay} currentPlan={currentPlan} />}
             <div className="editor-button-container">

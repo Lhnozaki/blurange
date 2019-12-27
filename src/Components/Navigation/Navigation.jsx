@@ -7,7 +7,6 @@ export default function Navigation({ isAuth }) {
     <nav className={styles.navigation}>
       <Link to="/">home</Link>
       <Link to="/editor/templates">editor</Link>
-      {isAuth && <Link to="/dashboard">dashboard</Link>}
     </nav>
   );
 }

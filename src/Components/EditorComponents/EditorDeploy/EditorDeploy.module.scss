@@ -1,3 +1,37 @@
+@import '../../../scss/_variables.scss';
+
 #editorDeploy{
     padding-top: 30px;
+}
+
+.deployContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+select{
+    width: fit-content;
+}
+
+strong{
+    color: $orange;
+}
+
+.deployButton{
+    margin-top: 30px;
+}
+
+.customDomainContainer{
+    display: flex;
+    // flex-direction: column;
+    button{
+        border-radius: 0;
+    }
+}
+
+@media(min-width: $breakpoint-medium){
+    .deployContainer{
+        width: 60%;
+        margin: 0 auto;
+    }
 }
