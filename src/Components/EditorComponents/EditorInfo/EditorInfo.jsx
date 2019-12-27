@@ -82,7 +82,7 @@ const EditorInfo = ({
   return (
     <div id={styles.container} className="container-lg">
       <div className={styles.infoCta}>
-        <h3>Fill in info</h3>
+        <h2 className="editor-title">Fill in info</h2>
       </div>
       <form onSubmit={handleSubmit}>
         <div className={styles.infoContainer}>
@@ -137,7 +137,7 @@ const EditorInfo = ({
             <Link to="/editor/templates">go back</Link>
           </button>
           <button>
-            <Link to="/editor/deploy">
+            <Link to="/editor/payments">
               continue
             </Link>
           </button>
