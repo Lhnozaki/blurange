@@ -9,7 +9,8 @@ const TemplateCard = ({
   userInfo,
   toggleSelectedState,
   setUserInfo,
-  links
+  links,
+  pictures
 }) => {
   function renderSelectedState(index) {
     return isSelected === index
@@ -31,14 +32,9 @@ const TemplateCard = ({
       onClick={() => selectTemplate()}
     >
       <div className={styles.imageContainer}>
-        {/* <a href={links[i]} alt="image" target="_blank"> */}
         <Link to={links[i]}>
-          <img
-            src="https://knowpathology.com.au/app/uploads/2018/07/Happy-Test-Screen-01-825x510.png"
-            alt=""
-          />
+          <img src={pictures[i]} alt="" />
         </Link>
-        {/* </a> */}
       </div>
       <h3 className="color-blue">
         template <span>{i + 1}</span>

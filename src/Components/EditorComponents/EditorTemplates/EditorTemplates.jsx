@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import styles from "./EditorTemplates.module.scss";
 import TemplateCard from "../../TemplateCard";
 import { Link } from "react-router-dom";
+import img1 from "./Temp1.png";
+import img2 from "./Temp2.png";
+import img3 from "./Temp3.png";
 
 import { getGithubAccount } from "../../../actions";
 
@@ -14,6 +17,8 @@ const EditorTemplates = props => {
     "/Templates/ATemplate2",
     "/Templates/JTemplate1"
   ];
+
+  const pictures = [img1, img2, img3];
 
   const [isSelected, setSelected] = useState(null);
 
@@ -40,6 +45,7 @@ const EditorTemplates = props => {
             setSelected={setSelected}
             toggleSelectedState={toggleSelectedState}
             links={links}
+            pictures={pictures}
           />
         ))}
       </div>

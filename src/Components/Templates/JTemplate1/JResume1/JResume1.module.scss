@@ -3,12 +3,12 @@
   width: 100%;
   display: grid;
   place-items: center;
-  background-color: cornflowerblue;
+  background: rgba(0, 0, 0, 0.75);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   .content {
     color: white;
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans";
     text-align: center;
   }
 

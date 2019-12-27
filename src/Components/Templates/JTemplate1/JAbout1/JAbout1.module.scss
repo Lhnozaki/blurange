@@ -3,23 +3,41 @@
   width: 100%;
   display: grid;
   place-items: center;
-  background-color: cornflowerblue;
+  background: black;
+  background-image: url(./JAbout1.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  .content {
+  .title {
     color: white;
-    font-family: 'Nunito Sans';
+    font-size: 24px;
+    font-family: "Nunito Sans";
     text-align: center;
+    text-shadow: 1px 1px 20px black;
+    margin-top: 15%;
   }
 
-  h1 {
-    font-size: 8rem;
-  }
-
-  .navigation {
-    a {
+  .aboutContainer {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2.5%;
+    margin: 5%;
+    h1 {
       color: white;
-      margin-right: 20px;
+      font-size: 20px;
+      text-shadow: 1px 1px 20px black;
+    }
+
+    p {
+      color: white;
+      margin: 1% 10% 1% 10%;
+      font-size: 16px;
+      text-shadow: 1px 1px 20px black;
+    }
+
+    .navigation {
+      a {
+        color: white;
+        margin-right: 20px;
+      }
     }
   }
 }

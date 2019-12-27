@@ -9,7 +9,11 @@ import EditorInfo from "../Components/EditorComponents/EditorInfo";
 import EditorPayments from "../Components/EditorComponents/EditorPayments";
 import ATemplate1 from "../Components/Templates/ATemplate1";
 import ATemplate2 from "../Components/Templates/ATemplate2";
-// import JTemplate1 from "../Components/Templates/JTemplate1";
+import JTemplate1 from "../Components/Templates/JTemplate1/JHome1/JHome1";
+import JTemplate1About1 from "../Components/Templates/JTemplate1/JAbout1";
+import JTemplate1Portfolio1 from "../Components/Templates/JTemplate1/JPortfolio1";
+import JTemplate1Resume1 from "../Components/Templates/JTemplate1/JResume1";
+import JTemplate1Contact1 from "../Components/Templates/JTemplate1/JContact1";
 
 export const routes = [
   {
@@ -55,13 +59,33 @@ export const routes = [
   {
     path: "/Templates/ATemplate2",
     exact: true,
-    components: ATemplate2
+    component: ATemplate2
+  },
+  {
+    path: "/Templates/JTemplate1",
+    exact: true,
+    component: JTemplate1
+  },
+  {
+    path: "/Templates/JTemplate1/JAbout1",
+    exact: true,
+    component: JTemplate1About1
+  },
+  {
+    path: "/Templates/JTemplate1/JPortfolio1",
+    exact: true,
+    component: JTemplate1Portfolio1
+  },
+  {
+    path: "/Templates/JTemplate1/JResume1",
+    exact: true,
+    component: JTemplate1Resume1
+  },
+  {
+    path: "/Templates/JTemplate1/JContact1",
+    exact: true,
+    component: JTemplate1Contact1
   }
-  // {
-  //   path: "/Templates/JTemplate1",
-  //   exact: true,
-  //   components: JTemplate1
-  // }
 ];
 
 // Create auth routes and render if authorized in the home page
