@@ -118,6 +118,7 @@ class Payment extends Component {
     return (
       <div className={styles.paymentContainer}>
         <div className="card" id={styles.paymentModal}>
+          <h2 className={styles.currentPlan}>Current Plan: <span>{this.props.currentPlan}</span></h2>
           <h3>Please enter your card details for payment</h3>
           <form onSubmit={this.handleSubmit}>
             <input

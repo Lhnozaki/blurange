@@ -4,9 +4,11 @@ import Payment from '../../Payment';
 import { Link } from 'react-router-dom';
 import PlanCard from '../../PlanCard';
 
+
 const EditorPayments = () => {
     const [showPay, setShowPay] = useState(false);
     const [isMonthly, setMonthly] = useState(false);
+    const [currentPlan, setCurrentPlan] = useState('Starter');
 
     const orange = '#ffb43d';
     const blue = '#0468b7';
@@ -19,12 +21,11 @@ const EditorPayments = () => {
                 <button style={{ background: isMonthly ? orange : blue }} onClick={() => setMonthly(true)} className={styles.paymentButton}>monthly</button>
             </div>
             <div id={styles.planCards} className="auto-grid grid-gap-lg">
-                <PlanCard isMonthly={isMonthly} title="Starter" monthly="$5" yearly="$3" />
-                <PlanCard isMonthly={isMonthly} title="Pro" monthly="$10" yearly="$7" />
-                <PlanCard isMonthly={isMonthly} title="Drip" monthly="$4000" yearly="$15" />
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Starter" monthly="$5" yearly="$3" />
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Pro" monthly="$10" yearly="$7" />
+                <PlanCard setShowPay={setShowPay} setCurrentPlan={setCurrentPlan} showPay={showPay} isMonthly={isMonthly} title="Drip" monthly="$10000" yearly="$15" />
             </div>
-            {showPay && <Payment setShowPay={setShowPay} showPay={showPay} />}
-            <button onClick={() => setShowPay(!showPay)}>pay</button>
+            {showPay && <Payment setShowPay={setShowPay} showPay={showPay} currentPlan={currentPlan} />}
             <div className="editor-button-container">
                 <button><Link to="/editor/info">go back</Link></button>
                 <button><Link to="/editor/deploy">continue</Link></button>
