@@ -1,0 +1,17 @@
+@import "../../../scss/variables";
+
+#editorPayments {
+  margin-top: 120px;
+}
+
+#planCards {
+  padding: 5vh 0;
+}
+
+.paymentOptions {
+  .paymentButton {
+    width: 100px;
+    text-align: center;
+    border-radius: 0;
+  }
+}

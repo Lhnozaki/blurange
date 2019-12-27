@@ -1,0 +1,15 @@
+@import "../../scss/variables";
+
+#planCard {
+  h3#planCardTitle {
+    font-size: 2rem;
+  }
+
+  button {
+    background: $orange;
+  }
+}
+
+.savings {
+  color: $blue;
+}
