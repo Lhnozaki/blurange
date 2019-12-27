@@ -2,7 +2,6 @@ import React from "react";
 import { Route } from "react-router-dom";
 import SplashPage from "../Components/SplashPage";
 import DesignSystem from "../Components/DesignSystem";
-import Dashboard from "../Components/DashboardComponents/Dashboard";
 import EditorTemplates from "../Components/EditorComponents/EditorTemplates";
 import EditorDeploy from '../Components/EditorComponents/EditorDeploy';
 import EditorInfo from '../Components/EditorComponents/EditorInfo';
@@ -38,31 +37,9 @@ export const routes = [
     path: "/editor/deploy",
     exact: true,
     component: EditorDeploy
-  },
-  {
-    path: "/dashboard",
-    exact: true,
-    component: Dashboard
   }
 ];
 
-// Create auth routes and render if authorized in the home page
-export const authRoutes = [
-  {
-    path: "/",
-    exact: true
-  },
-  {
-    path: "/design-system",
-    exact: true,
-    component: DesignSystem
-  },
-  {
-    path: "/editor/templates",
-    exact: true,
-    component: EditorTemplates
-  }
-];
 
 const Routes = () => {
   return (

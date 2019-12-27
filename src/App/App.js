@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import Routes from "../Routes";
@@ -33,7 +33,6 @@ function App({ state, ...props }) {
           <MobileNav showMenu={showMenu} isAuth={isAuth} />
 
           <Routes />
-          {/*isAuth ? <Redirect to="/dashboard" /> : <Redirect to="/" />*/}
         </div>
       </Elements>
     </StripeProvider>

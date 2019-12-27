@@ -6,6 +6,7 @@ import { authenticateGitHub } from "../../actions";
 require("dotenv").config();
 
 const LoginModal = ({ ...props }) => {
+    
   function handleSubmit(event) {
     event.preventDefault();
     // props.authenticateGitHub();
