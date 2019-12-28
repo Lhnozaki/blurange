@@ -28,7 +28,6 @@ const MobileNav = ({ isAuth, showMenu, toggleLoginStatus }) => {
         <animated.nav className={styles.navigation} style={slideIn}>
             <Link to="/">home</Link>
             <Link to="/editor/templates">editor</Link>
-            {isAuth && <Link to="/dashboard">dashboard</Link>}
             <div className={styles.loginBtns}>
                 <button onClick={toggleLoginStatus}>{isAuth ? 'logout' : 'login'}</button>
                 {!isAuth && <button className="alt-btn">sign up</button>}

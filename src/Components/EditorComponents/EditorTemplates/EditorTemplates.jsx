@@ -10,7 +10,7 @@ import img3 from "./Temp3.png";
 import { getGithubAccount } from "../../../actions";
 
 const EditorTemplates = props => {
-  const arrTemplateNames = ["ATemplate1", "ATemplate2", "DTemplate1"];
+  const arrTemplateNames = ["Aewis", "Andrip", "Dewis"];
 
   const links = [
     "/Templates/ATemplate1",

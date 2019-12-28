@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans|Rubik:500,700&display=swap");
 
 // Typography
-$type-base: "Nunito Sans", sans-serif;
-$type-heading: "Rubik", sans-serif;
+$type-base: "Nunito Sans",
+sans-serif;
+$type-heading: "Rubik",
+sans-serif;
 $type-linewidth: 38em;
 $type-color-body: rgba(0, 0, 0, 0.8);
 $type-color-headings: #000;
@@ -20,7 +22,8 @@ $border-color: rgba(178, 190, 195, 0.4);
 $border-radius: 5px;
 $btn-border-radius: 35px;
 $cubic-ease: cubic-bezier(0.3, 0.71, 0.21, 1.03);
-$box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.205);
+$box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.02);
+$header-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.302);
 
 // Breakpoints
 $breakpoint-small: 768px;

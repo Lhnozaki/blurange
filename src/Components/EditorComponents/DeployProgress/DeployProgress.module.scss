@@ -1,0 +1,141 @@
+@import '../../../scss/variables';
+
+.deployProgress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 9999;
+    background: rgba($dark-accent, 0.5);
+    display: grid;
+    place-items: center;
+
+    #deployContainer {
+        height: fit-content;
+        width: 90%;
+        margin: 0 auto;
+        background: $off-white;
+        top: calc(50% - 40vh);
+        left: calc(50% - 45%);
+        padding: 40px;
+
+        .progressBar {
+            height: 50px;
+            width: 100%;
+            border-radius: 15px;
+            border: 1px solid $orange;
+            position: relative;
+            overflow: hidden;
+
+            &:after {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                transform-origin: left;
+                background: $orange;
+                animation: loadDeploy 15s ease-in-out forwards;
+            }
+
+        }
+    }
+}
+
+.deployMessage {
+    text-align: center;
+    margin: 20px auto 0 auto;
+    color: $blue;
+    animation: blinking 15s ease forwards;
+}
+
+.deployLink {
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+    animation-delay: 15s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        margin-bottom: 50px;
+    }
+
+    span,
+    a {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loadDeploy {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+
+@keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}

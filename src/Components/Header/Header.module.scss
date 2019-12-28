@@ -12,9 +12,8 @@
   left: 0;
   background: $off-white;
   color: $dark-accent;
-  box-shadow: $box-shadow;
+  box-shadow: $header-shadow;
   z-index: 999;
-
   animation: slideInDown 0.5s forwards;
 }
 
@@ -22,6 +21,7 @@
   from {
     transform: translateY(-8vh);
   }
+
   to {
     transform: translateY(0vh);
   }
@@ -49,9 +49,11 @@
   0% {
     transform: rotate(0deg) scale(1);
   }
+
   50% {
     transform: rotate(360deg) scale(0.6);
   }
+
   100% {
     transform: rotate(720deg) scale(1);
   }

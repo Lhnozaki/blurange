@@ -46,11 +46,6 @@ export const routes = [
     component: EditorDeploy
   },
   {
-    path: "/dashboard",
-    exact: true,
-    component: Dashboard
-  },
-  {
     path: "/Templates/ATemplate1",
     exact: true,
     component: ATemplate1
