@@ -8,10 +8,15 @@ router.get("/", passport.authenticate("github", { scope: ["repo"] }));
 
 router.get(
   "/callback",
-  passport.authenticate("github", { failureRedirect: "/" }),
+  passport.authenticate("github", {
+    failureRedirect: "/",
+    successRedirect: "/"
+  }),
   (req, res) => {
     // Successful authentication, redirect home.
-    res.redirect(`${process.env.GITHUB_REDIRECT_LINK}`);
+    console.log("callback: ", req);
+    const user = req.session.passport.user.username;
+    res.json({ user });
   }
 );
 
