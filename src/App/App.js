@@ -30,7 +30,7 @@ function App({ state, ...props }) {
             setMenu={setMenu}
             showMenu={showMenu}
           />
-          <MobileNav showMenu={showMenu} isAuth={isAuth} />
+          <MobileNav showMenu={showMenu} isAuth={isAuth} setAuth={setAuth} />
 
           <Routes />
         </div>
