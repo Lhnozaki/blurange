@@ -32,3 +32,5 @@ This DevLeague Cohort 29 final project was created by:
 - Redis
 - Stripe API
 - React-Stripe-Elements
+- OAuth
+- Passport
