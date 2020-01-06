@@ -1,3 +1,5 @@
+![Blurange Logo](/public/logo192.png)
+
 # NoCan.Design
 
 ### As a Software Engineer you learn to not repeat your code. In life, you shouldn't have to repeat yourself either.
