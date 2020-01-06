@@ -14,6 +14,10 @@ This DevLeague Cohort 29 final project was created by:
 - [Lewis Nozaki](https://github.com/lhnozaki)
 - [Andrew Obiano](https://github.com/andrewobx)
 
+### Domain
+
+www.nocan.design (*Due to depoloyment costs, website hosting may be shut down*)
+
 ### Technologies Used
 
 - React
@@ -69,3 +73,7 @@ This DevLeague Cohort 29 final project was created by:
 
 1. Example Finished Product
    ![Splash Page](/assets/15.png)
+
+### Questions?
+
+Please reach out to us for any questions or inquiries you may have and we will gladly respond to you nocandesign@gmail.com.
