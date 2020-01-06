@@ -41,3 +41,31 @@ This DevLeague Cohort 29 final project was created by:
 
 1. Splash Page
    ![Splash Page](/assets/1.png)
+   ![Splash Page](/assets/2.png)
+   ![Splash Page](/assets/3.png)
+   ![Splash Page](/assets/4.png)
+   ![Splash Page](/assets/5.png)
+
+1. OAuth with Github
+   ![Splash Page](/assets/6.png)
+
+1. Our predesigned templates
+   ![Splash Page](/assets/7.png)
+   ![Splash Page](/assets/8.png)
+   ![Splash Page](/assets/9.png)
+   ![Splash Page](/assets/10.png)
+
+1. Editor
+   ![Splash Page](/assets/11.png)
+
+1. Plans
+   ![Splash Page](/assets/12.png)
+
+1. Payment with Stripe
+   ![Splash Page](/assets/13.png)
+
+1. Deployment Setup
+   ![Splash Page](/assets/14.png)
+
+1. Example Finished Product
+   ![Splash Page](/assets/15.png)
