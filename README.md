@@ -36,3 +36,8 @@ This DevLeague Cohort 29 final project was created by:
 - React-Stripe-Elements
 - OAuth
 - Passport
+
+### Screenshots
+
+1. Splash Page
+   ![Splash Page](/assets/1.png)
