@@ -2,7 +2,6 @@ import React from "react";
 import "../../index.scss";
 import styles from "./JPortfolio1.module.scss";
 import JHeader1 from "../JHeader1/JHeader1";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as Logo } from "./github.svg";
 
 export default function JPortfolio1() {

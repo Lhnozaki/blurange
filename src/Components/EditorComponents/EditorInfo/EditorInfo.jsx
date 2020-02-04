@@ -26,11 +26,9 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
   }
 
   function handleSubmit(e) {
-    console.log(state);
     e.preventDefault();
     AddProfile(state).then(() => {
       if (img !== undefined) {
-        console.log("IMAGE", img);
         let imgData = {
           profile_id: obj.id,
           url: img.data.location
@@ -42,7 +40,6 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
 
   function linkedinLogin(e) {
     e.preventDefault();
-    console.log(props.authenticateLinkedin());
     window.location = "/api/auth/linkedin";
   }
 
@@ -55,7 +52,6 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
   }
 
   useEffect(() => {
-    console.log(state);
     if (state) {
       if (state.githubAccount) {
         if (typeof state.githubAccount === "string") {
@@ -64,7 +60,6 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
           )
             .then(res => res.json())
             .then(data => {
-              console.log(data);
               githubRepos = data;
             })
             .catch(err => {
@@ -74,7 +69,6 @@ const EditorInfo = ({ currentVal, githubAccount, state, ...props }) => {
       }
     }
   }, []);
-  console.log(githubRepos);
 
   return (
     <div id={styles.container} className="container-lg">
@@ -167,7 +161,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EditorInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(EditorInfo);

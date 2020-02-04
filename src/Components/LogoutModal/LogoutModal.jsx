@@ -8,7 +8,6 @@ const LogoutModal = ({ isAuth, setAuth, ...props }) => {
     event.preventDefault();
     setAuth(false);
     props.logoutGithub();
-    console.log(isAuth);
   };
 
   return (
@@ -26,7 +25,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(LogoutModal);
+export default connect(null, mapDispatchToProps)(LogoutModal);

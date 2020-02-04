@@ -58,12 +58,6 @@ class Payment extends Component {
         body: JSON.stringify({ token, amount })
       });
 
-      console.log(token);
-
-      if (response.ok) {
-        console.log("Purchase Complete!");
-      }
-
       this.setState({
         Message: "Payment Successful!",
         success: !this.state.success
@@ -118,7 +112,9 @@ class Payment extends Component {
     return (
       <div className={styles.paymentContainer}>
         <div className="card" id={styles.paymentModal}>
-          <h2 className={styles.currentPlan}>Current Plan: <span>{this.props.currentPlan}</span></h2>
+          <h2 className={styles.currentPlan}>
+            Current Plan: <span>{this.props.currentPlan}</span>
+          </h2>
           <h3>Please enter your card details for payment</h3>
           <form onSubmit={this.handleSubmit}>
             <input
@@ -157,16 +153,17 @@ class Payment extends Component {
                 <a href="www.stripe.com">our terms </a>
                 and the{" "}
                 <a href="www.stripe.com">Stripe Connected Account Agreement</a>.
-            </p>
+              </p>
               <div className={styles.buttonContainer}>
                 <button>Pay</button>
-                <button onClick={() => this.props.setShowPay(false)}>Cancel</button>
+                <button onClick={() => this.props.setShowPay(false)}>
+                  Cancel
+                </button>
               </div>
             </div>
           </form>
-        </div >
+        </div>
       </div>
-
     );
   }
 }

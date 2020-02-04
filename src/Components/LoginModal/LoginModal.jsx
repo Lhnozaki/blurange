@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import styles from "./LoginModal.module.scss";
 import { authenticateGitHub } from "../../actions";
@@ -38,7 +38,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(LoginModal);
+export default connect(null, mapDispatchToProps)(LoginModal);

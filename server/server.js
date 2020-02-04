@@ -23,7 +23,6 @@ const profileRoute = require("./routes/api/profile");
 ///// REDIS /////
 const RedisStore = require("connect-redis")(session);
 const redis = require("redis");
-// const client = redis.createClient({ url: process.env.REDIS_URL });
 
 ///// PORT /////
 const PORT = process.env.EXPRESS_HOST_PORT;
@@ -58,14 +57,8 @@ app.use("/api/charge", paymentsRoute);
 app.use("/api/images", imagesRoute);
 app.use("/api/profile", profileRoute);
 
-///// Smoke Test /////
-
 app.get("/", (req, res) => {
-  console.log("test61");
   res.status(200).json({ success: true });
-});
-app.get("/smoke", (req, res) => {
-  console.log("test65");
 });
 
 ///// LISTEN /////

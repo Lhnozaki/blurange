@@ -53,12 +53,10 @@ function checkFileType(file, cb) {
 imageRouter.post("/upload", (req, res) => {
   creatureImageUpload(req, res, error => {
     if (error) {
-      console.log("errors", error);
       res.json({ error: error });
     } else {
       //if file not found
       if (req.file === undefined) {
-        console.log("Error: No File Selected!");
         res.json("Error: No File Selected!");
       } else {
         //success
@@ -78,7 +76,6 @@ imageRouter.post("/", (req, res) => {
   return new Image(req.body)
     .save()
     .then(results => {
-      console.log("IMAGE POST", results);
       res.status(200).json(results);
     })
     .catch(err => {

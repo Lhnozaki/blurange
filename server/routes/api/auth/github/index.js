@@ -14,7 +14,6 @@ router.get(
   }),
   (req, res) => {
     // Successful authentication, redirect home.
-    console.log("callback: ", req);
     const user = req.session.passport.user.username;
     res.json({ user });
   }

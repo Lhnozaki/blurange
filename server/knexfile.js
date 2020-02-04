@@ -18,7 +18,4 @@ module.exports = {
     tableName: "knex_migrations",
     directory: path.join(__dirname, "database", "migrations")
   }
-  // seeds: {
-  //   directory: path.join(__dirname, "database", "seeds")
-  // }
 };
