@@ -9,8 +9,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  console.log(req.body.token);
-
   try {
     let { status } = await stripe.charges.create({
       amount: req.body.amount,
@@ -23,7 +21,6 @@ router.post("/", async (req, res) => {
 
     res.json({ status });
   } catch (err) {
-    console.log(err);
     res.status(500).end();
   }
 });

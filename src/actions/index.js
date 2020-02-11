@@ -1,5 +1,4 @@
 import Axios from "axios";
-import { browserHistory } from "react-router";
 
 export const GITHUB_AUTH = "GITHUB_AUTH";
 export const LINKEDIN_AUTH = "LINKEDIN_AUTH";

@@ -6,7 +6,6 @@ const User = require("../database/models/User");
 require("dotenv").config();
 
 passport.serializeUser((data, cb) => {
-  console.log("serialized: ", data);
   cb(null, { username: data });
 });
 
@@ -33,20 +32,20 @@ passport.use(
             return new User({ github, name, token, location })
               .save()
               .then(data => {
-                console.log("User created");
+                // user created
                 return cb(null, data.github);
               })
               .catch(err => {
-                console.log("User wasnt created: ", err);
+                res.send(err);
               });
           } else {
-            console.log("User exists");
+            // user exists
             data = data.toJSON();
             return cb(null, data.github);
           }
         })
         .catch(err => {
-          console.log("Error getting user: ", err);
+          res.send(err);
         });
     }
   )
@@ -62,10 +61,8 @@ passport.use(
       state: true
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
-      console.log("Linkedin works");
+      // linkedin works
       process.nextTick(() => {
-        console.log("To be put into database: ");
         //record in database
         return done(null, profile);
       });
